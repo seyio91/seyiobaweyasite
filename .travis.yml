@@ -4,5 +4,7 @@ python:
   - "3.5"
 before_install:
   - pip install -r requirements.txt
+install:
+  - pelican-themes -i themes/Flex
 script:
   - make html
