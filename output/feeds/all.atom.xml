@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2nd site</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/all.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2010-12-03T10:20:00+00:00</updated><subtitle>Tech Lover</subtitle><entry><title>First Static Test</title><link href="http://localhost:8000/articles/2010/12/03/first-static-test/" rel="alternate"></link><published>2010-12-03T10:20:00+00:00</published><updated>2010-12-03T10:20:00+00:00</updated><author><name>seyi</name></author><id>tag:localhost,2010-12-03:/articles/2010/12/03/first-static-test/</id><summary type="html">&lt;p&gt;Cehcking out display.&lt;br&gt;
+&lt;a href="https://www.gunshipmusic.com/"&gt;Gunship&lt;/a&gt; is a &lt;em&gt;retro synthwave&lt;/em&gt; artist out of the UK.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=uYRZV8dV10w"&gt;Revel in Your Time&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=-nC5TBv3sfU"&gt;Tech Noir&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=Jv1ZN8c4_Gs"&gt;Fly for Your Life&lt;/a&gt; 
+and 
+&lt;a href="https://www.youtube.com/watch?v=-HYRTJr8EyA"&gt;The Mountain&lt;/a&gt; 
+are all quality songs by Gunship. Check out those amazing music videos!   &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;from xml.etree …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;Cehcking out display.&lt;br&gt;
+&lt;a href="https://www.gunshipmusic.com/"&gt;Gunship&lt;/a&gt; is a &lt;em&gt;retro synthwave&lt;/em&gt; artist out of the UK.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=uYRZV8dV10w"&gt;Revel in Your Time&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=-nC5TBv3sfU"&gt;Tech Noir&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=Jv1ZN8c4_Gs"&gt;Fly for Your Life&lt;/a&gt; 
+and 
+&lt;a href="https://www.youtube.com/watch?v=-HYRTJr8EyA"&gt;The Mountain&lt;/a&gt; 
+are all quality songs by Gunship. Check out those amazing music videos!   &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;from xml.etree.ElementTree import parse
+&lt;span class="nv"&gt;doc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; parse&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rt22.xml&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; bus in doc.findall&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;bus&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;:   &lt;span class="c1"&gt;#sort according to bus&lt;/span&gt;
+    &lt;span class="nv"&gt;lat&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; float&lt;span class="o"&gt;(&lt;/span&gt;bus.findtext&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lat&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;  &lt;span class="c1"&gt;#check lat field in bus&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; lat &amp;gt; daves_latitude:       &lt;span class="c1"&gt;#if lat is greater than mine, check the direction&lt;/span&gt;
+        &lt;span class="nv"&gt;directions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; bus.findtext&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; directions.startswith&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;North&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;:
+            &lt;span class="nv"&gt;busid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; bus.findtext&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            print busid, lat
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="Alt Text" src="http://localhost:8000/articles/2010/12/03/first-static-test/../images/thumbnails/128x_/test.jpeg"&gt; &lt;/p&gt;
+&lt;p&gt;There are two ways to specify the identifier:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;The triple-colon syntax will *not* show line numbers.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To display line numbers, use a path-less shebang instead of colons:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;The path-less shebang syntax *will* show line numbers.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Also take a look at other retro synthwave artists such as
+&lt;a href="https://trevorsomething.bandcamp.com/"&gt;Trevor Something&lt;/a&gt;, 
+&lt;a href="https://droidbishop.bandcamp.com/"&gt;Droid Bishop&lt;/a&gt;,
+&lt;a href="https://fm84.bandcamp.com/"&gt;FM-84&lt;/a&gt;
+and 
+&lt;a href="https://danieldeluxe.bandcamp.com/"&gt;Daniel Deluxe&lt;/a&gt;&lt;/p&gt;</content><category term="Review"></category></entry><entry><title>My First Review</title><link href="http://localhost:8000/articles/2010/12/03/my-first-review/" rel="alternate"></link><published>2010-12-03T10:20:00+00:00</published><updated>2010-12-03T10:20:00+00:00</updated><author><name>seyi</name></author><id>tag:localhost,2010-12-03:/articles/2010/12/03/my-first-review/</id><summary type="html">&lt;p&gt;&lt;a href="http://localhost:8000/articles/2010/12/03/first-static-test/"&gt;First Post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;br&gt;
+&lt;a href="https://www.gunshipmusic.com/"&gt;Gunship&lt;/a&gt; is a &lt;em&gt;retro synthwave&lt;/em&gt; artist out of the UK.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=uYRZV8dV10w"&gt;Revel in Your Time&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=-nC5TBv3sfU"&gt;Tech Noir&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=Jv1ZN8c4_Gs"&gt;Fly for Your Life&lt;/a&gt; 
+and 
+&lt;a href="https://www.youtube.com/watch?v=-HYRTJr8EyA"&gt;The Mountain&lt;/a&gt; 
+are all quality songs by Gunship. Check out those amazing music videos!&lt;/p&gt;
+&lt;p&gt;Also take a look …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://localhost:8000/articles/2010/12/03/first-static-test/"&gt;First Post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;br&gt;
+&lt;a href="https://www.gunshipmusic.com/"&gt;Gunship&lt;/a&gt; is a &lt;em&gt;retro synthwave&lt;/em&gt; artist out of the UK.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=uYRZV8dV10w"&gt;Revel in Your Time&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=-nC5TBv3sfU"&gt;Tech Noir&lt;/a&gt;, 
+&lt;a href="https://www.youtube.com/watch?v=Jv1ZN8c4_Gs"&gt;Fly for Your Life&lt;/a&gt; 
+and 
+&lt;a href="https://www.youtube.com/watch?v=-HYRTJr8EyA"&gt;The Mountain&lt;/a&gt; 
+are all quality songs by Gunship. Check out those amazing music videos!&lt;/p&gt;
+&lt;p&gt;Also take a look at other retro synthwave artists such as
+&lt;a href="https://trevorsomething.bandcamp.com/"&gt;Trevor Something&lt;/a&gt;, 
+&lt;a href="https://droidbishop.bandcamp.com/"&gt;Droid Bishop&lt;/a&gt;,
+&lt;a href="https://fm84.bandcamp.com/"&gt;FM-84&lt;/a&gt;
+and 
+&lt;a href="https://danieldeluxe.bandcamp.com/"&gt;Daniel Deluxe&lt;/a&gt;&lt;/p&gt;</content><category term="Review"></category></entry></feed>
