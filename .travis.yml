@@ -4,7 +4,9 @@ python:
   - "3.5"
 before_install:
   - pip install -r requirements.txt
+  - git clone https://github.com/alexandrevicenzi/Flex.git
 install:
-  - pelican-themes -i themes/Flex
+  - cp -r themes/templates Flex/templates
+  - pelican-themes -i Flex/
 script:
   - make html
