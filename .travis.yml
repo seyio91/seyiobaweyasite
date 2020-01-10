@@ -13,7 +13,7 @@ script:
 
 deploy:
   provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
+  access_key_id: AKIAQZPZYSPLRGXIGTOC
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: seyiobaweya.tech
   local-dir: output
