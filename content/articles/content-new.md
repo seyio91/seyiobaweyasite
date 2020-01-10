@@ -3,7 +3,8 @@ Date: 2010-12-03 10:20
 Category: Review
 
   
-
+Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis.yml with key “secure” (underneath the “env” key). This makes the environment variable SOMEVAR with value “secretvalue” available to your program.  
+  
 [First Post]({filename}/articles/02-newcontent.md)
   
 Following is a review of my favorite mechanical keyboard.  

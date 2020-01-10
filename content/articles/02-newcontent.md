@@ -12,19 +12,12 @@ and
 [The Mountain](https://www.youtube.com/watch?v=-HYRTJr8EyA) 
 are all quality songs by Gunship. Check out those amazing music videos!   
   
-    #!bash
+    #!python
     from xml.etree.ElementTree import parse
     doc = parse('rt22.xml')
     for bus in doc.findall('bus'):   #sort according to bus
-        lat = float(bus.findtext('lat'))  #check lat field in bus
-        if lat > daves_latitude:       #if lat is greater than mine, check the direction
-            directions = bus.findtext('d')
-            if directions.startswith('North'):
-                busid = bus.findtext('id')
-                print busid, lat
+        lat = float(bus.findtext('lat'))  #check lat field in bus  
   
-  
-
 ![Alt Text]({static ../images/test.jpeg thumb="128x_"}) 
 
 There are two ways to specify the identifier:
