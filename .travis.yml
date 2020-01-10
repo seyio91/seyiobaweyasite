@@ -8,7 +8,7 @@ install:
 - cp -r themes/templates Flex/templates
 - pelican-themes -i Flex/
 script:
-- make html
+- pelican content -s pelicanconf-prod.py
 
 
 deploy:
