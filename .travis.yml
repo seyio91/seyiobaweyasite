@@ -18,7 +18,6 @@ deploy:
   bucket: seyiobaweya.tech
   local-dir: output
   region: eu-west-2
-  acl: public_read, bucket_owner_full_control
   on:
     repo: seyio91/sample-blog
   skip_cleanup: true
