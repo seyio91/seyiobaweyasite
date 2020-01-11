@@ -126,8 +126,6 @@
           {% for name, link in LINKS %}
             <li><a target="{{ get_target(link) }}" href="{{ link }}" >{{ name }}</a></li>
           {% endfor %}
-          
-          <li><a href="{{ SITEURL }}/categories" >Categories</a></li>
 
         </ul>
       </nav>
@@ -146,13 +144,29 @@
 
     <div class="card">
       <div class="card-header">
+        <i class="fas fa-folder"></i> Categories
+      </div>
+      <div class="card-body">
+      <ul class="recent">
+        {% for category, articles in categories|sort %}
+        <li><a href="{{ SITEURL }}/{{ category.url }}"><i class="fas fa-folder-open"></i>  {{ category }}</a> ({{ articles|count }})</li>
+        {% endfor %}
+      </ul>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="card">
+      <div class="card-header">
         Most Recent Posts
       </div>
       <div class="card-body">
       <ul class="recent">
         {% for article in articles %}
           {% if loop.index <= 5 %}
-          <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+          <li><a href="{{ SITEURL }}/{{ article.url }}"><i class="fas fa-link"></i> {{ article.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

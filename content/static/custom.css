@@ -99,6 +99,25 @@ hr {
     margin-bottom: 20px;
 }
 
+.pager {
+    margin: 22px 0;
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.pager li {
+    display: inline;
+}
+
+.previous>a {
+    float: left;
+}
+
+.next>a {
+    float: right;
+}
+
 @media only screen and (max-width: 600px)  {
     .card, .btn-scroll-to-top .btn-scroll-to-top:hover {
         display: none;

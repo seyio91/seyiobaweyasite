@@ -48,8 +48,10 @@
 
   <div>
     {{ article.content }}
-    <a class="home-icon" href="{{SITEURL}}"><i class="fas fa-home fa-2x"></i></a>
-    <!-- <a class="home-icon" href="#"><i class="fas fa-angle-up fa-2x"></i></a> -->
+
+    <hr>
+    <br>
+
   </div>
   <div class="tag-cloud">
     <p>
@@ -96,6 +98,35 @@
   {% endif %}
 
   {% include "partial/disqus.html" %}
+  
+  <!-- Pager Goes Here -->
+  {% if articles %}
+  <ul class="pager">
+  {% set artIndex = articles.index(article) %}
+  {% set count = articles|length - 1 %}
+    {% if artIndex > 0 %}
+    {% set prev = articles[artIndex - 1] %}
+      <li class="previous">
+        <a href="{{SITEURL}}/{{prev.url}}"><i class="fas fa-angle-double-left"></i>  {{ prev.title }}</a>
+      </li>
+    {% endif %}
+    {% if artIndex < count %}
+    {% set next = articles[artIndex + 1] %}
+      <li class="next">
+        <a href="{{SITEURL}}/{{next.url}}">{{ next.title }}  <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    {% endif %}
+  </ul>
+  {% endif %}
+  <br>
+  <br>
+  <br>
+
+
+  <a class="home-icon" href="{{SITEURL}}"><i class="fas fa-home fa-2x"></i></a>
+  <!-- <a class="home-icon" href="#"><i class="fas fa-angle-up fa-2x"></i></a> -->
+
+  
 </article>
 
 
