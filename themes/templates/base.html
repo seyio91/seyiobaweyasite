@@ -93,13 +93,6 @@
   {% endif %}
   <aside>
     <div>
-      <a href="{{ SITEURL }}">
-        {% if SITELOGO %}
-        <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
-        {% else %}
-        <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
-        {% endif %}
-      </a>
       <h1><a href="{{ SITEURL }}">{{ SITETITLE }}</a></h1>
 
       {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
@@ -151,6 +144,21 @@
       </ul>
     </div>
 
+    <div class="card">
+      <div class="card-header">
+        Most Recent Posts
+      </div>
+      <div class="card-body">
+      <ul class="recent">
+        {% for article in articles %}
+          {% if loop.index <= 5 %}
+          <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    </div>
+
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside %}
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle ads-aside"
@@ -162,7 +170,7 @@
     {% endif %}
 
   </aside>
-  <main>
+  <main id="main">
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle ads-responsive"
@@ -202,7 +210,8 @@
       {% endif %}
     </footer>
   </main>
-
+  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+  <a href="#top" class="btn-scroll-to-top topshow" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
   {% if GUAGES %}
     {% include "partial/guages.html" %}
   {% endif %}
@@ -222,5 +231,38 @@
   {% if GITHUB_CORNER_URL %}
   {% include 'partial/github.html' %}
   {% endif %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    console.log('Your document is ready!');
+    const scrollToTopButton = document.getElementById('js-top');
+    const mainbody = document.getElementById('main')
+
+    console.log('this is scrol top elem', scrollToTopButton)
+      const scrollFunc = () => {
+      // Get the current scroll value
+      let y = mainbody.scrollTop;
+      if (y > 200) {
+        scrollToTopButton.className = "btn-scroll-to-top topshow";
+      } else {
+        scrollToTopButton.className = "btn-scroll-to-top tophide";
+      }
+    };
+    mainbody.addEventListener('scroll', scrollFunc);
+    const scrollToTop = () => {
+      // Let's set a variable for the number of pixels we are from the top of the document.
+      const c = mainbody.scrollTop;
+      if (c > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        mainbody.scrollTo(0, c - c / 10);
+      }
+    };
+    
+    // When the button is clicked, run our ScrolltoTop function above!
+    scrollToTopButton.onclick = function(e) {
+      e.preventDefault();
+      scrollToTop();
+    }
+    });
+    </script>
 </body>
 </html>

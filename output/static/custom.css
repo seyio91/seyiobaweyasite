@@ -1,3 +1,106 @@
 li {
     text-transform: capitalize !important;
 }
+a {
+    color: #af4e38;
+}
+
+a.btn {
+    background-color: #af4e38;
+}
+
+aside nav ul li {
+    display: block;
+}
+ul.recent {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+  
+  ul.recent li {
+    padding: 5px; /* Add some padding */
+    font-size: 1.0em;
+    /* text-decoration: underline; */
+    width: 100%;
+  }
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    width: 80%;
+    margin: auto;
+    padding: 0 0;
+    /* padding: .20rem 1.25rem; */
+}
+
+ul.recent li:hover {
+    background-color: grey;
+}
+
+.card-header {
+    padding: 10px 0 10px 0;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    font-weight: 700;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 0;
+}
+
+a.home-icon {
+    color: #242121;
+    margin: 5px;
+}
+
+a.home-icon:hover {
+    color: grey;
+}
+
+.btn-scroll-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+    /* padding: 0 5px 10px; */
+    padding: 5px;
+    color: grey;
+    background-color: #242121;
+    /* opacity: .7; */
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-scroll-to-top:hover {
+    background-color: grey;
+    color: #242121;
+}
+
+.topshow {
+    visibility: visible;
+    opacity: 0.7;
+}
+
+.tophide {
+    visibility: hidden;
+    opacity: 0;
+}
+h1, h2, h3 {
+    font-weight: 500;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px)  {
+    .card, .btn-scroll-to-top .btn-scroll-to-top:hover {
+        display: none;
+    }
+}

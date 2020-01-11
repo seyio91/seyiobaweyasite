@@ -49,5 +49,13 @@ USE_FOLDER_AS_CATEGORY = False
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
 
-ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+DISABLE_URL_HASH = True
+
+ARTICLE_URL = 'articles/{date:%Y-%m-%d}/{slug}/'
+ARTICLE_SAVE_AS = 'articles/{date:%Y-%m-%d}/{slug}/index.html'
+
+SUMMARY_MAX_LENGTH = 30
+
+PYGMENTS_STYLE = 'monokai'
+
+DEFAULT_PAGINATION = 5

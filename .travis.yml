@@ -5,7 +5,7 @@ before_install:
 - pip install -r requirements.txt
 - git clone https://github.com/alexandrevicenzi/Flex.git
 install:
-- cp -r themes/templates Flex/templates
+- cp -r themes/templates Flex/
 - pelican-themes -i Flex/
 script:
 - pelican content -s pelicanconf-prod.py
@@ -21,6 +21,9 @@ deploy:
   on:
     repo: seyio91/sample-blog
   skip_cleanup: true
+  acl: public_read
+
+
 after_deploy:
 - aws configure set preview.cloudfront true
 - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

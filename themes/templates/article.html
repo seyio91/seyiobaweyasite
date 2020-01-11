@@ -48,6 +48,8 @@
 
   <div>
     {{ article.content }}
+    <a class="home-icon" href="{{SITEURL}}"><i class="fas fa-home fa-2x"></i></a>
+    <!-- <a class="home-icon" href="#"><i class="fas fa-angle-up fa-2x"></i></a> -->
   </div>
   <div class="tag-cloud">
     <p>
@@ -95,4 +97,8 @@
 
   {% include "partial/disqus.html" %}
 </article>
+
+
+
+
 {% endblock %}

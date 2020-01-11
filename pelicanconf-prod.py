@@ -31,7 +31,7 @@ CUSTOM_CSS = 'static/custom.css'
 # Blogroll
 # LINKS = (('Portfolio', 'http://alexandrevicenzi.com'),)
 
-SOCIAL = (('linkedin', 'www.linkedin.com/in/obaweya-seyi-375270ba'),
+SOCIAL = (('linkedin', 'https://www.linkedin.com/in/obaweya-seyi-375270ba'),
           ('github', 'https://github.com/seyio91'))
 
 MENUITEMS = (('Archives', '/archives.html'),
@@ -48,6 +48,8 @@ USE_FOLDER_AS_CATEGORY = False
 
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
+
+DISABLE_URL_HASH = True
 
 ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
