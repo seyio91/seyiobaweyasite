@@ -2,13 +2,12 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'seyi'
-SITENAME = '2nd site'
+AUTHOR = 'Seyi Obaweya'
+SITENAME = 'Seyi\'s Tech Blog'
 SITEURL = 'https://www.seyiobaweya.tech'
 SITETITLE = 'Musings of an Engineer'
 SITESUBTITLE = 'Tech Lover'
 SITEDESCRIPTION = 'Seyi\'s Thoughts and Attempts at Writings'
-SITELOGO = SITEURL + '/images/site_logo.jpeg'
 
 PATH = 'content'
 
@@ -25,7 +24,7 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'Flex'
 STATIC_PATHS = ['images', 'static']
-FAVICON = 'img/favicon.ico'
+# FAVICON = 'img/favicon.ico'
 CUSTOM_CSS = 'static/custom.css'
 
 # Blogroll
@@ -51,5 +50,10 @@ PAGE_PATHS = ['pages']
 
 DISABLE_URL_HASH = True
 
-ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+ARTICLE_URL = 'articles/{date:%Y-%m-%d}/{slug}/'
+ARTICLE_SAVE_AS = 'articles/{date:%Y-%m-%d}/{slug}/index.html'
+
+
+SUMMARY_MAX_LENGTH = 30
+
+PYGMENTS_STYLE = 'monokai'

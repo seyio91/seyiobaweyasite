@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'seyi'
 SITENAME = '2nd site'
-SITEURL = 'http://localhost:8000/'
+SITEURL = 'http://localhost:8000'
 SITETITLE = 'Musings of an Engineer'
 SITESUBTITLE = 'Tech Lover'
 SITEDESCRIPTION = 'Seyi\'s Thoughts and Attempts at Writings'
@@ -25,20 +25,19 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'Flex'
 STATIC_PATHS = ['images', 'static']
-FAVICON = 'img/favicon.ico'
+# FAVICON = 'img/favicon.ico'
 CUSTOM_CSS = 'static/custom.css'
 
 # Blogroll
 # LINKS = (('Portfolio', 'http://alexandrevicenzi.com'),)
 
-SOCIAL = (('linkedin', 'www.linkedin.com/in/obaweya-seyi-375270ba'),
+SOCIAL = (('linkedin', 'https://www.linkedin.com/in/obaweya-seyi-375270ba'),
           ('github', 'https://github.com/seyio91'))
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
              ('Tags', '/tags.html'),)
 
-DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -58,4 +57,4 @@ SUMMARY_MAX_LENGTH = 30
 
 PYGMENTS_STYLE = 'monokai'
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 10
