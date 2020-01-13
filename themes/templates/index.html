@@ -22,7 +22,7 @@
            category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
 
       {% if article.tags and not HOME_HIDE_TAGS %}
-          &#8226; {{ _('Tagged with') }}
+          &#8226; {{ _('Tags') }}
           {% for tag in article.tags %}
               <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
           {% endfor %}

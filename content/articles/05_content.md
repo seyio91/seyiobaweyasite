@@ -1,6 +1,7 @@
 Title: Theme 6
 Date: 2012-12-03 10:20
 Category: catergory-2
+Tags: Tag_1
 Slug: title-06
 
   

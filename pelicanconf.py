@@ -38,6 +38,7 @@ MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
              ('Tags', '/tags.html'),)
 
+MAIN_MENU = True
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -49,6 +50,7 @@ ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
 
 DISABLE_URL_HASH = True
+SOCIAL_SHARE = True
 
 ARTICLE_URL = 'articles/{date:%Y-%m-%d}/{slug}/'
 ARTICLE_SAVE_AS = 'articles/{date:%Y-%m-%d}/{slug}/index.html'
@@ -58,3 +60,11 @@ SUMMARY_MAX_LENGTH = 30
 PYGMENTS_STYLE = 'monokai'
 
 DEFAULT_PAGINATION = 10
+
+LINK_PAGINATION = True
+
+import math, urllib.parse
+JINJA_FILTERS = {
+    'count_to_font_size': lambda c: '{p:.1f}%'.format(p=100 + 25 * math.log(c, 2)),
+    'url_encode': lambda url: urllib.parse.quote(str(url), safe=" ")
+}

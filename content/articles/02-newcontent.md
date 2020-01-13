@@ -1,6 +1,7 @@
 Title: First Static Test
 Date: 2010-12-03 10:20
 Category: Review
+Tags: Tag_3
 Summary: This is the Summary Test
 
 Cehcking out display.  

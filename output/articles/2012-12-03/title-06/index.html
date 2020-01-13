@@ -26,7 +26,7 @@
 
 <meta name="author" content="seyi" />
 <meta name="description" content="Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …" />
-<meta name="keywords" content="">
+<meta name="keywords" content="Tag_1">
 
 
 <meta property="og:site_name" content="2nd site"/>
@@ -39,12 +39,16 @@
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="http://localhost:8000/author/seyi.html">
 <meta property="article:section" content="catergory-2"/>
+<meta property="article:tag" content="Tag_1"/>
 <meta property="og:image" content="http://localhost:8000/images/site_logo.jpeg">
 
   <title>2nd site &ndash; Theme 6</title>
 
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>  
   <aside>
     <div>
       <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
@@ -57,7 +61,7 @@
       <!-- <div id="navid"> -->
       <nav id="navid">
         <ul class="list">
-          <li class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</li>
+          <li class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</li>
 
             <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
 
@@ -92,8 +96,33 @@
     </div>
     </div>
 
-    <br>
-    <br>
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-folder"></i> Tags
+      </div>
+      <div class="card-body">
+        <div class="tag-block">
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+        </div>
+    </div>
+    </div>
+
+
 
     <div class="card">
       <div class="card-header">
@@ -101,11 +130,11 @@
       </div>
       <div class="card-body">
       <ul class="recent">
+          <li><a href="http://localhost:8000/articles/2020-12-03/my-first-review/"><i class="fas fa-link"></i> My First Review</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-04/"><i class="fas fa-link"></i> Theme 4</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-05/"><i class="fas fa-link"></i> Theme 5</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-06/"><i class="fas fa-link"></i> Theme 6</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-07/"><i class="fas fa-link"></i> Theme 7</a></li>
-          <li><a href="http://localhost:8000/articles/2010-12-03/first-static-test/"><i class="fas fa-link"></i> First Static Test</a></li>
       </ul>
     </div>
     </div>
@@ -114,6 +143,16 @@
   </aside>
   <main id="main">
 
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
 
 <article class="single">
   <header>
@@ -124,6 +163,7 @@
 
 
     </p>
+    
   </header>
 
 
@@ -144,13 +184,21 @@ are all quality songs by Gunship. Check out those amazing music videos!</p>
 <a href="https://fm84.bandcamp.com/">FM-84</a>
 and 
 <a href="https://danieldeluxe.bandcamp.com/">Daniel Deluxe</a></p>
-
-    <hr>
     <br>
+  
+  <div class="sharepage">
+  <!-- share test -->
+  <span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2012-12-03%2Ftitle-06%2F');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2012-12-03%2Ftitle-06%2F');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2012-12-03%2Ftitle-06%2F&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    </div>
+  </div>    <br>
 
   </div>
   <div class="tag-cloud">
     <p>
+      <a href="http://localhost:8000/tag/tag_1.html">Tag_1</a>
     </p>
   </div>
 
@@ -174,7 +222,12 @@ and
 
 
   <a class="home-icon" href="http://localhost:8000"><i class="fas fa-home fa-2x"></i></a>
-  <!-- <a class="home-icon" href="#"><i class="fas fa-angle-up fa-2x"></i></a> -->
+
+
+
+  
+
+
 
   
 </article>
@@ -266,10 +319,6 @@ and
         for (let el of navigation) el.setAttribute('style', 'display: none;');
         toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
       }
-
-
-      // navigation.setAttribute('style', 'display: block;')
-      // (navigation[0].hasAttribute('style'))? (navigation.forEach(item => item.removeAttribute('style')), toggler.innerHTML = '<i class="fas fa-times"></i> MENU'): (navigation.forEach(item => item.setAttribute('style', 'display: none;')), toggler.innerHTML = '<i class="fas fa-bars"></i> MENU')
     }
 
 

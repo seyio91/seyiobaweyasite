@@ -34,6 +34,7 @@
         &#8226; {{ article.stats['read_mins'] }} min read
       {% endif %}
     </p>
+    
   </header>
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
@@ -48,8 +49,10 @@
 
   <div>
     {{ article.content }}
-
-    <hr>
+    <br>
+    {% if SOCIAL_SHARE %}  
+      {% include "partial/sharepage.html" %}
+    {% endif %}
     <br>
 
   </div>
@@ -100,6 +103,7 @@
   {% include "partial/disqus.html" %}
   
   <!-- Pager Goes Here -->
+  {% if LINK_PAGINATION %}
   {% if articles %}
   <ul class="pager">
   {% set artIndex = articles.index(article) %}
@@ -121,10 +125,16 @@
   <br>
   <br>
   <br>
+  {% endif %}
 
 
   <a class="home-icon" href="{{SITEURL}}"><i class="fas fa-home fa-2x"></i></a>
-  <!-- <a class="home-icon" href="#"><i class="fas fa-angle-up fa-2x"></i></a> -->
+
+
+
+  
+
+
 
   
 </article>

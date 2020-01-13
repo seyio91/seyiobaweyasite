@@ -39,6 +39,9 @@
 
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>  
   <aside>
     <div>
       <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
@@ -51,7 +54,7 @@
       <!-- <div id="navid"> -->
       <nav id="navid">
         <ul class="list">
-          <li class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</li>
+          <li class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</li>
 
             <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
 
@@ -86,8 +89,33 @@
     </div>
     </div>
 
-    <br>
-    <br>
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-folder"></i> Tags
+      </div>
+      <div class="card-body">
+        <div class="tag-block">
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+        </div>
+    </div>
+    </div>
+
+
 
     <div class="card">
       <div class="card-header">
@@ -95,11 +123,11 @@
       </div>
       <div class="card-body">
       <ul class="recent">
+          <li><a href="http://localhost:8000/articles/2020-12-03/my-first-review/"><i class="fas fa-link"></i> My First Review</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-04/"><i class="fas fa-link"></i> Theme 4</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-05/"><i class="fas fa-link"></i> Theme 5</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-06/"><i class="fas fa-link"></i> Theme 6</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-07/"><i class="fas fa-link"></i> Theme 7</a></li>
-          <li><a href="http://localhost:8000/articles/2010-12-03/first-static-test/"><i class="fas fa-link"></i> First Static Test</a></li>
       </ul>
     </div>
     </div>
@@ -108,9 +136,39 @@
   </aside>
   <main id="main">
 
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
 
 
 
+<article>
+  <header>
+    <b><h2><a href="http://localhost:8000/articles/2020-12-03/my-first-review/">My First Review</a></h2></b>
+    <p>
+          Posted on Thu 03 December 2020 in <a href="http://localhost:8000/category/review.html">Review</a>
+
+
+          &#8226;     Tags
+
+              <a href="http://localhost:8000/tag/tag_4.html">Tag_4</a>
+    </p>
+  </header>
+  <div>
+      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
+        <br>
+        <a class="btn" href="http://localhost:8000/articles/2020-12-03/my-first-review/">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <b><h2><a href="http://localhost:8000/articles/2012-12-03/title-04/">Theme 4</a></h2></b>
@@ -118,7 +176,9 @@
           Posted on Mon 03 December 2012 in <a href="http://localhost:8000/category/catergory-2.html">catergory-2</a>
 
 
+          &#8226;     Tags
 
+              <a href="http://localhost:8000/tag/tag_3.html">Tag_3</a>
     </p>
   </header>
   <div>
@@ -136,7 +196,9 @@
           Posted on Mon 03 December 2012 in <a href="http://localhost:8000/category/catergory-2.html">catergory-2</a>
 
 
+          &#8226;     Tags
 
+              <a href="http://localhost:8000/tag/tag_2.html">Tag_2</a>
     </p>
   </header>
   <div>
@@ -154,7 +216,9 @@
           Posted on Mon 03 December 2012 in <a href="http://localhost:8000/category/catergory-2.html">catergory-2</a>
 
 
+          &#8226;     Tags
 
+              <a href="http://localhost:8000/tag/tag_1.html">Tag_1</a>
     </p>
   </header>
   <div>
@@ -172,7 +236,9 @@
           Posted on Mon 03 December 2012 in <a href="http://localhost:8000/category/catergory-2.html">catergory-2</a>
 
 
+          &#8226;     Tags
 
+              <a href="http://localhost:8000/tag/tag_1.html">Tag_1</a>
     </p>
   </header>
   <div>
@@ -190,31 +256,15 @@
           Posted on Fri 03 December 2010 in <a href="http://localhost:8000/category/review.html">Review</a>
 
 
+          &#8226;     Tags
 
+              <a href="http://localhost:8000/tag/tag_3.html">Tag_3</a>
     </p>
   </header>
   <div>
       <p>This is the Summary Test</p>
         <br>
         <a class="btn" href="http://localhost:8000/articles/2010-12-03/first-static-test/">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <b><h2><a href="http://localhost:8000/articles/2010-12-03/my-first-review/">My First Review</a></h2></b>
-    <p>
-          Posted on Fri 03 December 2010 in <a href="http://localhost:8000/category/review.html">Review</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
-        <br>
-        <a class="btn" href="http://localhost:8000/articles/2010-12-03/my-first-review/">    Continue reading
 </a>
   </div>
   <hr />
@@ -309,10 +359,6 @@
         for (let el of navigation) el.setAttribute('style', 'display: none;');
         toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
       }
-
-
-      // navigation.setAttribute('style', 'display: block;')
-      // (navigation[0].hasAttribute('style'))? (navigation.forEach(item => item.removeAttribute('style')), toggler.innerHTML = '<i class="fas fa-times"></i> MENU'): (navigation.forEach(item => item.setAttribute('style', 'display: none;')), toggler.innerHTML = '<i class="fas fa-bars"></i> MENU')
     }
 
 
