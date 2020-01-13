@@ -50,17 +50,23 @@
       <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
 
 <p>Tech Lover</p>
-      <nav>
+      <!-- <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span> -->
+      <!-- <div class="toggler" id="toggler"> -->
+        <!-- <button>&#9776;</button></div> -->
+      
+      <!-- <div id="navid"> -->
+      <nav id="navid">
         <ul class="list">
-          
+          <li class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</li>
 
-            <li><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
+            <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
 
 
         </ul>
       </nav>
+    <!-- </div> -->
 
-      <ul class="social">
+      <ul class="social" id="social">
           <li>
             <a  class="sc-linkedin" href="https://www.linkedin.com/in/obaweya-seyi-375270ba" target="_blank">
             <i class="fab fa-linkedin">
@@ -183,7 +189,7 @@ and
 </p>    </footer>
   </main>
   <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
-  <a href="#top" class="btn-scroll-to-top topshow" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
+  <a href="#top" class="btn-scroll-to-top tophide" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
 
 
 
@@ -200,7 +206,6 @@ and
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-    console.log('Your document is ready!');
     const scrollToTopButton = document.getElementById('js-top');
     const mainbody = document.getElementById('main')
 
@@ -229,7 +234,48 @@ and
       e.preventDefault();
       scrollToTop();
     }
+
+    // Nav bar media query
+    toggler = document.getElementById('toggler');
+    navigation = document.getElementsByClassName('navlist')
+    socials = document.getElementById('social')
+    var mediaq = window.matchMedia("(max-width: 600px)")
+    function removeBlock(mediaq) {
+      if (mediaq.matches) { // If media query matches
+        toggler.removeAttribute('style');
+        for (let el of navigation) el.setAttribute('style', 'display: none;');
+        socials.setAttribute('style', 'display: none;');
+        scrollToTopButton.removeAttribute('style');
+      } else {
+        toggler.setAttribute('style', 'display: none;')
+        for (let el of navigation) el.removeAttribute('style');
+        scrollToTopButton.setAttribute('style', 'display: block;')
+        socials.removeAttribute('style');
+      }
+    }
+
+    removeBlock(mediaq)
+    mediaq.addListener(removeBlock)
+
+    //Hamburger Toggle
+    toggler.onclick = function() {
+      if (navigation[0].hasAttribute('style')){
+        for (let el of navigation) el.removeAttribute('style');
+        toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
+      } else {
+        for (let el of navigation) el.setAttribute('style', 'display: none;');
+        toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+      }
+
+
+      // navigation.setAttribute('style', 'display: block;')
+      // (navigation[0].hasAttribute('style'))? (navigation.forEach(item => item.removeAttribute('style')), toggler.innerHTML = '<i class="fas fa-times"></i> MENU'): (navigation.forEach(item => item.setAttribute('style', 'display: none;')), toggler.innerHTML = '<i class="fas fa-bars"></i> MENU')
+    }
+
+
     });
+
+    
     </script>
 </body>
 </html>

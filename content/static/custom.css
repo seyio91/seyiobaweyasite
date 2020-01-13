@@ -118,8 +118,28 @@ hr {
     float: right;
 }
 
+div.toggler {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+ aside div#navid {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+span.toggler {
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+
 @media only screen and (max-width: 600px)  {
-    .card, .btn-scroll-to-top .btn-scroll-to-top:hover {
+    .card, .btn-scroll-to-top, .btn-scroll-to-top:hover {
         display: none;
     }
 }
