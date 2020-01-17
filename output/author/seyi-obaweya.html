@@ -10,50 +10,58 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/font-awesome/css/solid.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
 
-    <link href="https://www.seyiobaweya.tech/static/custom.css" rel="stylesheet">
-
-
+    <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
 
 
 
 
-    <meta name="author" content="Seyi Obaweya" />
+
+
+    <meta name="author" content="seyi" />
     <meta name="description" content="Seyi's Thoughts and Attempts at Writings" />
-<meta property="og:site_name" content="Seyi's Tech Blog"/>
+<meta property="og:site_name" content="2nd site"/>
 <meta property="og:type" content="blog"/>
-<meta property="og:title" content="Seyi's Tech Blog"/>
+<meta property="og:title" content="2nd site"/>
 <meta property="og:description" content="Seyi's Thoughts and Attempts at Writings"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.seyiobaweya.tech"/>
+<meta property="og:url" content="http://localhost:8000"/>
+<meta property="og:image" content="http://localhost:8000/images/site_logo.jpeg">
 
-  <title>Seyi's Tech Blog &ndash;     Posts by Seyi Obaweya
+  <title>2nd site &ndash;     Posts by Seyi Obaweya
 :</title>
 
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>  
   <aside>
     <div>
-      <h1><a href="https://www.seyiobaweya.tech">Musings of an Engineer</a></h1>
+      <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
 
 <p>Tech Lover</p>
-      <nav>
-        <ul class="list">
-          
 
-            <li><a target="_blank" href="https://www.seyiobaweya.tech/pages/About Me.html">About me</a></li>
+      <!-- <span class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</span> -->
+      <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span>
+      <nav id="navid">
+        <ul class="list">
+
+            <li class="navlist"><a href="http://localhost:8000">Home</a></li>
+            <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
 
 
         </ul>
       </nav>
+    <!-- </div> -->
 
-      <ul class="social">
+      <ul class="social" id="social">
           <li>
             <a  class="sc-linkedin" href="https://www.linkedin.com/in/obaweya-seyi-375270ba" target="_blank">
             <i class="fab fa-linkedin">
@@ -73,14 +81,30 @@
       </div>
       <div class="card-body">
       <ul class="recent">
-        <li><a href="https://www.seyiobaweya.tech/category/catergory-2.html"><i class="fas fa-folder-open"></i>  catergory-2</a> (4)</li>
-        <li><a href="https://www.seyiobaweya.tech/category/review.html"><i class="fas fa-folder-open"></i>  Review</a> (2)</li>
+        <li><a href="http://localhost:8000/category/bash_automation.html"><i class="fas fa-folder-open"></i>  Bash_Automation</a> (1)</li>
+        <li><a href="http://localhost:8000/category/catergory-2.html"><i class="fas fa-folder-open"></i>  catergory-2</a> (4)</li>
+        <li><a href="http://localhost:8000/category/review.html"><i class="fas fa-folder-open"></i>  Review</a> (2)</li>
       </ul>
     </div>
     </div>
 
-    <br>
-    <br>
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-folder"></i> Tags
+      </div>
+      <div class="card-body">
+        <div class="tag-block">
+            <a href="#" style="font-size: 100.0%;">bash</a>
+            <a href="#" style="font-size: 100.0%;">git</a>
+            <a href="#" style="font-size: 125.0%;">Tag_1</a>
+            <a href="#" style="font-size: 100.0%;">Tag_2</a>
+            <a href="#" style="font-size: 125.0%;">Tag_3</a>
+            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+        </div>
+    </div>
+    </div>
+
+
 
     <div class="card">
       <div class="card-header">
@@ -88,11 +112,7 @@
       </div>
       <div class="card-body">
       <ul class="recent">
-          <li><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-04/"><i class="fas fa-link"></i> Theme 4</a></li>
-          <li><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-05/"><i class="fas fa-link"></i> Theme 5</a></li>
-          <li><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-06/"><i class="fas fa-link"></i> Theme 6</a></li>
-          <li><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-07/"><i class="fas fa-link"></i> Theme 7</a></li>
-          <li><a href="https://www.seyiobaweya.tech/articles/2010-12-03/first-static-test/"><i class="fas fa-link"></i> First Static Test</a></li>
+          <li><a href="http://localhost:8000/articles/2020-01-17/new-project-script/"><i class="fas fa-link"></i> New Project Script</a></li>
       </ul>
     </div>
     </div>
@@ -101,113 +121,35 @@
   </aside>
   <main id="main">
 
-
-
-
-<article>
-  <header>
-    <b><h2><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-04/">Theme 4</a></h2></b>
-    <p>
-          Posted on Mon 03 December 2012 in <a href="https://www.seyiobaweya.tech/category/catergory-2.html">catergory-2</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
-        <br>
-        <a class="btn" href="https://www.seyiobaweya.tech/articles/2012-12-03/title-04/">    Continue reading
+    <nav>
+      <a href="http://localhost:8000">    Home
 </a>
-  </div>
-  <hr />
-</article>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
 <article>
   <header>
-    <b><h2><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-05/">Theme 5</a></h2></b>
+    <b><h2><a href="http://localhost:8000/articles/2020-01-17/new-project-script/">New Project Script</a></h2></b>
     <p>
-          Posted on Mon 03 December 2012 in <a href="https://www.seyiobaweya.tech/category/catergory-2.html">catergory-2</a>
+          Posted on Fri 17 January 2020 in <a href="http://localhost:8000/category/bash_automation.html">Bash_Automation</a>
 
 
+          &#8226;     Tags
 
+              <a href="http://localhost:8000/tag/bash.html">bash</a>,              <a href="http://localhost:8000/tag/git.html">git</a>
     </p>
   </header>
   <div>
-      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
+      <p>One of the plans for 2020 is working on more projects and putting them on Github to share as well as act as a portofolio for prospective employers. i decided …</p>
         <br>
-        <a class="btn" href="https://www.seyiobaweya.tech/articles/2012-12-03/title-05/">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <b><h2><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-06/">Theme 6</a></h2></b>
-    <p>
-          Posted on Mon 03 December 2012 in <a href="https://www.seyiobaweya.tech/category/catergory-2.html">catergory-2</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
-        <br>
-        <a class="btn" href="https://www.seyiobaweya.tech/articles/2012-12-03/title-06/">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <b><h2><a href="https://www.seyiobaweya.tech/articles/2012-12-03/title-07/">Theme 7</a></h2></b>
-    <p>
-          Posted on Mon 03 December 2012 in <a href="https://www.seyiobaweya.tech/category/catergory-2.html">catergory-2</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
-        <br>
-        <a class="btn" href="https://www.seyiobaweya.tech/articles/2012-12-03/title-07/">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <b><h2><a href="https://www.seyiobaweya.tech/articles/2010-12-03/first-static-test/">First Static Test</a></h2></b>
-    <p>
-          Posted on Fri 03 December 2010 in <a href="https://www.seyiobaweya.tech/category/review.html">Review</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>This is the Summary Test</p>
-        <br>
-        <a class="btn" href="https://www.seyiobaweya.tech/articles/2010-12-03/first-static-test/">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <b><h2><a href="https://www.seyiobaweya.tech/articles/2010-12-03/my-first-review/">My First Review</a></h2></b>
-    <p>
-          Posted on Fri 03 December 2010 in <a href="https://www.seyiobaweya.tech/category/review.html">Review</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>Please note that the name of the environment variable and its value are both encoded in the string produced by “travis encrypt.” You must add the entry to your .travis …</p>
-        <br>
-        <a class="btn" href="https://www.seyiobaweya.tech/articles/2010-12-03/my-first-review/">    Continue reading
+        <a class="btn" href="http://localhost:8000/articles/2020-01-17/new-project-script/">    Continue reading
 </a>
   </div>
   <hr />
@@ -225,7 +167,7 @@
 </p>    </footer>
   </main>
   <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
-  <a href="#top" class="btn-scroll-to-top topshow" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
+  <a href="#top" class="btn-scroll-to-top tophide" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
 
 
 
@@ -233,45 +175,87 @@
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",
-  "name": " Seyi's Tech Blog ",
-  "url" : "https://www.seyiobaweya.tech",
-  "image": "",
+  "name": " 2nd site ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/site_logo.jpeg",
   "description": "Seyi's Thoughts and Attempts at Writings"
 }
 </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    console.log('Your document is ready!');
-    const scrollToTopButton = document.getElementById('js-top');
-    const mainbody = document.getElementById('main')
 
-    console.log('this is scrol top elem', scrollToTopButton)
-      const scrollFunc = () => {
-      // Get the current scroll value
-      let y = mainbody.scrollTop;
-      if (y > 200) {
-        scrollToTopButton.className = "btn-scroll-to-top topshow";
-      } else {
-        scrollToTopButton.className = "btn-scroll-to-top tophide";
-      }
-    };
-    mainbody.addEventListener('scroll', scrollFunc);
-    const scrollToTop = () => {
-      // Let's set a variable for the number of pixels we are from the top of the document.
-      const c = mainbody.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        mainbody.scrollTo(0, c - c / 10);
-      }
-    };
-    
-    // When the button is clicked, run our ScrolltoTop function above!
-    scrollToTopButton.onclick = function(e) {
-      e.preventDefault();
-      scrollToTop();
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const scrollToTopButton = document.getElementById('js-top');
+const mainbody = document.getElementById('main')
+  const scrollFunc = () => {
+  // Get the current scroll value
+  let y = mainbody.scrollTop;
+  if (y > 200) {
+    scrollToTopButton.className = "btn-scroll-to-top topshow";
+  } else {
+    scrollToTopButton.className = "btn-scroll-to-top tophide";
+  }
+};
+mainbody.addEventListener('scroll', scrollFunc);
+const scrollToTop = () => {
+  // Let's set a variable for the number of pixels we are from the top of the document.
+  const c = mainbody.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    mainbody.scrollTo(0, c - c / 10);
+  }
+};
+
+// When the button is clicked, run our ScrolltoTop function above!
+scrollToTopButton.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
+}
+
+// Nav bar media query
+navcol = document.getElementById('navid');
+toggler = document.getElementById('toggler');
+socials = document.getElementById('social')
+var mediaq = window.matchMedia("(max-width: 600px)")
+function removeBlock(mediaq) {
+  if (mediaq.matches) { // If media query matches
+    // toggler.removeAttribute('style');
+    toggler.style.display = "block";
+    navcol.style.display = "none";
+    socials.setAttribute('style', 'display: none;');
+    scrollToTopButton.removeAttribute('style');
+    hamburger()
+  } else {
+    toggler.setAttribute('style', 'display: none;')
+    navcol.removeAttribute('style');
+    scrollToTopButton.setAttribute('style', 'display: block;')
+    socials.removeAttribute('style');
+  }
+}
+
+removeBlock(mediaq)
+mediaq.addListener(removeBlock)
+
+//Hamburger Toggle
+function hamburger(){
+  toggler.onclick = function() {
+    if (navcol.hasAttribute('style')){
+      navcol.removeAttribute('style');
+      toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
+    } else {
+      navcol.setAttribute('style', 'display: none;');
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
     }
-    });
-    </script>
-</body>
+  }
+
+  //Closing Hamburger
+  document.addEventListener('click', function(event){
+    if (event.target.parentNode.parentNode != navcol && !navcol.hasAttribute('style') && event.target != toggler){
+      navcol.style.display = "none";
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+    }
+  })
+}
+});
+</script></body>
 </html>

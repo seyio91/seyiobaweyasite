@@ -54,15 +54,13 @@
       <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
 
 <p>Tech Lover</p>
-      <!-- <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span> -->
-      <!-- <div class="toggler" id="toggler"> -->
-        <!-- <button>&#9776;</button></div> -->
-      
-      <!-- <div id="navid"> -->
+
+      <!-- <span class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</span> -->
+      <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span>
       <nav id="navid">
         <ul class="list">
-          <li class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</li>
 
+            <li class="navlist"><a href="http://localhost:8000">Home</a></li>
             <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
 
 
@@ -90,6 +88,7 @@
       </div>
       <div class="card-body">
       <ul class="recent">
+        <li><a href="http://localhost:8000/category/bash_automation.html"><i class="fas fa-folder-open"></i>  Bash_Automation</a> (1)</li>
         <li><a href="http://localhost:8000/category/catergory-2.html"><i class="fas fa-folder-open"></i>  catergory-2</a> (4)</li>
         <li><a href="http://localhost:8000/category/review.html"><i class="fas fa-folder-open"></i>  Review</a> (2)</li>
       </ul>
@@ -102,18 +101,8 @@
       </div>
       <div class="card-body">
         <div class="tag-block">
-            <a href="#" style="font-size: 125.0%;">Tag_1</a>
-            <a href="#" style="font-size: 100.0%;">Tag_2</a>
-            <a href="#" style="font-size: 125.0%;">Tag_3</a>
-            <a href="#" style="font-size: 100.0%;">Tag_4</a>
-            <a href="#" style="font-size: 125.0%;">Tag_1</a>
-            <a href="#" style="font-size: 100.0%;">Tag_2</a>
-            <a href="#" style="font-size: 125.0%;">Tag_3</a>
-            <a href="#" style="font-size: 100.0%;">Tag_4</a>
-            <a href="#" style="font-size: 125.0%;">Tag_1</a>
-            <a href="#" style="font-size: 100.0%;">Tag_2</a>
-            <a href="#" style="font-size: 125.0%;">Tag_3</a>
-            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="#" style="font-size: 100.0%;">bash</a>
+            <a href="#" style="font-size: 100.0%;">git</a>
             <a href="#" style="font-size: 125.0%;">Tag_1</a>
             <a href="#" style="font-size: 100.0%;">Tag_2</a>
             <a href="#" style="font-size: 125.0%;">Tag_3</a>
@@ -131,10 +120,10 @@
       <div class="card-body">
       <ul class="recent">
           <li><a href="http://localhost:8000/articles/2020-12-03/my-first-review/"><i class="fas fa-link"></i> My First Review</a></li>
+          <li><a href="http://localhost:8000/articles/2020-01-17/new-project-script/"><i class="fas fa-link"></i> New Project Script</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-04/"><i class="fas fa-link"></i> Theme 4</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-05/"><i class="fas fa-link"></i> Theme 5</a></li>
           <li><a href="http://localhost:8000/articles/2012-12-03/title-06/"><i class="fas fa-link"></i> Theme 6</a></li>
-          <li><a href="http://localhost:8000/articles/2012-12-03/title-07/"><i class="fas fa-link"></i> Theme 7</a></li>
       </ul>
     </div>
     </div>
@@ -210,7 +199,7 @@ and
   <!-- Pager Goes Here -->
   <ul class="pager">
       <li class="previous">
-        <a href="http://localhost:8000/articles/2020-12-03/my-first-review/"><i class="fas fa-angle-double-left"></i>  My First Review</a>
+        <a href="http://localhost:8000/articles/2020-01-17/new-project-script/"><i class="fas fa-angle-double-left"></i>  New Project Script</a>
       </li>
       <li class="next">
         <a href="http://localhost:8000/articles/2012-12-03/title-05/">Theme 5  <i class="fas fa-angle-double-right"></i></a>
@@ -257,74 +246,80 @@ and
 }
 </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const scrollToTopButton = document.getElementById('js-top');
-    const mainbody = document.getElementById('main')
 
-    console.log('this is scrol top elem', scrollToTopButton)
-      const scrollFunc = () => {
-      // Get the current scroll value
-      let y = mainbody.scrollTop;
-      if (y > 200) {
-        scrollToTopButton.className = "btn-scroll-to-top topshow";
-      } else {
-        scrollToTopButton.className = "btn-scroll-to-top tophide";
-      }
-    };
-    mainbody.addEventListener('scroll', scrollFunc);
-    const scrollToTop = () => {
-      // Let's set a variable for the number of pixels we are from the top of the document.
-      const c = mainbody.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        mainbody.scrollTo(0, c - c / 10);
-      }
-    };
-    
-    // When the button is clicked, run our ScrolltoTop function above!
-    scrollToTopButton.onclick = function(e) {
-      e.preventDefault();
-      scrollToTop();
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const scrollToTopButton = document.getElementById('js-top');
+const mainbody = document.getElementById('main')
+  const scrollFunc = () => {
+  // Get the current scroll value
+  let y = mainbody.scrollTop;
+  if (y > 200) {
+    scrollToTopButton.className = "btn-scroll-to-top topshow";
+  } else {
+    scrollToTopButton.className = "btn-scroll-to-top tophide";
+  }
+};
+mainbody.addEventListener('scroll', scrollFunc);
+const scrollToTop = () => {
+  // Let's set a variable for the number of pixels we are from the top of the document.
+  const c = mainbody.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    mainbody.scrollTo(0, c - c / 10);
+  }
+};
+
+// When the button is clicked, run our ScrolltoTop function above!
+scrollToTopButton.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
+}
+
+// Nav bar media query
+navcol = document.getElementById('navid');
+toggler = document.getElementById('toggler');
+socials = document.getElementById('social')
+var mediaq = window.matchMedia("(max-width: 600px)")
+function removeBlock(mediaq) {
+  if (mediaq.matches) { // If media query matches
+    // toggler.removeAttribute('style');
+    toggler.style.display = "block";
+    navcol.style.display = "none";
+    socials.setAttribute('style', 'display: none;');
+    scrollToTopButton.removeAttribute('style');
+    hamburger()
+  } else {
+    toggler.setAttribute('style', 'display: none;')
+    navcol.removeAttribute('style');
+    scrollToTopButton.setAttribute('style', 'display: block;')
+    socials.removeAttribute('style');
+  }
+}
+
+removeBlock(mediaq)
+mediaq.addListener(removeBlock)
+
+//Hamburger Toggle
+function hamburger(){
+  toggler.onclick = function() {
+    if (navcol.hasAttribute('style')){
+      navcol.removeAttribute('style');
+      toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
+    } else {
+      navcol.setAttribute('style', 'display: none;');
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
     }
+  }
 
-    // Nav bar media query
-    toggler = document.getElementById('toggler');
-    navigation = document.getElementsByClassName('navlist')
-    socials = document.getElementById('social')
-    var mediaq = window.matchMedia("(max-width: 600px)")
-    function removeBlock(mediaq) {
-      if (mediaq.matches) { // If media query matches
-        toggler.removeAttribute('style');
-        for (let el of navigation) el.setAttribute('style', 'display: none;');
-        socials.setAttribute('style', 'display: none;');
-        scrollToTopButton.removeAttribute('style');
-      } else {
-        toggler.setAttribute('style', 'display: none;')
-        for (let el of navigation) el.removeAttribute('style');
-        scrollToTopButton.setAttribute('style', 'display: block;')
-        socials.removeAttribute('style');
-      }
+  //Closing Hamburger
+  document.addEventListener('click', function(event){
+    if (event.target.parentNode.parentNode != navcol && !navcol.hasAttribute('style') && event.target != toggler){
+      navcol.style.display = "none";
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
     }
-
-    removeBlock(mediaq)
-    mediaq.addListener(removeBlock)
-
-    //Hamburger Toggle
-    toggler.onclick = function() {
-      if (navigation[0].hasAttribute('style')){
-        for (let el of navigation) el.removeAttribute('style');
-        toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
-      } else {
-        for (let el of navigation) el.setAttribute('style', 'display: none;');
-        toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
-      }
-    }
-
-
-    });
-
-    
-    </script>
-</body>
+  })
+}
+});
+</script></body>
 </html>
