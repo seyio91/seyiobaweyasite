@@ -28,8 +28,9 @@ STATIC_PATHS = ['images', 'static']
 # FAVICON = 'img/favicon.ico'
 CUSTOM_CSS = 'static/custom.css'
 
+BROWSER_COLOR = '#C0C0C0'
+
 # Blogroll
-# LINKS = (('Portfolio', 'http://alexandrevicenzi.com'),)
 
 SOCIAL = (('linkedin', 'https://www.linkedin.com/in/obaweya-seyi-375270ba'),
           ('github', 'https://github.com/seyio91'))
@@ -41,7 +42,7 @@ MENUITEMS = (('Archives', '/archives.html'),
 MAIN_MENU = True
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 PLUGINS = ['autostatic', 'advthumbnailer']
 USE_FOLDER_AS_CATEGORY = False
@@ -55,7 +56,11 @@ SOCIAL_SHARE = True
 ARTICLE_URL = 'articles/{date:%Y-%m-%d}/{slug}/'
 ARTICLE_SAVE_AS = 'articles/{date:%Y-%m-%d}/{slug}/index.html'
 
+YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
+
 SUMMARY_MAX_LENGTH = 30
+
 
 PYGMENTS_STYLE = 'monokai'
 

@@ -23,6 +23,15 @@
 
 
 
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#C0C0C0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#C0C0C0">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#C0C0C0">
 
 <meta name="author" content="Seyi Obaweya" />
 <meta name="description" content="One of the plans for 2020 is working on more projects and putting them on Github to share as well as act as a portofolio for prospective employers. i decided …" />
@@ -62,7 +71,7 @@
         <ul class="list">
 
             <li class="navlist"><a href="http://localhost:8000">Home</a></li>
-            <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/About Me.html">About me</a></li>
+            <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/about-me.html">About seyi</a></li>
 
 
         </ul>
@@ -90,8 +99,7 @@
       <div class="card-body">
       <ul class="recent">
         <li><a href="http://localhost:8000/category/bash_automation.html"><i class="fas fa-folder-open"></i>  Bash_Automation</a> (1)</li>
-        <li><a href="http://localhost:8000/category/catergory-2.html"><i class="fas fa-folder-open"></i>  catergory-2</a> (4)</li>
-        <li><a href="http://localhost:8000/category/review.html"><i class="fas fa-folder-open"></i>  Review</a> (2)</li>
+        <li><a href="http://localhost:8000/category/web_development.html"><i class="fas fa-folder-open"></i>  Web_Development</a> (1)</li>
       </ul>
     </div>
     </div>
@@ -102,12 +110,10 @@
       </div>
       <div class="card-body">
         <div class="tag-block">
-            <a href="#" style="font-size: 100.0%;">bash</a>
-            <a href="#" style="font-size: 100.0%;">git</a>
-            <a href="#" style="font-size: 125.0%;">Tag_1</a>
-            <a href="#" style="font-size: 100.0%;">Tag_2</a>
-            <a href="#" style="font-size: 125.0%;">Tag_3</a>
-            <a href="#" style="font-size: 100.0%;">Tag_4</a>
+            <a href="http://localhost:8000/tag/bash.html" style="font-size: 100.0%;">bash</a>
+            <a href="http://localhost:8000/tag/git.html" style="font-size: 100.0%;">git</a>
+            <a href="http://localhost:8000/tag/pelican.html" style="font-size: 100.0%;">pelican</a>
+            <a href="http://localhost:8000/tag/python.html" style="font-size: 100.0%;">python</a>
         </div>
     </div>
     </div>
@@ -120,11 +126,8 @@
       </div>
       <div class="card-body">
       <ul class="recent">
-          <li><a href="http://localhost:8000/articles/2020-12-03/my-first-review/"><i class="fas fa-link"></i> My First Review</a></li>
+          <li><a href="http://localhost:8000/articles/2020-01-20/my-personal-website-setup/"><i class="fas fa-link"></i> Creating my Personal Static Website with Pelican</a></li>
           <li><a href="http://localhost:8000/articles/2020-01-17/new-project-script/"><i class="fas fa-link"></i> New Project Script</a></li>
-          <li><a href="http://localhost:8000/articles/2012-12-03/title-04/"><i class="fas fa-link"></i> Theme 4</a></li>
-          <li><a href="http://localhost:8000/articles/2012-12-03/title-05/"><i class="fas fa-link"></i> Theme 5</a></li>
-          <li><a href="http://localhost:8000/articles/2012-12-03/title-06/"><i class="fas fa-link"></i> Theme 6</a></li>
       </ul>
     </div>
     </div>
@@ -160,15 +163,17 @@
   <div>
     <p>One of the plans for 2020 is working on more projects and putting them on Github to share as well as act as a portofolio for prospective employers. i decided to reduce the barriers to achieving this goal by working on Tools to make my day to day tasks more efficient, Hence the newproject script.<br>
 This tool aims to automate the process of starting a new project as well as forcing me to upload all my projects on github.  </p>
-<h5>The manual Process of Starting a Project is :</h5>
+<p>The manual Process of Starting a Project is :  </p>
+<h2></h2>
 <ul>
 <li>Navigate to your project folder and create new folder  </li>
-<li>Initialize GIT Repo in new Directory  </li>
+<li>Initialize Git Repo in new Directory  </li>
 <li>Create a ReadMe file  </li>
 <li>Stage ReadMe File  </li>
 <li>Create First Commit  </li>
 </ul>
-<h5>on the Github Page</h5>
+<p>on the Github Page  </p>
+<h2></h2>
 <ul>
 <li>Create New Repo  </li>
 <li>Copy Origin Address  </li>
@@ -215,7 +220,8 @@ success <span class="s2">&quot;this color should be displayed as green to signif
 </pre></div>
 
 
-<h5>Other functions that were created are</h5>
+<p>Other functions that were created are  </p>
+<h2></h2>
 <ul>
 <li><code>usage</code> : function to display error and how the script should be used. this is called at every conditions where the script will exit  </li>
 <li><code>cleanup</code> : this is used to clean up files that were created if an error occurs after folders have been created in the script.  </li>
@@ -369,7 +375,7 @@ the read command is used to read input and pass to the variable passed to the co
   <div class="sharepage">
   <!-- share test -->
   <span style="color: silver;">Share on: </span><div id="share-buttons">
-    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-01-17%2Fnew-project-script%2F');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http%3A//localhost%3A8000/articles/2020-01-17/new-project-script/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
     <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-01-17%2Fnew-project-script%2F');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
     <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-01-17%2Fnew-project-script%2F&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
     </div>
@@ -387,14 +393,26 @@ the read command is used to read input and pass to the variable passed to the co
 
 
 
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'www-seyiobaweya-tech.disqus.com';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+<!-- End Disqus -->
   
   <!-- Pager Goes Here -->
   <ul class="pager">
       <li class="previous">
-        <a href="http://localhost:8000/articles/2020-12-03/my-first-review/"><i class="fas fa-angle-double-left"></i>  My First Review</a>
-      </li>
-      <li class="next">
-        <a href="http://localhost:8000/articles/2012-12-03/title-04/">Theme 4  <i class="fas fa-angle-double-right"></i></a>
+        <a href="http://localhost:8000/articles/2020-01-20/my-personal-website-setup/"><i class="fas fa-angle-double-left"></i>  Creating my Personal Static Website with Pelican</a>
       </li>
   </ul>
   <br>
