@@ -4,6 +4,7 @@ Category: Web_Development
 Tags: python, pelican
 Slug: my-personal-website-setup
 Author: Seyi Obaweya
+Summary: The process of creating a website can sometimes look daunting. There are a lot of over engineered options for running a simple blog. This article walks you through the use of Static Site generators which is known for its simplicity in creating a personal website. 
   
 
 I am excited to share the process of creating my personal website which was made to document my projects, share my learning journey and probably act as a portfolio. There are so many choices for creating a website, with easy options like WordPress, blogger and other hosted solutions, however being someone who likes tinkering, I prefer to host a website myself to be able to customize and break it. This led to discovering Static Site Generators in my quest for simple and cost-effective solutions.

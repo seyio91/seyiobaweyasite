@@ -4,6 +4,8 @@ Category: Bash_Automation
 Tags: bash, git
 Slug: new-project-script
 Author: Seyi Obaweya
+Summary: The new project script is a tool that was created to reduce the amount of repetitive tasks in starting a new project as well as ensuring the project is stored on Github by Automating the entire process of starting a new project using bash and the GitHub API.
+
 
 One of the plans for 2020 is working on more projects and putting them on Github to share as well as act as a portofolio for prospective employers. i decided to reduce the barriers to achieving this goal by working on Tools to make my day to day tasks more efficient, Hence the newproject script.  
 This tool aims to automate the process of starting a new project as well as forcing me to upload all my projects on github.  
