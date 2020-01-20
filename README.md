@@ -1,4 +1,4 @@
-##Sample Blog Deployment using Pelican  
+### My Pelican Website  
   
   
 Sample Blog to be deployed to AWS S3 Bucket  

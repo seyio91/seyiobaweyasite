@@ -5,9 +5,9 @@ before_install:
 - pip install -r requirements.txt
 install:
 - pelican-themes -i themes/Flex/
+
 script:
 - pelican content -s publishconf.py
-
 
 deploy:
   provider: s3
