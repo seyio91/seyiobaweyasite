@@ -31,3 +31,22 @@ Email: seyi_obaweya@yahoo.com
 Contact No : +27787752906  
 WhatsApp: +26878514450  
 Linkedin: [https://www.linkedin.com/in/obaweya-seyi-375270ba](https://www.linkedin.com/in/obaweya-seyi-375270ba)
+
+  
+
+<p align="center"><h2>Tech Stack</h2></p>  
+  
+
+Scripting Languages  | Web Development Frameworks | Infrastructure Automation | Monitoring Stack
+ :----: | :----: | :----: | :----:
+Python | Flask | Docker | ELK
+Bash | JQuery | Ansible | Nagios
+Javascript |  | Packer | Zabbix
+   |   | Vagrant |
+   |   |  Make  |
+
+
+## Certifications  
+- CCNA (Expired)  
+- CCNP (Expired)  
+- LPIC (Linux System Administrator)   

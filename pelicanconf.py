@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'seyi'
-SITENAME = '2nd site'
+AUTHOR = 'Seyi Obaweya'
+SITENAME = 'Seyi Obaweya'
 SITEURL = 'http://localhost:8000'
 SITETITLE = 'Musings of an Engineer'
 SITESUBTITLE = 'Tech Lover'
