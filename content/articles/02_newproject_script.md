@@ -1,4 +1,4 @@
-Title: New Project Script
+Title: Automating Project Setup with Bash
 Date: 2020-01-17 10:20
 Category: Bash_Automation
 Tags: bash, git

@@ -3,7 +3,9 @@ python:
 - '3.5'
 before_install:
 - pip install -r requirements.txt
+- git clone https://github.com/alexandrevicenzi/Flex.git
 install:
+- cp -r themes/templates themes/Flex/
 - pelican-themes -i themes/Flex/
 
 script:
@@ -17,7 +19,7 @@ deploy:
   local-dir: output
   region: eu-west-2
   on:
-    repo: seyio91/sample-blog
+    repo: seyio91/seyiobaweyasite
   skip_cleanup: true
   acl: public_read
 
