@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://www.seyiobaweya.tech/theme/font-awesome/css/solid.css">
+
+    <link href="https://www.seyiobaweya.tech/static/custom.css" rel="stylesheet">
+
+    <link href="https://www.seyiobaweya.tech/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="2nd site Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#C0C0C0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#C0C0C0">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#C0C0C0">
+
+<meta name="author" content="Seyi Obaweya" />
+<meta name="description" content="The new project script is a tool that was created to reduce the amount of repetitive tasks in starting a new project as well as ensuring the project is stored on Github by Automating the entire process of starting a new project using bash and the GitHub API." />
+<meta name="keywords" content="bash, git">
+
+
+<meta property="og:site_name" content="2nd site"/>
+<meta property="og:title" content="Automating Project Setup with Bash"/>
+<meta property="og:description" content="The new project script is a tool that was created to reduce the amount of repetitive tasks in starting a new project as well as ensuring the project is stored on Github by Automating the entire process of starting a new project using bash and the GitHub API."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.seyiobaweya.tech/articles/2020-01-17/new-project-script/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-01-17 10:20:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://www.seyiobaweya.tech/author/seyi-obaweya.html">
+<meta property="article:section" content="Bash_Automation"/>
+<meta property="article:tag" content="bash"/>
+<meta property="article:tag" content="git"/>
+<meta property="og:image" content="http://localhost:8000/images/site_logo.jpeg">
+
+  <title>2nd site &ndash; Automating Project Setup with Bash</title>
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>  
+  <aside>
+    <div>
+      <h1><a href="https://www.seyiobaweya.tech">Musings of an Engineer</a></h1>
+
+<p>Tech Lover</p>
+
+      <!-- <span class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</span> -->
+      <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span>
+      <nav id="navid">
+        <ul class="list">
+
+            <li class="navlist"><a href="https://www.seyiobaweya.tech">Home</a></li>
+            <li class="navlist"><a target="_blank" href="https://www.seyiobaweya.tech/pages/about-me.html">About seyi</a></li>
+
+
+        </ul>
+      </nav>
+    <!-- </div> -->
+
+      <ul class="social" id="social">
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/obaweya-seyi-375270ba" target="_blank">
+            <i class="fab fa-linkedin">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-github" href="https://github.com/seyio91" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-folder"></i> Categories
+      </div>
+      <div class="card-body">
+      <ul class="recent">
+        <li><a href="https://www.seyiobaweya.tech/category/bash_automation.html"><i class="fas fa-folder-open"></i>  Bash_Automation</a> (1)</li>
+        <li><a href="https://www.seyiobaweya.tech/category/web_development.html"><i class="fas fa-folder-open"></i>  Web_Development</a> (1)</li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-folder"></i> Tags
+      </div>
+      <div class="card-body">
+        <div class="tag-block">
+            <a href="https://www.seyiobaweya.tech/tag/bash.html" style="font-size: 100.0%;">bash</a>
+            <a href="https://www.seyiobaweya.tech/tag/git.html" style="font-size: 100.0%;">git</a>
+            <a href="https://www.seyiobaweya.tech/tag/pelican.html" style="font-size: 100.0%;">pelican</a>
+            <a href="https://www.seyiobaweya.tech/tag/python.html" style="font-size: 100.0%;">python</a>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="card">
+      <div class="card-header">
+        Most Recent Posts
+      </div>
+      <div class="card-body">
+      <ul class="recent">
+          <li><a href="https://www.seyiobaweya.tech/articles/2020-01-20/my-personal-website-setup/"><i class="fas fa-link"></i> Creating my Personal Static Website with Pelican</a></li>
+          <li><a href="https://www.seyiobaweya.tech/articles/2020-01-17/new-project-script/"><i class="fas fa-link"></i> Automating Project Setup with Bash</a></li>
+      </ul>
+    </div>
+    </div>
+
+
+  </aside>
+  <main id="main">
+
+    <nav>
+      <a href="https://www.seyiobaweya.tech">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://www.seyiobaweya.tech/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <b><h1 id="new-project-script">Automating Project Setup with Bash</h1></b>
+    <p>
+          Posted on Fri 17 January 2020 in <a href="https://www.seyiobaweya.tech/category/bash_automation.html">Bash_Automation</a>
+
+
+    </p>
+    
+  </header>
+
+
+  <div>
+    <p>One of the plans for 2020 is working on more projects and putting them on Github to share as well as act as a portofolio for prospective employers. i decided to reduce the barriers to achieving this goal by working on Tools to make my day to day tasks more efficient, Hence the newproject script.<br>
+This tool aims to automate the process of starting a new project as well as forcing me to upload all my projects on github.  </p>
+<p>The manual Process of Starting a Project is :  </p>
+<h2></h2>
+<ul>
+<li>Navigate to your project folder and create new folder  </li>
+<li>Initialize Git Repo in new Directory  </li>
+<li>Create a ReadMe file  </li>
+<li>Stage ReadMe File  </li>
+<li>Create First Commit  </li>
+</ul>
+<p>on the Github Page  </p>
+<h2></h2>
+<ul>
+<li>Create New Repo  </li>
+<li>Copy Origin Address  </li>
+<li>Add remote Origin to your project Directory  </li>
+</ul>
+<p>I decided to automate this process using a bash script due to Linux being my preferred dev environment (Ubuntu WSL2). I however intend to later port the script to a python script to enable it work on numerous platforms. </p>
+<h3>New Project Script</h3>
+<p>This is a fairly easy script to understand, i will walk you through some of the snippets which could be useful for creating your own scripts<br>
+To Skip to script usage click here <a href="#usage">here</a><br>
+GitHub Link to project is <a href="https://github.com/seyio91/newprojectscript" target="_blank">Here</a></p>
+<p><strong>Creating a Repo with the Github API</strong></p>
+<div class="highlight"><pre><span></span>curl -u <span class="s2">&quot;</span><span class="si">${</span><span class="nv">GITHUB_USERNAME</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">GITHUB_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span> https://api.github.com/user/repos -d <span class="s1">&#39;{&quot;name&quot;:&quot;&#39;</span><span class="nv">$REPO_NAME</span><span class="s1">&#39;&quot;}&#39;</span> &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+
+
+<p>the curl command takes the url which consists of the github username, personal access token and repo name as the data to create the new repository
+the output is passed to /dev/null so it is not displayed on the script as some json object is returned on success.  </p>
+<p><strong>Setting Default Variables</strong>    </p>
+<div class="highlight"><pre><span></span><span class="n">PROJECT_DIR</span><span class="o">=</span><span class="err">$</span><span class="p">{</span><span class="n">PROJECT_DIR</span><span class="p">:</span><span class="o">-</span><span class="err">$</span><span class="n">DEFAULT_DIR</span><span class="p">}</span>
+</pre></div>
+
+
+<p>this is used to set a default value to a variable, if the variable is not defined, it takes the 2nd value as its new value. A default_dir is hardcoded, if the Project_dir variable is not passed in to the script, the project_Dir variable takes the values of the default dir.</p>
+<p><strong>Bash Functions</strong>  </p>
+<p>Bash functions work almost the same way as every other scripting language, it is used in the script to define repetitive tasks. 
+An example is coloring functions for my error and success messages. The process of getting a colored text is below  </p>
+<div class="highlight"><pre><span></span><span class="nv">normal</span><span class="o">=</span><span class="s2">&quot;\033[0m&quot;</span>
+<span class="nv">greentext</span><span class="o">=</span><span class="s2">&quot;\033[32m&quot;</span>
+
+<span class="nb">echo</span> -e <span class="nv">$greentext</span><span class="s2">&quot;this color should be displayed as green to signify success&quot;</span><span class="nv">$normal</span>
+</pre></div>
+
+
+<p>This quickly becomes stressful if you have to do it a couple of times.<br>
+Defining a function which takes in an argument of message can be used to improve this.
+note bash does take in arguments in the name definitions, this can be passed into the function using the <code>$1</code> arguments. <br>
+Also the <code>local</code> keyword is used to make the variable local to the function so it does not change variables having the same name outside the function scope  </p>
+<div class="highlight"><pre><span></span>success <span class="o">(){</span>
+    <span class="nb">local</span> <span class="nv">msg</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="nb">echo</span> -e <span class="nv">$greentext</span><span class="s2">&quot;</span><span class="nv">$msg</span><span class="s2">&quot;</span><span class="nv">$normal</span>
+<span class="o">}</span>
+
+success <span class="s2">&quot;this color should be displayed as green to signify success&quot;</span>
+</pre></div>
+
+
+<p>Other functions that were created are  </p>
+<h2></h2>
+<ul>
+<li><code>usage</code> : function to display error and how the script should be used. this is called at every conditions where the script will exit  </li>
+<li><code>cleanup</code> : this is used to clean up files that were created if an error occurs after folders have been created in the script.  </li>
+<li><code>nameCheck</code> : function to check if repo name meets the required conventions using regex.  </li>
+</ul>
+<p><strong>Parsing Commandline Arguments</strong>  </p>
+<p>This is popular in most linux commands e.g cp -r source destination. the Minus sign are commandline arguments which are used to alter the default behavior of the script. Parsing of this argument is done through getopts.  </p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="nb">getopts</span> <span class="s2">&quot;d:u:t:f:ih&quot;</span> option<span class="p">;</span> <span class="k">do</span>
+    <span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$option</span><span class="s2">&quot;</span> in
+
+    i <span class="o">)</span> <span class="nv">INTERACTIVE</span><span class="o">=</span><span class="m">1</span><span class="p">;;</span>
+    d <span class="o">)</span> <span class="nv">PROJECT_DIR</span><span class="o">=</span><span class="nv">$OPTARG</span><span class="p">;;</span>
+    f <span class="o">)</span> <span class="nv">REPO_FOLDER</span><span class="o">=</span><span class="nv">$OPTARG</span><span class="p">;;</span>
+    u <span class="o">)</span> <span class="nv">GITHUB_USERNAME</span><span class="o">=</span><span class="nv">$OPTARG</span><span class="p">;;</span>
+    t <span class="o">)</span> <span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="nv">$OPTARG</span><span class="p">;;</span>
+    h <span class="o">)</span> <span class="nv">HELP</span><span class="o">=</span><span class="m">1</span><span class="p">;;</span>
+    <span class="se">\?</span> <span class="o">)</span> usage
+        <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">done</span>
+<span class="nb">shift</span> <span class="k">$((</span>OPTIND <span class="o">-</span><span class="m">1</span><span class="k">))</span>
+</pre></div>
+
+
+<p>getopts will take a list of characters that it will accept, <code>"d:u:tf"</code>, each character that is followed by a <code>":"</code> will be accepting an argument, while others act as flags.<br>
+example  </p>
+<div class="highlight"><pre><span></span>newproject -d argumentforD -i
+</pre></div>
+
+
+<p><code>argumentforD</code> is passed as the argument for <code>d</code>, while <code>i</code> does not need any argument passed to it. The argument for D is stored in the <code>OPTARG</code> variable which can then be reassigned to your defined variable.</p>
+<p><code>$option</code> is the variable used to store the current character the while loop is on from the list of arguments. e.g it stores <code>-d</code> as d, which can then be checked in the case statement to carry out the corresponding action i.e set the variable in my case</p>
+<p>case statement works the same way as every other language, the only difference here is the <code>\?</code> which is used to specify everyother character that i did not define in my case statement. my usage function is passed to trigger an error when an invalid character is passed  </p>
+<p>the last part of the getopts is the <code>shift $((OPTIND -1))</code> statement. this helps in processing the arguments by shifting the current character that has been processed. e.g in example, after <code>-d</code> is processed, <code>-f</code> should be processed.  </p>
+<p>for more info about the getopts command: <a href="https://www.shellscript.sh/tips/getopts/" target="_blank" >Here</a></p>
+<p><strong>Tests</strong><br>
+Various Tests were used all through the script. the basic syntax for the tests is  </p>
+<p><strong>if</strong> </p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[[</span> sometest <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    some action
+<span class="k">fi</span>
+</pre></div>
+
+
+<p><strong>if else statement</strong></p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[[</span> sometest <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    some action
+<span class="k">else</span>
+    some other action
+<span class="k">fi</span>
+</pre></div>
+
+
+<p><strong>if elseif</strong></p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[[</span> sometest <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    some action
+<span class="k">elif</span>
+    some other action
+<span class="k">fi</span>
+</pre></div>
+
+
+<p><strong>Test Conditions</strong>  </p>
+<p><code>[[ -n *$VARIABLE ]]</code> # if a variable is set. <code>! -n $VARIABLE</code> is for the reverse case. not set  </p>
+<p><code>[[ -d $VARIABLE ]]</code> check if $value is a folder  </p>
+<p><code>[[ -e $VARIABLE ]]</code> check if folder/file exist  </p>
+<p><code>[[ $VARIABLE = "somevalue" ]]</code> if specific condition is met<br>
+bash uses "=" rather than the double equal sign in most languages.  </p>
+<p><code>[[ $VARIABLE =~ [$someregexvariable] ]]</code> to check if value does not match regex.  </p>
+<p><strong>Reading file input</strong>  </p>
+<p>this is used to drive the interactive part of the script.<br>
+the read command is used to read input and pass to the variable passed to the command  </p>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> -n <span class="s2">&quot;Enter Project Folder: (somedefault) : &quot;</span>
+<span class="nb">read</span> PROJECT_DIR
+<span class="nb">echo</span> <span class="nv">$PROJECT_DIR</span>
+
+<span class="s2">&quot;Enter Project Folder: (somedefault) : /home/seyi/projectfolder&quot;</span> 
+<span class="s2">&quot;/home/seyi/projectfolder&quot;</span>
+</pre></div>
+
+
+<div id="usage"></div>
+
+<h3>Dependencies</h3>
+<p><strong>Github personal access token</strong> is required to create repo as well as making commits. Link on Creating your Personal Access Token is <a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line" target="_blank">Here</a>.<br>
+<strong>JQ Program</strong> for parsing responses from the git api. This checks if there is an existing repo with the same name on users github page   </p>
+<p><strong>Installing JQ Dependency</strong>  </p>
+<p>for debian  </p>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">jq</span>
+</pre></div>
+
+
+<p>for redhat</p>
+<div class="highlight"><pre><span></span>sudo yum install jq
+</pre></div>
+
+
+<h3>Usage</h3>
+<div class="highlight"><pre><span></span><span class="s2">&quot;Usage: newproject [ -i | -d | -f | -u | -t | -h ] repo_name&quot;</span>  
+<span class="s2">&quot;-i : Interactive Prompt&quot;</span>   
+<span class="s2">&quot;-d : Projects Directory&quot;</span> 
+<span class="s2">&quot;-f : Folder for Storing Repo&quot;</span>  
+<span class="s2">&quot;-u : Github Username&quot;</span>  
+<span class="s2">&quot;-t : Github Personal Access Token&quot;</span>  
+<span class="s2">&quot;-h : Help&quot;</span>
+</pre></div>
+
+
+<p><strong>Basic Usage</strong>  </p>
+<div class="highlight"><pre><span></span>newproject reponame
+</pre></div>
+
+
+<p>newproject script will create folder with the reponame in the directory set in the DEFAULT_DIR variable.  </p>
+<div class="highlight"><pre><span></span>newproject -d /home/system/opt -f newfolder reponame
+</pre></div>
+
+
+<p>Project folder "newfolder" will be created in the directory passed to -d flag.  </p>
+<div class="highlight"><pre><span></span>newproject -u seyio91 -t dummy_token reponame
+</pre></div>
+
+
+<p>username and token will overwrite the variables exported to shell environment during setup  </p>
+<div class="highlight"><pre><span></span>newproject -i reponame
+</pre></div>
+
+
+<p>Starts the interactive session</p>
+<div class="highlight"><pre><span></span>newproject -i reponame
+<span class="s2">&quot;Enter project Default Folder: (/home/seyi/projects)&quot;</span>  
+<span class="s2">&quot;Enter project Folder- Repo name will be used if no default:  ()&quot;</span>  
+<span class="s2">&quot;Enter Git Username:  (seyio91)&quot;</span>  
+<span class="s2">&quot;Enter Git Token:  (dummy_token)&quot;</span>
+</pre></div>
+
+
+<p>To view help options  </p>
+<div class="highlight"><pre><span></span>newproject -h
+</pre></div>
+
+
+<h3>Planned Improvements.</h3>
+<ul>
+<li>Specific Project Types. Ability to specify the type of project and create directory structure by project e.g creating virtual env for python or dockerfiles for docker projects  </li>
+<li>Add Testing</li>
+</ul>
+<p>GitHub Link to project is <a href="https://github.com/seyio91/newprojectscript" target="_blank">Here</a></p>
+    <br>
+  
+  <div class="sharepage">
+  <!-- share test -->
+  <span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=https%3A//www.seyiobaweya.tech/articles/2020-01-17/new-project-script/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=https%3A%2F%2Fwww.seyiobaweya.tech%2Farticles%2F2020-01-17%2Fnew-project-script%2F');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.seyiobaweya.tech%2Farticles%2F2020-01-17%2Fnew-project-script%2F&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    </div>
+  </div>    <br>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.seyiobaweya.tech/tag/bash.html">bash</a>
+      <a href="https://www.seyiobaweya.tech/tag/git.html">git</a>
+    </p>
+  </div>
+
+
+
+
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'www-seyiobaweya-tech';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+<!-- End Disqus -->
+  
+  <!-- Pager Goes Here -->
+  <ul class="pager">
+      <li class="previous">
+        <a href="https://www.seyiobaweya.tech/articles/2020-01-20/my-personal-website-setup/"><i class="fas fa-angle-double-left"></i>  Creating my Personal Static Website with Pelican</a>
+      </li>
+  </ul>
+  <br>
+  <br>
+  <br>
+
+
+  <a class="home-icon" href="https://www.seyiobaweya.tech"><i class="fas fa-home fa-2x"></i></a>
+
+
+
+  
+
+
+
+  
+</article>
+
+
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>    Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+  <a href="#top" class="btn-scroll-to-top tophide" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 2nd site ",
+  "url" : "https://www.seyiobaweya.tech",
+  "image": "http://localhost:8000/images/site_logo.jpeg",
+  "description": "Seyi's Thoughts and Attempts at Writings"
+}
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const scrollToTopButton = document.getElementById('js-top');
+const mainbody = document.getElementById('main')
+  const scrollFunc = () => {
+  // Get the current scroll value
+  let y = mainbody.scrollTop;
+  if (y > 200) {
+    scrollToTopButton.className = "btn-scroll-to-top topshow";
+  } else {
+    scrollToTopButton.className = "btn-scroll-to-top tophide";
+  }
+};
+mainbody.addEventListener('scroll', scrollFunc);
+const scrollToTop = () => {
+  // Let's set a variable for the number of pixels we are from the top of the document.
+  const c = mainbody.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    mainbody.scrollTo(0, c - c / 10);
+  }
+};
+
+// When the button is clicked, run our ScrolltoTop function above!
+scrollToTopButton.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
+}
+
+// Nav bar media query
+navcol = document.getElementById('navid');
+toggler = document.getElementById('toggler');
+socials = document.getElementById('social')
+var mediaq = window.matchMedia("(max-width: 600px)")
+function removeBlock(mediaq) {
+  if (mediaq.matches) { // If media query matches
+    // toggler.removeAttribute('style');
+    toggler.style.display = "block";
+    navcol.style.display = "none";
+    socials.setAttribute('style', 'display: none;');
+    scrollToTopButton.removeAttribute('style');
+    hamburger()
+  } else {
+    toggler.setAttribute('style', 'display: none;')
+    navcol.removeAttribute('style');
+    scrollToTopButton.setAttribute('style', 'display: block;')
+    socials.removeAttribute('style');
+  }
+}
+
+removeBlock(mediaq)
+mediaq.addListener(removeBlock)
+
+//Hamburger Toggle
+function hamburger(){
+  toggler.onclick = function() {
+    if (navcol.hasAttribute('style')){
+      navcol.removeAttribute('style');
+      toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
+    } else {
+      navcol.setAttribute('style', 'display: none;');
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+    }
+  }
+
+  //Closing Hamburger
+  document.addEventListener('click', function(event){
+    if (event.target.parentNode.parentNode != navcol && !navcol.hasAttribute('style') && event.target != toggler){
+      navcol.style.display = "none";
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+    }
+  })
+}
+});
+</script></body>
+</html>
