@@ -4,9 +4,11 @@ Category: Web_Development
 Tags: python, pelican
 Slug: my-personal-website-setup
 Author: Seyi Obaweya
-Summary: The process of creating a website can sometimes look daunting. There are a lot of over engineered options for running a simple blog. This article walks you through the use of Static Site generators which is known for its simplicity in creating a personal website. 
+Summary: The process of creating a personal blog can be a daunting task, as there are a lot of over engineered-options for running a simple blog. This article walks you through the process of getting your blog up and running through the use of a Static site generator which is known for its simplicity and performance. 
   
+![pelican]({filename}/images/pelican.png)
 
+<>
 I am excited to share the process of creating my personal website which was made to document my projects, share my learning journey and probably act as a portfolio. There are so many choices for creating a website, with easy options like WordPress, blogger and other hosted solutions, however being someone who likes tinkering, I prefer to host a website myself to be able to customize and break it. This led to discovering Static Site Generators in my quest for simple and cost-effective solutions.
 
 
@@ -227,7 +229,7 @@ Static Files such as images, documents can be linked to each article, by referen
 
     STATIC_PATHS = ['images', 'pdfs', 'static', 'zipfiles']  
 ## 
-- **Images**  : `![some alternate text]({filename}/images/han.jpg)`   
+- **Images**  : `![alt]({filename}/images/han.jpg)`   
 some alternate text will be displayed if the image is not found. Also note, the static path folders are included in the "content" folder  
 images can also be referenced using HTML syntax such as `<img src="/images/han.jpg">  `
 
@@ -240,13 +242,13 @@ images can also be referenced using HTML syntax such as `<img src="/images/han.j
 **Adding Links**  
   
 External links can be referenced using both markdown and HTML syntax  
-Markdown: `[Link](https:\\www.someexample.com\)`  
+Markdown: `[Link](https:\\www.example.com\)`  
   
-HTML: `<a href="https:\\www.someexample.com\">link<\a>`  
+HTML: `<a href="www.example.com">link<\a>`  
 
 
 internal links to contents like previous articles  
-`[First Post]({filename}/articles/02-newcontent.md)`
+`[Post]({filename}/articles/oldfile.md)`
 
 
 **Adding code syntax highlighting**  
@@ -268,8 +270,12 @@ Code syntax with Line numbers
   
 After creating the new content, use the `pelican content` command to generate the HTML Pages. You can also use `make devserver` to generate HTML and serve the Page locally on your development environment.
 
-Your content can now be viewed on `localhost:8000`
+Your content can now be viewed on `localhost:8000`  
+  
+## 
 
+![pelican default theme]({filename}/images/pelican_default_theme.JPG)
+<p style="text-align: center;"><b>pelican default theme</b></p>
 
 The Next Article on **Customizing your Site** can be found [Here](#)
 

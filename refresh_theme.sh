@@ -15,3 +15,4 @@ make devserver
 #  2290  mkdir web_output
 #  2294  pelican content -o web_output/ -s publishconf.py
 #  2295  pelican -l content/ -o web_output/ -s publishconf.py
+# aws cloudfront create-invalidation --distribution-id $ID --paths "/static/custom.css"

@@ -34,13 +34,13 @@
     <meta name="msapplication-TileColor" content="#C0C0C0">
 
 <meta name="author" content="Seyi Obaweya" />
-<meta name="description" content="The process of creating a website can sometimes look daunting. There are a lot of over engineered options for running a simple blog. This article walks you through the use of Static Site generators which is known for its simplicity in creating a personal website." />
+<meta name="description" content="The process of creating a personal blog can be a daunting task, as there are a lot of over engineered-options for running a simple blog. This article walks you through the process of getting your blog up and running through the use of a Static site generator which is known for its simplicity and performance." />
 <meta name="keywords" content="python, pelican">
 
 
 <meta property="og:site_name" content="Seyi Obaweya"/>
 <meta property="og:title" content="Creating my Personal Static Website with Pelican"/>
-<meta property="og:description" content="The process of creating a website can sometimes look daunting. There are a lot of over engineered options for running a simple blog. This article walks you through the use of Static Site generators which is known for its simplicity in creating a personal website."/>
+<meta property="og:description" content="The process of creating a personal blog can be a daunting task, as there are a lot of over engineered-options for running a simple blog. This article walks you through the process of getting your blog up and running through the use of a Static site generator which is known for its simplicity and performance."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://localhost:8000/articles/2020-01-20/my-personal-website-setup/"/>
 <meta property="og:type" content="article"/>
@@ -161,7 +161,8 @@
 
 
   <div>
-    <p>I am excited to share the process of creating my personal website which was made to document my projects, share my learning journey and probably act as a portfolio. There are so many choices for creating a website, with easy options like WordPress, blogger and other hosted solutions, however being someone who likes tinkering, I prefer to host a website myself to be able to customize and break it. This led to discovering Static Site Generators in my quest for simple and cost-effective solutions.</p>
+    <p><img alt="pelican" src="http://localhost:8000/images/pelican.png">
+I am excited to share the process of creating my personal website which was made to document my projects, share my learning journey and probably act as a portfolio. There are so many choices for creating a website, with easy options like WordPress, blogger and other hosted solutions, however being someone who likes tinkering, I prefer to host a website myself to be able to customize and break it. This led to discovering Static Site Generators in my quest for simple and cost-effective solutions.</p>
 <p>This seemed perfect as my blog will mainly be static HTML pages, giving me a variety of options for hosting. Another reason for choosing a static site generator was the ability to write content in Markdown removing the need for creating static pages by hand with HTML, which would be more effort than worth it. There are a ton of Static Site generators out there, List can be found <a href="https://www.staticgen.com/" target="_blank">here</a>.  </p>
 <p>Eventually, I ended up choosing <strong>Pelican</strong> which is a python based Static Site Generator over other popular SSGs as python is my preferred scripting language making the setup and customization process easy for me. Also, pelican uses Jinja templating to generate its HTML which is straightforward and flexible</p>
 <p>I would not go in-depth into Pelican site generators. The <a href="Documentation" target="_blank">documentation</a> is quite extensive and easy to understand.</p>
@@ -361,7 +362,7 @@ Article Body Lorem ipsum dolor sit amet consectetur adipisicing elit...
 <h2></h2>
 <ul>
 <li>
-<p><strong>Images</strong>  : <code>![some alternate text]({filename}/images/han.jpg)</code> <br>
+<p><strong>Images</strong>  : <code>![alt]({filename}/images/han.jpg)</code> <br>
 some alternate text will be displayed if the image is not found. Also note, the static path folders are included in the "content" folder<br>
 images can also be referenced using HTML syntax such as <code>&lt;img src="/images/han.jpg"&gt;</code></p>
 </li>
@@ -372,10 +373,10 @@ images can also be referenced using HTML syntax such as <code>&lt;img src="/imag
 </ul>
 <p><strong>Adding Links</strong>  </p>
 <p>External links can be referenced using both markdown and HTML syntax<br>
-Markdown: <code>[Link](https:\\www.someexample.com\)</code>  </p>
-<p>HTML: <code>&lt;a href="https:\\www.someexample.com\"&gt;link&lt;\a&gt;</code>  </p>
+Markdown: <code>[Link](https:\\www.example.com\)</code>  </p>
+<p>HTML: <code>&lt;a href="www.example.com"&gt;link&lt;\a&gt;</code>  </p>
 <p>internal links to contents like previous articles<br>
-<code>[First Post]({filename}/articles/02-newcontent.md)</code></p>
+<code>[Post]({filename}/articles/oldfile.md)</code></p>
 <p><strong>Adding code syntax highlighting</strong>  </p>
 <p>Pelican handles code syntax using the Markdown CodeHilite extension. To use this, include the language identifier just above the code block, indenting both the identifier and the code</p>
 <p>Code Syntax without Line numbers</p>
@@ -390,7 +391,10 @@ Markdown: <code>[Link](https:\\www.someexample.com\)</code>  </p>
 
 <h2>Post-Content Creation</h2>
 <p>After creating the new content, use the <code>pelican content</code> command to generate the HTML Pages. You can also use <code>make devserver</code> to generate HTML and serve the Page locally on your development environment.</p>
-<p>Your content can now be viewed on <code>localhost:8000</code></p>
+<p>Your content can now be viewed on <code>localhost:8000</code>  </p>
+<h2></h2>
+<p><img alt="pelican default theme" src="http://localhost:8000/images/pelican_default_theme.JPG">
+<p style="text-align: center;"><b>pelican default theme</b></p></p>
 <p>The Next Article on <strong>Customizing your Site</strong> can be found <a href="#">Here</a></p>
     <br>
   

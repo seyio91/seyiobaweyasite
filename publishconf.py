@@ -23,5 +23,4 @@ DISQUS_SITENAME='www-seyiobaweya-tech'
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+GOOGLE_ANALYTICS = "UA-156544577-1"
