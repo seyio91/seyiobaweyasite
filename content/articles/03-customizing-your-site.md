@@ -8,7 +8,7 @@ Summary: This is the second article in the series "**Creating a Personal Static 
 
 This is the second article in the series "**Creating a Personal Static Website with Pelican**". This article covers modifying your site design.
 
-1. [Setting Up Pelican Site Generator](www.seyiobaweya.tech/2020-01-20/my-personal-website-setup/)
+1. [Setting Up Pelican Site Generator]({filename}/articles/01-creating-static-site.md)
 2. **Customizing your Site**  <-- this article
 3. Hosting your Static Site on AWS S3 Buckets
 4. Creating your Pelican CD Pipeline using Travis
