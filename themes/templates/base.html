@@ -150,48 +150,22 @@
       </ul>
     </div>
 
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-folder"></i> Categories
-      </div>
-      <div class="card-body">
-      <ul class="recent">
-        {% for category, articles in categories|sort %}
-        <li><a href="{{ SITEURL }}/{{ category.url }}"><i class="fas fa-folder-open"></i>  {{ category }}</a> ({{ articles|count }})</li>
-        {% endfor %}
-      </ul>
-    </div>
-    </div>
+    {% if SIDE_CATEGORY %}  
+      {% include "partial/side-category.html" %}
+    {% endif %}
 
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-folder"></i> Tags
-      </div>
-      <div class="card-body">
-        <div class="tag-block">
-          {% for tag, articles in tags|sort %}
-            <a href="{{ SITEURL }}/{{ tag.url }}" style="font-size: {{ articles|count|count_to_font_size }};">{{ tag }}</a>
-          {% endfor %}
-        </div>
-    </div>
-    </div>
+    {% if SIDE_TAG_CLOUD %}  
+      {% include "partial/tag-cloud.html" %}
+    {% endif %}
 
-
-
-    <div class="card">
-      <div class="card-header">
-        Most Recent Posts
-      </div>
-      <div class="card-body">
-      <ul class="recent">
-        {% for article in articles %}
-          {% if loop.index <= 5 %}
-          <li><a href="{{ SITEURL }}/{{ article.url }}"><i class="fas fa-link"></i> {{ article.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-    </div>
+    {% if RECENT_PAGES %}
+      {% if RECENT_ARTICLE_COUNT %}
+        {% set COUNT = RECENT_ARTICLE_COUNT %}
+      {% else %}
+        {% set COUNT = 5 %}
+      {% endif %}
+      {% include "partial/recent-articles.html" %}
+    {% endif %}
 
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside %}
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

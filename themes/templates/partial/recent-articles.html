@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-header">
+      Most Recent Posts
+    </div>
+    <div class="card-body">
+    <ul class="recent">
+      {% for article in articles %}
+        {% if loop.index <= COUNT %}
+        <li><a href="{{ SITEURL }}/{{ article.url }}"><i class="fas fa-link"></i> {{ article.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  </div>

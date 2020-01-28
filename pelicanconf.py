@@ -68,6 +68,14 @@ DEFAULT_PAGINATION = 10
 
 LINK_PAGINATION = True
 
+SIDE_CATEGORY = True
+
+SIDE_TAG_CLOUD = True
+
+RECENT_PAGES = True
+
+RECENT_ARTICLE_COUNT = 6
+
 import math, urllib.parse
 JINJA_FILTERS = {
     'count_to_font_size': lambda c: '{p:.1f}%'.format(p=100 + 25 * math.log(c, 2)),

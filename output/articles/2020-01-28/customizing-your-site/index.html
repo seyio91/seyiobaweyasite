@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+    <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#C0C0C0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#C0C0C0">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#C0C0C0">
+
+<meta name="author" content="Seyi Obaweya" />
+<meta name="description" content="This is the second article in the series &#34;Creating a Personal Static Website with Pelican&#34;. This article covers modifying your site design using templates and pelican plugins." />
+<meta name="keywords" content="python, pelican">
+
+
+<meta property="og:site_name" content="Seyi Obaweya"/>
+<meta property="og:title" content="Customizing your Pelican Static Site"/>
+<meta property="og:description" content="This is the second article in the series &#34;Creating a Personal Static Website with Pelican&#34;. This article covers modifying your site design using templates and pelican plugins."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/articles/2020-01-28/customizing-your-site/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-01-28 10:20:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/seyi-obaweya.html">
+<meta property="article:section" content="Web_Development"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="og:image" content="http://localhost:8000/images/site_logo.jpeg">
+
+  <title>Seyi Obaweya &ndash; Customizing your Pelican Static Site</title>
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>  
+  <aside>
+    <div>
+      <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
+
+<p>Tech Lover</p>
+
+      <!-- <span class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</span> -->
+      <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span>
+      <nav id="navid">
+        <ul class="list">
+
+            <li class="navlist"><a href="http://localhost:8000">Home</a></li>
+            <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/about-me.html">About seyi</a></li>
+
+
+        </ul>
+      </nav>
+    <!-- </div> -->
+
+      <ul class="social" id="social">
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/obaweya-seyi-375270ba" target="_blank">
+            <i class="fab fa-linkedin">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-github" href="https://github.com/seyio91" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+  
+<div class="card">
+    <div class="card-header">
+      <i class="fas fa-folder"></i> Categories
+    </div>
+    <div class="card-body">
+    <ul class="recent">
+      <li><a href="http://localhost:8000/category/bash_automation.html"><i class="fas fa-folder-open"></i>  Bash_Automation</a> (1)</li>
+      <li><a href="http://localhost:8000/category/web_development.html"><i class="fas fa-folder-open"></i>  Web_Development</a> (2)</li>
+    </ul>
+  </div>
+  </div>
+  
+<div class="card">
+    <div class="card-header">
+      <i class="fas fa-folder"></i> Tags
+    </div>
+    <div class="card-body">
+      <div class="tag-block">
+          <a href="http://localhost:8000/tag/bash.html" style="font-size: 100.0%;">bash</a>
+          <a href="http://localhost:8000/tag/git.html" style="font-size: 100.0%;">git</a>
+          <a href="http://localhost:8000/tag/pelican.html" style="font-size: 125.0%;">pelican</a>
+          <a href="http://localhost:8000/tag/python.html" style="font-size: 125.0%;">python</a>
+      </div>
+  </div>
+  </div>
+<div class="card">
+    <div class="card-header">
+      Most Recent Posts
+    </div>
+    <div class="card-body">
+    <ul class="recent">
+        <li><a href="http://localhost:8000/articles/2020-01-28/customizing-your-site/"><i class="fas fa-link"></i> Customizing your Pelican Static Site</a></li>
+        <li><a href="http://localhost:8000/articles/2020-01-20/personal-website-setup/"><i class="fas fa-link"></i> Creating a Personal Static Website with Pelican</a></li>
+        <li><a href="http://localhost:8000/articles/2020-01-17/new-project-script/"><i class="fas fa-link"></i> Automating Project Setup with Bash</a></li>
+    </ul>
+  </div>
+  </div>
+
+  </aside>
+  <main id="main">
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <b><h1 id="customizing-your-site">Customizing your Pelican Static Site</h1></b>
+    <p>
+          Posted on Tue 28 January 2020 in <a href="http://localhost:8000/category/web_development.html">Web_Development</a>
+
+
+    </p>
+    
+  </header>
+
+
+  <div>
+    <p>This is the second article in the series "<strong>Creating a Personal Static Website with Pelican</strong>". This article covers modifying your site design.</p>
+<ol>
+<li><a href="www.seyiobaweya.tech/2020-01-20/my-personal-website-setup/">Setting Up Pelican Site Generator</a></li>
+<li><strong>Customizing your Site</strong>  &lt;-- this article</li>
+<li>Hosting your Static Site on AWS S3 Buckets</li>
+<li>Creating your Pelican CD Pipeline using Travis</li>
+<li>Buying a Domain name and Pointing the Domain to your Bucket</li>
+</ol>
+<h2></h2>
+<p><p align="center">
+<img src="/images/article3-header.jpg" alt="Pelican Jinja Markdown">
+</p></p>
+<p>Pelican allows you to customize your website design by creating your preferred theme or using any of the themes created by the pelican community which can be found <a href="http://www.pelicanthemes.com/">here</a>.   </p>
+<p>The themes should be cloned into your project folder and installed. To keep your project organized, It is advisable to store the themes in a separate directory.</p>
+<p>Pelican themes are managed using the <code>pelican-themes</code> command-line tool. This is used to add, remove and list themes.</p>
+<h2></h2>
+<ul>
+<li><code>pelican-theme -i themeFolder</code> # installs the theme
+the drawback to using this method is that theme must be removed and reinstalled on edit.</li>
+<li><code>pelican-themes -r themeName</code> # Removes an installed Theme</li>
+<li>
+<p><code>pelican-themes -l -v</code>  #list the installed themes.</p>
+</li>
+<li>
+<p><code>pelican-themes --symlink themeFolder</code> # This creates a symlink to the theme folder, changes you make on the themes are immediately propagated without having to reinstall the theme.</p>
+</li>
+</ul>
+<p>Although the Pelican-theme command manages the themes for the pelican engine, the User has to specify which theme is to be used for the site in the Pelican site configuration. This is done by setting the Theme variable to the desired theme.</p>
+<div class="highlight"><pre><span></span><span class="n">vi</span> <span class="n">pelicanconf</span><span class="o">.</span><span class="n">py</span>  
+<span class="o">...</span>
+<span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;themename&quot;</span><span class="o">.</span>
+</pre></div>
+
+
+<p>Or </p>
+<div class="highlight"><pre><span></span><span class="n">pelican</span> <span class="n">content</span> <span class="o">-</span><span class="n">t</span> <span class="n">pathtotheme</span>
+</pre></div>
+
+
+<p>Each theme also comes with some extra set of configuration variables to set certain behaviors, check the theme readme for more information. For the Flex Configuration visit <a href="https://github.com/alexandrevicenzi/Flex/wiki/Configuration-example">here</a></p>
+<h3>Installing the Flex Theme.</h3>
+<p>For my website, I choose the Flex theme due to the simplicity of its design. the link can be found <a href="link">here</a>.</p>
+<p>Create a new directory called themes and clone your desired theme to this directory.</p>
+<div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">themes</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">themes</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">alexandrevicenzi</span><span class="o">/</span><span class="n">Flex</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+
+
+<p>Install the Flex Theme</p>
+<div class="highlight"><pre><span></span><span class="n">Pelican</span><span class="o">-</span><span class="n">theme</span> <span class="o">-</span><span class="n">i</span> <span class="n">themes</span><span class="o">/</span><span class="n">Flex</span>
+</pre></div>
+
+
+<p>Set the Website theme in Site Configuration</p>
+<div class="highlight"><pre><span></span><span class="n">vi</span> <span class="n">pelicanconf</span><span class="o">.</span><span class="n">py</span>
+<span class="o">...</span>
+<span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;themename&quot;</span>
+</pre></div>
+
+
+<p>On regenerating the HTML pages, the site appears with the new theme. </p>
+<div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">devserver</span>
+</pre></div>
+
+
+<p><img src="/images/thumbnails/846x427/pelican-flex-theme.JPG" alt="Pelican Flex">
+<p style="text-align: center;"><b>pelican Flex theme</b></p></p>
+<p>Theme Template Structure</p>
+<div class="highlight"><pre><span></span><span class="o">.</span>
+<span class="err">├──</span> <span class="n">static</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">stylesheet</span><span class="o">/</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">font</span><span class="o">-</span><span class="n">awesome</span><span class="o">/</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">pygments</span><span class="o">/</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="n">images</span><span class="o">/</span>
+<span class="err">└──</span> <span class="n">templates</span>
+    <span class="err">├──</span> <span class="n">archives</span><span class="o">.</span><span class="n">html</span>         <span class="o">//</span> <span class="n">to</span> <span class="n">display</span> <span class="n">archives</span>
+    <span class="err">├──</span> <span class="n">article</span><span class="o">.</span><span class="n">html</span>          <span class="o">//</span> <span class="n">processed</span> <span class="k">for</span> <span class="n">each</span> <span class="n">article</span>
+    <span class="err">├──</span> <span class="n">categories</span><span class="o">.</span><span class="n">html</span>       <span class="o">//</span> <span class="n">must</span> <span class="nb">list</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">categories</span>
+    <span class="err">├──</span> <span class="n">category</span><span class="o">.</span><span class="n">html</span>         <span class="o">//</span> <span class="n">processed</span> <span class="k">for</span> <span class="n">each</span> <span class="n">category</span>
+    <span class="err">├──</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>            <span class="o">//</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">articles</span> <span class="n">available</span>
+    <span class="err">├──</span> <span class="n">page</span><span class="o">.</span><span class="n">html</span>             <span class="o">//</span> <span class="n">pages</span> <span class="n">such</span> <span class="k">as</span> <span class="n">about</span> <span class="n">me</span><span class="p">,</span> <span class="n">that</span> <span class="n">are</span> <span class="n">different</span> <span class="kn">from</span> <span class="nn">articles</span>
+    <span class="err">├──</span> <span class="n">tag</span><span class="o">.</span><span class="n">html</span>              <span class="o">//</span> <span class="n">display</span> <span class="k">for</span> <span class="n">each</span> <span class="n">tag</span>
+    <span class="err">├──</span> <span class="n">tags</span><span class="o">.</span><span class="n">html</span>             <span class="o">//</span> <span class="n">must</span> <span class="nb">list</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">tags</span><span class="o">.</span> <span class="n">Can</span> <span class="n">be</span> <span class="n">a</span> <span class="n">tag</span> <span class="n">cloud</span><span class="o">.</span>
+    <span class="err">└──</span> <span class="n">partial</span><span class="o">/</span>              <span class="o">//</span> <span class="n">code</span> <span class="n">snippets</span> <span class="n">to</span> <span class="n">be</span> <span class="n">imported</span> <span class="n">into</span> <span class="n">templates</span>
+        <span class="err">├──</span> <span class="n">cc_license</span><span class="o">.</span><span class="n">html</span>
+        <span class="err">├──</span> <span class="n">copyright</span><span class="o">.</span><span class="n">html</span>
+        <span class="err">└──</span> <span class="n">disqus</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+
+
+<h2></h2>
+<ul>
+<li><code>static</code> contains all the static files which are to be copied to the generated output folder. All static assets can be included in this folder e.g. documents.</li>
+<li><code>templates</code> contains all the templates that will be used to generate the content. The template files listed above are mandatory; you can add your templates if it helps you keep things organized while creating your theme.</li>
+</ul>
+<h3>Editing a template.</h3>
+<p>One of the advantages of using pelican is the ease of customization, Pelican uses the Jinja templating engine due to its flexibility and straightforward syntax, making themes easily customized to suit your design preferences. </p>
+<p>An example is changing the default social media share to a darker themed share for the article template.
+here I took advantage of the jinja templating engine by creating the new feature as a partial template and only load when the variable assigned for using my dark themed share is called</p>
+<p><strong>Creating the HTML template</strong>  </p>
+<p>First, create the template in partial/ directory inside my template directory.  The share theme template contains the HTML code for creating the dark share theme</p>
+<div class="highlight"><pre><span></span>vi themes/Flex/template/partial/darkshare.html
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sharepage&quot;</span><span class="p">&gt;</span>
+  {% set art_url = SITEURL + &#39;/&#39; + article.url %}
+  <span class="c">&lt;!-- share test --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: silver;&quot;</span><span class="p">&gt;</span>
+    Share on: 
+  <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;share-buttons&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;facebook&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Share this on Facebook&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.facebook.com/share.php?u={{ art_url|url_encode }}&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 1792 1792&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    ...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>The div tag contains an SVG images logo for each social media platform which acts as the link to share the articles to the platform. The Link for each article is inserted dynamically using the jinja templating language. Click <a href="https://jinja.palletsprojects.com/en/2.11.x/">here</a> for more info on Jinja Template. </p>
+<h2></h2>
+<ul>
+<li>
+<p><code>{% set art_url = SITEURL + '/' + article.url %}</code> this is used to set the absolute article URL by appending the site URL and article URL. this is done to call the absolute path when needed than always adding when needed</p>
+</li>
+<li>
+<p><code>{{ art_url|urlencode }}</code> used to pass the jinja filter urlencode on the url defined earlier. filters act as functions to carry out actions on the value passed to them. this was passed as the Facebook share link uses the encoded url of the article it is sharing.</p>
+</li>
+</ul>
+<p><strong>Linking the template.</strong>  </p>
+<p>Templates can be loaded in other templates using jinja include method this allows templates to be better structured and reusable.<br>
+The darkshare template will be attached at the bottom of every article, so we find the <code>article</code> template and include the darkshare template at the bottom. Also note, we would also allow the user to turn off this feature by attaching a variable in the pelicanconf. </p>
+<div class="highlight"><pre><span></span>vi themes/Flex/template/article.html
+
+<span class="o">{</span>% <span class="k">if</span> SOCIAL_SHARE %<span class="o">}</span>  
+  <span class="o">{</span>% include <span class="s2">&quot;partial/sharepage.html&quot;</span> %<span class="o">}</span>
+<span class="o">{</span>% endif %<span class="o">}</span>
+</pre></div>
+
+
+<p><code>SOCIAL_SHARE</code> is the variable used for managing the darkshare template. if the variable is set to false or not declared, the template is not imported into the article page.  </p>
+<p>Set the Social Share Variable</p>
+<div class="highlight"><pre><span></span>vi pelicanconf.py
+<span class="nv">SOCIAL_SHARE</span><span class="o">=</span> True
+</pre></div>
+
+
+<p><strong>Styling your Template with CSS</strong>  </p>
+<p>custom css can be added to templates by defining the css file path in the STATIC_PATHS variable</p>
+<p><code>STATIC_PATHS = ['images', 'static']</code></p>
+<p>The Flex theme has its variable for locating the custom CSS  </p>
+<p><code>CUSTOM_CSS = 'static/custom.css'</code></p>
+<p>Create your CSS file</p>
+<div class="highlight"><pre><span></span><span class="nt">vi</span> <span class="nt">content</span><span class="o">/</span><span class="nt">static</span><span class="o">/</span><span class="nt">custom</span><span class="p">.</span><span class="nc">css</span>
+
+<span class="p">#</span><span class="nn">share-buttons</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span> 
+    <span class="k">height</span><span class="p">:</span> <span class="mi">36</span><span class="kt">px</span><span class="p">;</span> 
+    <span class="k">width</span><span class="p">:</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span> 
+    <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span> 
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">share-buttons</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="o">&gt;</span> <span class="nt">svg</span> <span class="p">{</span><span class="k">height</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span> <span class="n">fill</span><span class="p">:</span> <span class="mh">#d5d5d5</span><span class="p">;</span> <span class="k">margin-top</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;}</span>  
+<span class="p">#</span><span class="nn">share-buttons</span> <span class="o">&gt;</span> <span class="nt">div</span><span class="p">.</span><span class="nc">facebook</span><span class="p">:</span><span class="nd">hover</span> <span class="o">&gt;</span> <span class="nt">svg</span> <span class="p">{</span><span class="n">fill</span><span class="p">:</span> <span class="mh">#3B5998</span><span class="p">;}</span>  
+<span class="o">...</span>  
+<span class="p">.</span><span class="nc">sharepage</span> <span class="p">{</span> <span class="k">background-color</span><span class="p">:</span> <span class="mh">#242121</span><span class="p">;}</span>
+</pre></div>
+
+
+<p>Other Flex Modification on my website.</p>
+<h2></h2>
+<ul>
+<li>Article Pagination: To Display Links and Title to the previous and next article at the bottom of the page. uses the <code>LINK_PAGINATION</code> variable</li>
+<li>Side Category Menu: Displays All Categories on the sidebar. enable using the  <code>SIDE_CATEGORY</code> variable</li>
+<li>Recent Articles: Displays Most Recent Articles on Side Bar, Set RECENT_ARTICLE_COUNT Variable to Specify Number of Articles to display as recent, Defaults to 5 if not Set. <code>RECENT_PAGES</code></li>
+<li>Tag Cloud: Displays Most used tags using the Font size. Set using <code>SIDE_TAG_CLOUD</code> Variable</li>
+<li>Hamburger Menu for Mobile View</li>
+<li>Back to Top Button</li>
+</ul>
+<h3>Plugins</h3>
+<p>Also another way to add external features to pelican. This website uses the <a href="https://github.com/AlexJF/pelican-advthumbnailer" target="_blank">advthumbnailer plugin</a> for resizing images</p>
+<p><strong>Installing the advthumbnailer plugin</strong></p>
+<div class="highlight"><pre><span></span>pip install pelican-advthumbnailer
+</pre></div>
+
+
+<p>Add the plugin to the pelican config variable
+PLUGIN = [advthumbnailer, otherplugins]</p>
+<p><strong>Plugin Use</strong>   </p>
+<p><code>&lt;img src="images/thumbnails/&lt;spec&gt;/example.png" /&gt;</code> #the <code>thumbnails/&lt;spec&gt;</code> is used by the plugin
+Where spec is the scaling size e.g <code>200x300</code>, or <code>200x</code> to get a square resize </p>
+<p>e.g to display resize an image in images/test.png to 100x100.<br>
+<code>&lt;img src="images/test.png" /&gt;</code><br>
+to<br>
+<code>&lt;img src="images/thumbnails/100x/test.png" /&gt;</code>  </p>
+<p>After Customizing your site to your desired taste, Regenerate your Website, Review and Merge with the master branch.</p>
+<div class="highlight"><pre><span></span>make html
+pelican --listen
+</pre></div>
+
+
+<h3>Livereload Library</h3>
+<p>One of the tools I use to enhance my productivity is the livereload Library and Browser Plugin. The Livereload Plugin refreshes your browser page when a file change is detected, while the Server watches specified files for change. <br>
+This is used in addition to the pelican command wrapper which watch for changes and recompiles your pages, However, the pelican commands by default do not watch changes made to the Theme folder, only applying theme changes when the content or pelican configuration is edited.<br>
+Another advantage of using the Livereload Plugin is the removal of the repetitive process of refreshing your page every time the HTML pages are regenerated. </p>
+<p>Using livereload Library is fairly easy.</p>
+<p>Install the Livereload Lib</p>
+<div class="highlight"><pre><span></span>pip install python-livereload
+</pre></div>
+
+
+<p>Create your livereload script</p>
+<div class="highlight"><pre><span></span>vi reloader.py
+
+from livereload import Server, shell
+from pelican import Pelican
+from pelican.settings import read_settings
+
+<span class="nv">p</span> <span class="o">=</span> Pelican<span class="o">(</span>read_settings<span class="o">(</span><span class="s1">&#39;pelicanconf.py&#39;</span><span class="o">))</span> <span class="c1">#reads the pelicanconf file using the read_setting function in pelican settings file</span>
+
+def compile<span class="o">()</span>:
+    try:
+        p.run<span class="o">()</span> <span class="c1">#regenerates the HTML Pages</span>
+    except SystemExit as e:
+        Pass  <span class="c1">#ignores system errors during page regeneration</span>
+
+<span class="nv">server</span> <span class="o">=</span> Server<span class="o">()</span>
+server.watch<span class="o">(</span><span class="s1">&#39;content/&#39;</span>, compile<span class="o">)</span> <span class="c1">#add directories or files to watch for changes</span>
+server.watch<span class="o">(</span><span class="s1">&#39;themes/&#39;</span>, compile<span class="o">)</span>
+server.watch<span class="o">(</span><span class="s1">&#39;./pelicanconf.py&#39;</span>, compile<span class="o">)</span>
+server.serve<span class="o">(</span><span class="nv">root</span><span class="o">=</span><span class="s1">&#39;output&#39;</span>, <span class="nv">port</span><span class="o">=</span><span class="m">8000</span><span class="o">)</span> <span class="c1">#folder to be served and port</span>
+</pre></div>
+
+
+<p>Go to your preferred browser and install the Livereload Plugin.</p>
+<h2></h2>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en">Chrome</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/livereload-web-extension/">Firefox</a></li>
+</ul>
+<p>After installing the Add-on. Run your Livereload script</p>
+<div class="highlight"><pre><span></span>python reloader.py
+</pre></div>
+
+
+<p>You can now access your Site at <code>localhost:8000</code> and view your changes as you make them.</p>
+<p>The Next Article on <strong>Hosting Your Static Site on AWS S3</strong> can be found <a href="#">Here</a></p>
+    <br>
+  
+  <div class="sharepage">
+  <!-- share test -->
+  <span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http%3A//localhost%3A8000/articles/2020-01-28/customizing-your-site/');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-01-28%2Fcustomizing-your-site%2F');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-01-28%2Fcustomizing-your-site%2F&title=&summary=&source=');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></div>
+    </div>
+  </div>    <br>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/python.html">python</a>
+      <a href="http://localhost:8000/tag/pelican.html">pelican</a>
+    </p>
+  </div>
+
+
+
+
+  
+  <!-- Pager Goes Here -->
+  <ul class="pager">
+      <li class="next">
+        <a href="http://localhost:8000/articles/2020-01-20/personal-website-setup/">Creating a Personal Static Website with Pelican  <i class="fas fa-angle-double-right"></i></a>
+      </li>
+  </ul>
+  <br>
+  <br>
+  <br>
+
+
+  <a class="home-icon" href="http://localhost:8000"><i class="fas fa-home fa-2x"></i></a>
+
+  
+
+
+
+  
+</article>
+
+
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>    Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+  <a href="#top" class="btn-scroll-to-top tophide" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Seyi Obaweya ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/site_logo.jpeg",
+  "description": "Seyi's Thoughts and Attempts at Writings"
+}
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const scrollToTopButton = document.getElementById('js-top');
+const mainbody = document.getElementById('main')
+  const scrollFunc = () => {
+  // Get the current scroll value
+  let y = mainbody.scrollTop;
+  if (y > 200) {
+    scrollToTopButton.className = "btn-scroll-to-top topshow";
+  } else {
+    scrollToTopButton.className = "btn-scroll-to-top tophide";
+  }
+};
+mainbody.addEventListener('scroll', scrollFunc);
+const scrollToTop = () => {
+  // Let's set a variable for the number of pixels we are from the top of the document.
+  const c = mainbody.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    mainbody.scrollTo(0, c - c / 10);
+  }
+};
+
+// When the button is clicked, run our ScrolltoTop function above!
+scrollToTopButton.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
+}
+
+// Nav bar media query
+navcol = document.getElementById('navid');
+toggler = document.getElementById('toggler');
+socials = document.getElementById('social')
+var mediaq = window.matchMedia("(max-width: 600px)")
+function removeBlock(mediaq) {
+  if (mediaq.matches) { // If media query matches
+    // toggler.removeAttribute('style');
+    toggler.style.display = "block";
+    navcol.style.display = "none";
+    socials.setAttribute('style', 'display: none;');
+    scrollToTopButton.removeAttribute('style');
+    hamburger()
+  } else {
+    toggler.setAttribute('style', 'display: none;')
+    navcol.removeAttribute('style');
+    scrollToTopButton.setAttribute('style', 'display: block;')
+    socials.removeAttribute('style');
+  }
+}
+
+removeBlock(mediaq)
+mediaq.addListener(removeBlock)
+
+//Hamburger Toggle
+function hamburger(){
+  toggler.onclick = function() {
+    if (navcol.hasAttribute('style')){
+      navcol.removeAttribute('style');
+      toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
+    } else {
+      navcol.setAttribute('style', 'display: none;');
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+    }
+  }
+
+  //Closing Hamburger
+  document.addEventListener('click', function(event){
+    if (event.target.parentNode.parentNode != navcol && !navcol.hasAttribute('style') && event.target != toggler){
+      navcol.style.display = "none";
+      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+    }
+  })
+}
+});
+</script></body>
+</html>

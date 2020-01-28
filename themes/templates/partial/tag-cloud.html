@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">
+      <i class="fas fa-folder"></i> Tags
+    </div>
+    <div class="card-body">
+      <div class="tag-block">
+        {% for tag, articles in tags|sort %}
+          <a href="{{ SITEURL }}/{{ tag.url }}" style="font-size: {{ articles|count|count_to_font_size }};">{{ tag }}</a>
+        {% endfor %}
+      </div>
+  </div>
+  </div>

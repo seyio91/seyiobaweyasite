@@ -1,14 +1,13 @@
-Title: Creating my Personal Static Website with Pelican
+Title: Creating a Personal Static Website with Pelican
 Date: 2020-01-20 10:20
 Category: Web_Development
 Tags: python, pelican
-Slug: my-personal-website-setup
+Slug: personal-website-setup
 Author: Seyi Obaweya
 Summary: The process of creating a personal blog can be a daunting task, as there are a lot of over engineered-options for running a simple blog. This article walks you through the process of getting your blog up and running through the use of a Static site generator which is known for its simplicity and performance. 
   
-![pelican]({filename}/images/pelican.png)
+<img src="/images/pelican.png" alt="Pelican logo">
 
-<>
 I am excited to share the process of creating my personal website which was made to document my projects, share my learning journey and probably act as a portfolio. There are so many choices for creating a website, with easy options like WordPress, blogger and other hosted solutions, however being someone who likes tinkering, I prefer to host a website myself to be able to customize and break it. This led to discovering Static Site Generators in my quest for simple and cost-effective solutions.
 
 
@@ -45,7 +44,12 @@ installing the virtual-env package for centos
     :::python
     sudo yum install python3-env 
   
-    
+installing git for version control
+
+:::python  
+sudo apt-get install git  
+  
+  
 Create a folder to hold your Virtual Environment. This will Act as your Project Root Folder
 
     :::python
@@ -83,6 +87,12 @@ Alternatively, can create a new project manually using the following setps
 
         :::python
         git init
+
+i would be using 2 branches in my repository, as the master branch would always contain the published website while our development will be done on the development branch
+
+    :::python
+    git checkout -b development
+
   
     
 ### Setting Up Pelican  
@@ -274,15 +284,21 @@ Your content can now be viewed on `localhost:8000`
   
 ## 
 
-![pelican default theme]({filename}/images/pelican_default_theme.JPG)
+<img src="/images/pelican_default_theme.JPG" alt="pelican default theme">
 <p style="text-align: center;"><b>pelican default theme</b></p>
 
-The Next Article on **Customizing your Site** can be found [Here](#)
+  
 
 
+The working version can now be commited and merged with the master branch
+
+    :::python
+    git add .
+    git commit -m "default pelican site"
+
+    git checkout master
+    git merge development
 
 
-
-
-
+The Next Article on **Customizing your Site** can be found [Here]({filename}/articles/03-customizing-your-site.md)
 
