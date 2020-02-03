@@ -229,78 +229,89 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-const scrollToTopButton = document.getElementById('js-top');
-const mainbody = document.getElementById('main')
-  const scrollFunc = () => {
-  // Get the current scroll value
-  let y = mainbody.scrollTop;
-  if (y > 200) {
-    scrollToTopButton.className = "btn-scroll-to-top topshow";
-  } else {
-    scrollToTopButton.className = "btn-scroll-to-top tophide";
-  }
-};
-mainbody.addEventListener('scroll', scrollFunc);
-const scrollToTop = () => {
-  // Let's set a variable for the number of pixels we are from the top of the document.
-  const c = mainbody.scrollTop;
-  if (c > 0) {
-    window.requestAnimationFrame(scrollToTop);
-    mainbody.scrollTo(0, c - c / 10);
-  }
-};
-
-// When the button is clicked, run our ScrolltoTop function above!
-scrollToTopButton.onclick = function(e) {
-  e.preventDefault();
-  scrollToTop();
-}
-
-// Nav bar media query
-navcol = document.getElementById('navid');
-toggler = document.getElementById('toggler');
-socials = document.getElementById('social')
-var mediaq = window.matchMedia("(max-width: 600px)")
-function removeBlock(mediaq) {
-  if (mediaq.matches) { // If media query matches
-    // toggler.removeAttribute('style');
-    toggler.style.display = "block";
-    navcol.style.display = "none";
-    socials.setAttribute('style', 'display: none;');
-    scrollToTopButton.removeAttribute('style');
-    hamburger()
-  } else {
-    toggler.setAttribute('style', 'display: none;')
-    navcol.removeAttribute('style');
-    scrollToTopButton.setAttribute('style', 'display: block;')
-    socials.removeAttribute('style');
-  }
-}
-
-removeBlock(mediaq)
-mediaq.addListener(removeBlock)
-
-//Hamburger Toggle
-function hamburger(){
-  toggler.onclick = function() {
-    if (navcol.hasAttribute('style')){
-      navcol.removeAttribute('style');
-      toggler.innerHTML = '<i class="fas fa-times"></i> MENU';
+  document.addEventListener("DOMContentLoaded", function() {
+  const scrollToTopButton = document.getElementById('js-top');
+  const mainbody = document.getElementById('main')
+    const scrollFunc = () => {
+    // Get the current scroll value
+    let y = mainbody.scrollTop;
+    if (y > 200) {
+      scrollToTopButton.className = "btn-scroll-to-top topshow";
     } else {
-      navcol.setAttribute('style', 'display: none;');
-      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+      scrollToTopButton.className = "btn-scroll-to-top tophide";
+    }
+  };
+  mainbody.addEventListener('scroll', scrollFunc);
+  const scrollToTop = () => {
+    // Let's set a variable for the number of pixels we are from the top of the document.
+    const c = mainbody.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      mainbody.scrollTo(0, c - c / 10);
+    }
+  };
+  
+  // When the button is clicked, run our ScrolltoTop function above!
+  scrollToTopButton.onclick = function(e) {
+    e.preventDefault();
+    scrollToTop();
+  }
+  
+  // Nav bar media query
+  navcol = document.getElementById('navid');
+  toggler = document.getElementById('toggler');
+  socials = document.getElementById('social')
+  var mediaq = window.matchMedia("(max-width: 600px)")
+  function removeBlock(mediaq) {
+    if (mediaq.matches) { // If media query matches
+      // toggler.removeAttribute('style');
+      toggler.style.display = "block";
+      navcol.style.display = "none";
+      socials.setAttribute('style', 'display: none;');
+      scrollToTopButton.removeAttribute('style');
+      hamburger()
+    } else {
+      toggler.setAttribute('style', 'display: none;')
+      navcol.removeAttribute('style');
+      scrollToTopButton.setAttribute('style', 'display: block;')
+      socials.removeAttribute('style');
     }
   }
-
-  //Closing Hamburger
-  document.addEventListener('click', function(event){
-    if (event.target.parentNode.parentNode != navcol && !navcol.hasAttribute('style') && event.target != toggler){
-      navcol.style.display = "none";
-      toggler.innerHTML = '<i class="fas fa-bars"></i> MENU';
+  
+  removeBlock(mediaq)
+  mediaq.addListener(removeBlock)
+  
+  
+  
+  //Hamburger Toggle
+  function hamburger(){
+    toggler.onclick = function(event) {
+      event.stopPropagation()
+      showMenu = !showMenu;
+      if (showMenu === true){
+        navcol.removeAttribute('style');
+      } else {
+        navcol.style.display = "none"
+      }
+      toggler.innerHTML = buttonStates[toggler.innerHTML]
     }
-  })
-}
-});
-</script></body>
+    showMenu = false;
+  
+    buttonStates = {
+      '<i class="fas fa-bars"></i> MENU' : '<i class="fas fa-times"></i> MENU',
+      '<i class="fas fa-times"></i> MENU' : '<i class="fas fa-bars"></i> MENU'
+    }
+  
+    //Closing Hamburger Outside Menu
+    document.addEventListener('click', function(event){
+      if (!event.target.contains(navcol) && showMenu && event.target != toggler){
+        navcol.style.display = "none";
+        toggler.innerHTML = buttonStates[toggler.innerHTML]
+        showMenu = false
+      }
+    })
+    
+  }
+  });
+  </script></body>
 </html>
