@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+    <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#C0C0C0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#C0C0C0">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#C0C0C0">
+
+<meta name="author" content="Seyi Obaweya" />
+<meta name="description" content="We&#39;ll be writing a python script that sends messages to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, sending messages using the Twilio API, and the script is deployed on AWS lambda." />
+<meta name="keywords" content="python, cron, webscraping, api">
+
+
+<meta property="og:site_name" content="Seyi Obaweya"/>
+<meta property="og:title" content="Creating a Python Love Poem"/>
+<meta property="og:description" content="We&#39;ll be writing a python script that sends messages to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, sending messages using the Twilio API, and the script is deployed on AWS lambda."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/articles/2020-02-25/python-love-poem/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-02-25 10:20:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/seyi-obaweya.html">
+<meta property="article:section" content="Web_Development"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="cron"/>
+<meta property="article:tag" content="webscraping"/>
+<meta property="article:tag" content="api"/>
+<meta property="og:image" content="http://localhost:8000/images/site_logo.jpeg">
+
+  <title>Seyi Obaweya &ndash; Creating a Python Love Poem</title>
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>  
+  <aside>
+    <div>
+      <h1><a href="http://localhost:8000">Musings of an Engineer</a></h1>
+
+<p>Tech Lover</p>
+
+      <!-- <span class="toggler" id="toggler" style="display: none;"><i class="fas fa-bars"></i> MENU</span> -->
+      <span class="toggler" id="toggler"><i class="fas fa-bars"></i> MENU</span>
+      <nav id="navid">
+        <ul class="list">
+
+            <li class="navlist"><a href="http://localhost:8000">Home</a></li>
+            <li class="navlist"><a target="_blank" href="http://localhost:8000/pages/about-me.html">About seyi</a></li>
+
+
+        </ul>
+      </nav>
+    <!-- </div> -->
+
+      <ul class="social" id="social">
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/obaweya-seyi-375270ba" target="_blank">
+            <i class="fab fa-linkedin">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-github" href="https://github.com/seyio91" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+  
+<div class="card">
+    <div class="card-header">
+      <i class="fas fa-folder"></i> Categories
+    </div>
+    <div class="card-body">
+    <ul class="recent">
+      <li><a href="http://localhost:8000/category/bash_automation.html"><i class="fas fa-folder-open"></i>  Bash_Automation</a> (1)</li>
+      <li><a href="http://localhost:8000/category/web_development.html"><i class="fas fa-folder-open"></i>  Web_Development</a> (3)</li>
+    </ul>
+  </div>
+  </div>
+  
+<div class="card">
+    <div class="card-header">
+      <i class="fas fa-folder"></i> Tags
+    </div>
+    <div class="card-body">
+      <div class="tag-block">
+          <a href="http://localhost:8000/tag/api.html" style="font-size: 100.0%;">api</a>
+          <a href="http://localhost:8000/tag/bash.html" style="font-size: 100.0%;">bash</a>
+          <a href="http://localhost:8000/tag/cron.html" style="font-size: 100.0%;">cron</a>
+          <a href="http://localhost:8000/tag/git.html" style="font-size: 100.0%;">git</a>
+          <a href="http://localhost:8000/tag/pelican.html" style="font-size: 125.0%;">pelican</a>
+          <a href="http://localhost:8000/tag/python.html" style="font-size: 139.6%;">python</a>
+          <a href="http://localhost:8000/tag/webscraping.html" style="font-size: 100.0%;">webscraping</a>
+      </div>
+  </div>
+  </div>
+<div class="card">
+    <div class="card-header">
+      Most Recent Posts
+    </div>
+    <div class="card-body">
+    <ul class="recent">
+        <li><a href="http://localhost:8000/articles/2020-02-25/python-love-poem/"><i class="fas fa-link"></i> Creating a Python Love Poem</a></li>
+        <li><a href="http://localhost:8000/articles/2020-01-28/customizing-your-site/"><i class="fas fa-link"></i> Customizing your Pelican Static Site</a></li>
+        <li><a href="http://localhost:8000/articles/2020-01-20/personal-website-setup/"><i class="fas fa-link"></i> Creating a Personal Static Website with Pelican</a></li>
+        <li><a href="http://localhost:8000/articles/2020-01-17/new-project-script/"><i class="fas fa-link"></i> Automating Project Setup with Bash</a></li>
+    </ul>
+  </div>
+  </div>
+
+  </aside>
+  <main id="main">
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <b><h1 id="python-love-poem">Creating a Python Love Poem</h1></b>
+    <p>
+          Posted on Tue 25 February 2020 in <a href="http://localhost:8000/category/web_development.html">Web_Development</a>
+
+
+    </p>
+    
+  </header>
+
+
+  <div>
+    <p><img src="/images/thumbnails/1000x400/valentine.jfif" alt="some alternate text"></p>
+<h1></h1>
+<p>It's another Valentine's Day!!!. Lying down, thinking about doing something special for my loved one, being about 10000km away from her. After so much deliberation, sending a  WhatsApp reminder every hour, telling her how much I love her in different languages sounded like a fun and thoughtful idea.</p>
+<h1></h1>
+<p>In this tutorial, we will be writing a script to sends a Whatsapp message every hour to a number and deploying our script on AWS lambda. This will be written in python as that is my preferred language, if you have an interest in getting a nodejs version, you can put that in the comments.</p>
+<h3>Gettings Started!!</h3>
+<p>The article is broken into 3 sections: </p>
+<h1></h1>
+<ul>
+<li>
+<p><strong>Automating Whatsapp Message sending using Python:</strong> 
+One option is to use Python's Selenium package to open the WhatsApp web interface on a browser and control using the selenium web driver. This introduces new challenges, as WhatsApp requires QR code scanning to use the web interface,  making automation impossible. The other option is using the Twilio WhatsApp API, which allows developers to build prototypes in a sandbox environment. The Sandbox uses by default, a shared number to send messages to recipients. Using a personal number requires an application to Whatsapp, which might take time to be approved. 
+The script will be created using the Twilio API because it is best suited for our small scale project as it is easy to set up and can be automated</p>
+</li>
+<li>
+<p><strong>Creating Messages to send.</strong> 
+The aim is to send Love messages and also write <code>i love you</code> in different languages. A sequence of steps will be taken to accomplish this.<br>
+1) Scraping Messages off the internet- Composing a lot of messages for the project would take a lot of time, so why not make use of the available resources all over the internet?. This is done by scraping a website using the python beautiful soup library<br>
+2) Translating Messages to Random Languages - The Google Translate API will be used to get a random Language and translating our texts.</p>
+</li>
+<li>
+<p><strong>Deploying our app.</strong>
+We will be deploying our script to AWS lambda, which is a cloud computing service that runs small pieces of code functions without the need for a server. This will help reduce costs as it removes the need for provisioning and maintaining a server</p>
+</li>
+<li>
+<p><strong>Running the script periodically.</strong>
+This will be done using the Cron Utility on our development server, while AWS Lambda Triggers will be used after deployment.</p>
+</li>
+</ul>
+<p align="center">
+<img src="/images/twiliologo.png" alt="some alternate text">  
+</p>
+
+<h1></h1>
+<h3>Sending Messages using the Twilio API</h3>
+<p>The Twilio Whatsapp API is easy and quick to set up, using a shared phone number without waiting for a dedicated number to be approved by Whatsapp.
+To get started with the Twilio API, visit the <a href="Twilio Website">twilio website</a>, Create a Free Twilio account and confirm your email and phone number  </p>
+<h1></h1>
+<p>The only con to using this method is that the sandbox is pre-provision with a Whatsapp Number that is shared across all sandbox users. <br>
+Also Note, Recipients have to go through a one-time permission process to receive messages. This works just fine for our small scale project. To activate the Twilio Sandbox. Navigate to Whatsapp Beta on the left side menu  </p>
+<h1></h1>
+<p><img src="/images/step5.PNG" alt="some alternate text">
+<p style="text-align: center;"><b>Twilio Whatsapp Sandbox</b></p></p>
+<h1></h1>
+<p>A Phone Number and a Joining Message are provided, Save the number on your device and send the provided message from your device. This is a one time process for every Recipient using your script. </p>
+<p align="center">  
+<img src="/images/whatsappconfirmation.jpeg" alt="some alternate text">
+<p style="text-align: center;"><b>Success Reply</b></p>
+</p>
+
+<p>if successful, a reply is returned, The web interface also shows message received.<br>
+screen shows received</p>
+<p><strong>Creating the project</strong>  </p>
+<p>To view how the API works, visit the <a href="https://www.twilio.com/docs/sms/whatsapp/api">API documentation to find the basic usage</a></p>
+<p>After logging into the Twilio Console, take note of your Account SID and Auth Token. The Account SID is a unique identifier for your account, while the Auth Token is a secret key that should never be shared or else anyone will have full access to your Twilio account.</p>
+<p><img src="/images/step7.PNG" alt="some alternate text">
+<p style="text-align: center;"><b>Twilio DashBoard</b></p></p>
+<p>Copy both keys, as they will later be used for authenticating with the API in your script</p>
+<p><strong>Create and activate a virtual environment for project isolation</strong></p>
+<div class="highlight"><pre><span></span>$ python3 -m venv virtualenv
+$ <span class="nb">cd</span> virtualenv <span class="o">&amp;&amp;</span> . bin/activate
+</pre></div>
+
+
+<p><strong>Create a project folder and GitHub repository.</strong>   </p>
+<div class="highlight"><pre><span></span>$ mkdir twiliowhatsapp <span class="o">&amp;&amp;</span> <span class="nb">cd</span> twiliowhatsapp
+$ git init
+</pre></div>
+
+
+<p>OR</p>
+<h2></h2>
+<p><strong>Automating the setup process using the <a href="somelink">newproject script</a></strong></p>
+<div class="highlight"><pre><span></span>$ newproject twiliowhatsapp
+</pre></div>
+
+
+<p><strong>Install the Twilio python library</strong></p>
+<div class="highlight"><pre><span></span>$ pip install Twilio
+</pre></div>
+
+
+<p><strong>Creating your project script</strong></p>
+<div class="highlight"><pre><span></span>$ touch whatsappcode.py
+</pre></div>
+
+
+<p><strong>Copy and paste the code from the whatsapp API documentation</strong><br>
+(Also replace the <strong>sid</strong> and <strong>auth_token</strong>, and <strong>recipient phone number</strong> with yours)</p>
+<div class="highlight"><pre><span></span>from twilio.rest import Client
+<span class="nv">account_sid</span> <span class="o">=</span> <span class="s1">&#39;AC4bdca1b7084d0c29e62c381f60b8a041&#39;</span>
+<span class="nv">auth_token</span> <span class="o">=</span> <span class="s1">&#39;your_auth_token&#39;</span>
+<span class="nv">client</span> <span class="o">=</span> Client<span class="o">(</span>account_sid, auth_token<span class="o">)</span>
+
+<span class="nv">message</span> <span class="o">=</span> client.messages.create<span class="o">(</span>
+                            <span class="nv">from_</span><span class="o">=</span><span class="s1">&#39;whatsapp:+14155238886&#39;</span>,
+                            <span class="nv">body</span><span class="o">=</span><span class="s1">&#39;Hello, there!&#39;</span>,
+                            <span class="nv">to</span><span class="o">=</span><span class="s1">&#39;whatsapp:&lt;recipient-number&gt;&#39;</span>
+                        <span class="o">)</span>
+
+print<span class="o">(</span>message.sid<span class="o">)</span>
+</pre></div>
+
+
+<p>You can test your script to get a message sent to the recipient number</p>
+<div class="highlight"><pre><span></span>$ python whatsappcode.py
+</pre></div>
+
+
+<p>Voila!!!, a message is received on the recipient phone</p>
+<h3>Securing our API keys on the development environment</h3>
+<p>Hard coding the API keys to our script is bad practice because it exposes sensitive information to the public when committing your code to a public repository. A way to avoid this is to externalize the keys and read from the os environment at runtime.<br>
+The Python dotenv package can be used to externalize our keys by searching for a .env file that will contain our keys, and exports the variables into our script. The .env file should also be added to a .gitignore file so it is ignored when uploading your code to the public repository.  </p>
+<p><strong>Install the <code>python-dotenv</code> package</strong></p>
+<div class="highlight"><pre><span></span>$ pip install python-dotenv
+</pre></div>
+
+
+<p>In the project folder, <strong>create a .env file and add your sid and token</strong></p>
+<div class="highlight"><pre><span></span>$ vi .env
+<span class="nv">TWILIOSID</span><span class="o">=</span>&lt;your-sid&gt;
+<span class="nv">TWILIO_AUTH_TOKEN</span><span class="o">=</span>&lt;your-token&gt;
+</pre></div>
+
+
+<p><strong>Add .env filename to the gitignore file</strong> so that it ignored by git when you make your commit</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">echo</span> .env &gt;&gt; .gitignore
+</pre></div>
+
+
+<p>The next process is importing the variables into our code so we can remove the insecure keys. Add the following code to your script</p>
+<div class="highlight"><pre><span></span>import os
+from dotenv import load_dotenv
+
+load_dotenv<span class="o">(</span><span class="nv">override</span><span class="o">=</span>True<span class="o">)</span>
+<span class="c1"># load_dotenv(override=True). Overwrites already set system environments.</span>
+
+from twilio.rest import Client
+<span class="nv">account_sid</span> <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">&#39;TWILIOSID&#39;</span><span class="o">)</span>
+<span class="nv">auth_token</span> <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">&#39;TWILIO_AUTH_TOKEN&#39;</span><span class="o">)</span>
+<span class="nv">client</span> <span class="o">=</span> Client<span class="o">(</span>account_sid, auth_token<span class="o">)</span>
+
+...
+</pre></div>
+
+
+<p>At this point, the key/value pairs in the .env file are now present as system environment variables and they can be conveniently accessed via os.environ.get() method.</p>
+<p><strong>Run the script</strong> again and you should get the message on WhatsApp if there are no errors.</p>
+<p>Next verify your .env file is in the gitignore file, then commit your code to your repository</p>
+<div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Message Client Working&quot;</span>
+</pre></div>
+
+
+<h3>STEP 2 Composing your messages</h3>
+<p>The next item on our list is getting the messages we want to send. This is divided into 3 parts</p>
+<h1></h1>
+<ul>
+<li>Scraping the Page</li>
+<li>Getting a Random Language</li>
+<li>Translating your Text to the random Language</li>
+</ul>
+<h4>1 Scraping the webpage</h4>
+<p>Even though most people think I am a romantic, composing multiple messages to send all through the day will be a tedious process. This led to the option of scraping messages off the tons of romantic messages online. For the script, we would be scraping off <a href="https://www.serenataflowers.com/pollennation/love-messages/">serenea flowers</a> for their simple and thoughtful messages.</p>
+<p>We will be using the BeautifulSoup python package to scrape the messages.  </p>
+<h1></h1>
+<p><strong>Install the beautifulsoup and requests library</strong> for making HTTP requests and scraping the page</p>
+<div class="highlight"><pre><span></span>$ pip install bs4 requests
+</pre></div>
+
+
+<p>In your project folder,<strong> create a new script for scraping the site and import the request and beautifulsoup library</strong> into your file</p>
+<div class="highlight"><pre><span></span>$ touch scraper.py <span class="o">&amp;&amp;</span> vi scraper.py
+
+from bs4 import BeautifulSoup as bs
+import requests
+</pre></div>
+
+
+<p>Next, make an HTTP request to the page we want to scrape and check for errors</p>
+<div class="highlight"><pre><span></span>...
+<span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.serenataflowers.com/pollennation/love-messages/&#39;</span>
+<span class="nv">res</span> <span class="o">=</span> requests.get<span class="o">(</span>url<span class="o">)</span>
+try:
+    res.raise_for_status<span class="o">()</span>
+except requests.exceptions.HTTPError:
+    sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+</pre></div>
+
+
+<p>If our request is successful, the HTML document is then passed to beautifulsoup to create a beautiful soup object which we can run the select and find methods on</p>
+<div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>We then select all the messages in the soup object. To do this, we need to first get the HTML element path of the messages. This can be done using the <code>inspect element</code> option in your web browser.  </p>
+<h1></h1>
+<p><img src="/images/step19.PNG" alt="some alternate text"><br>
+<p style="text-align: center;"><b>Chrome Developer Tools</b></p></p>
+<h1></h1>
+<p>On viewing the developer console, the messages are nested inside a <code>&lt;li&gt;</code> tag within an <code>&lt;ol&gt;</code> tag with the class of <code>simple-list</code>. The HTML code for the message is represented in the following structure</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">&quot;simple-list&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Message we are trying to access 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Message we are trying to access 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Message we are trying to access 3<span class="nt">&lt;/li&gt;</span>
+    ...
+<span class="nt">&lt;/ol&gt;</span>
+</pre></div>
+
+
+<p>To select all <code>&lt;li&gt;</code> tags within the <strong>simple-list</strong> class, we used the beautifulsoup <code>select()</code> method and save the list to a variable <code>listOfMessages</code>.</p>
+<div class="highlight"><pre><span></span><span class="nv">listOfMessages</span> <span class="o">=</span> soup.select<span class="o">(</span><span class="s1">&#39;.simple-list li&#39;</span><span class="o">)</span> <span class="c1"># the space is used to specify element exists inside the class</span>
+</pre></div>
+
+
+<p>This returns a list of all <code>&lt;li&gt;</code> tags as beautifulsoup objects within the element.</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">listOfMessages</span><span class="p">)</span>
+
+<span class="p">[</span><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Message</span> <span class="n">we</span> <span class="n">are</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">access</span> <span class="mi">1</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Message</span> <span class="n">we</span> <span class="n">are</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">access</span> <span class="mi">2</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Message</span> <span class="n">we</span> <span class="n">are</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">access</span> <span class="mi">3</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>To get the text in each element, the <code>text()</code> method is used to extract texts from the object</p>
+<div class="highlight"><pre><span></span><span class="n">textMessages</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listOfMessages</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Now there is a list of messages to choose from. We only need a message from the list each time the script is run. this is where the python <code>random</code> module comes to our rescue. </p>
+<p><strong>Import the random library</strong> at the beginning of the script, then use <code>random.choice()</code> method to get a random message from the list at each run.</p>
+<div class="highlight"><pre><span></span>import random
+
+<span class="nv">textMessages</span> <span class="o">=</span> <span class="o">[</span>item.text <span class="k">for</span> item in listOfMessages<span class="o">]</span>
+<span class="nv">randomQuote</span> <span class="o">=</span> random.choice<span class="o">(</span>textMessages<span class="o">)</span>
+
+print<span class="o">(</span>randomQuote<span class="o">)</span>
+</pre></div>
+
+
+<p>Our code can be converted into a function that can be imported into our main <code>whatsappcode.py</code> script. The final code should look like this</p>
+<div class="highlight"><pre><span></span>from bs4 import BeautifulSoup as bs
+import requests, random
+
+def getMessage<span class="o">()</span>:
+    <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.serenataflowers.com/pollennation/love-messages/&#39;</span>
+    <span class="nv">res</span> <span class="o">=</span> requests.get<span class="o">(</span>url<span class="o">)</span>
+    try:
+        res.raise_for_status<span class="o">()</span>
+    except requests.exceptions.HTTPError:
+        sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+    <span class="nv">soup</span> <span class="o">=</span> bs<span class="o">(</span>res.text, <span class="nv">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="o">)</span>
+    <span class="nv">listOfMessages</span> <span class="o">=</span> soup.select<span class="o">(</span><span class="s1">&#39;.simple-list li&#39;</span><span class="o">)</span>
+    <span class="nv">textMessages</span> <span class="o">=</span> <span class="o">[</span>item.text <span class="k">for</span> item in listOfMessages<span class="o">]</span>
+    <span class="k">return</span> random.choice<span class="o">(</span>textMessages<span class="o">)</span>
+
+print<span class="o">(</span>getMessage<span class="o">())</span>
+</pre></div>
+
+
+<p>Every time we now run the script, a random message is generated. </p>
+<h4>2 Getting a Random Language</h4>
+<p>The second process in this step is getting a random language to be used in translating the words  "I love you". (i consider every other language to be much more romantic than English).<br>
+The Google Translate API will be used in this step as I find it easy to use and free for our small scale project</p>
+<p>To use the Google API, you'll have to sign up with Google Cloud and get a developer API key. <a href="https://cloud.google.com/docs/authentication/api-keys">visit here for details</a></p>
+<p><strong>Add the key into the .env file</strong> in your project folder to ensure the API key is not exposed in the script</p>
+<div class="highlight"><pre><span></span>vi .env
+<span class="nv">GOOGLEAPIKEY</span><span class="o">=</span>&lt;your-api-key&gt;
+</pre></div>
+
+
+<p>The list of languages supported by Google Cloud can be accessed via the API <code>https://translation.googleapis.com/language/translate/v2/languages?key=&lt;your-key&gt;</code></p>
+<p>The request library will be used to access the API. This will return a JSON object, which will be parsed into a python dictionary using the JSON library.</p>
+<div class="highlight"><pre><span></span>import your api key
+<span class="nv">gApiKey</span> <span class="o">=</span> os.getenv<span class="o">(</span><span class="s1">&#39;GOOGLEAPIKEY&#39;</span><span class="o">)</span>
+<span class="nv">langApiUrl</span> <span class="o">=</span> <span class="s2">&quot;https://translation.googleapis.com/language/translate/v2/languages&quot;</span>
+</pre></div>
+
+
+<p>The key is then passed as a parameter to the request</p>
+<div class="highlight"><pre><span></span><span class="nv">langpayload</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;key&#39;</span>: gApiKey<span class="o">}</span>
+
+<span class="nv">r</span> <span class="o">=</span> requests.get<span class="o">(</span>langApiUrl, <span class="nv">params</span><span class="o">=</span>langpayload<span class="o">)</span>
+try:
+    r.raise_for_status<span class="o">()</span>
+except requests.exceptions.HTTPError:
+    print<span class="o">(</span><span class="s1">&#39;Error: the Request failed.&#39;</span><span class="o">)</span>
+    sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+</pre></div>
+
+
+<p>if the request is successful, a JSON object is returned which is then parsed using the <code>json.loads()</code> method</p>
+<div class="highlight"><pre><span></span><span class="nv">response</span> <span class="o">=</span> json.loads<span class="o">(</span>r.content.decode<span class="o">(</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="o">))</span>
+</pre></div>
+
+
+<p>we can then access the data from the converted python dictionary</p>
+<div class="highlight"><pre><span></span><span class="nv">dest_language</span> <span class="o">=</span> random.choice<span class="o">(</span>destResponse<span class="o">[</span><span class="s1">&#39;data&#39;</span><span class="o">][</span><span class="s1">&#39;languages&#39;</span><span class="o">])</span>
+
+print<span class="o">(</span>dest_language<span class="o">)</span>
+</pre></div>
+
+
+<p>Every time the script is run, a different language should be displayed.</p>
+<h4>3 Translating the text.</h4>
+<p>This is the same process as above, the only difference will be the URL and the parameters passed to requests library</p>
+<div class="highlight"><pre><span></span><span class="nv">transUrl</span> <span class="o">=</span> <span class="s1">&#39;https://translation.googleapis.com/language/translate/v2&#39;</span>
+</pre></div>
+
+
+<p>The translate API takes the following parameters</p>
+<h1></h1>
+<ul>
+<li>source language - English</li>
+<li>target - This will be the result of the random language generated above</li>
+<li>key - Your Google API key</li>
+<li>q - this will be the text we are translating</li>
+</ul>
+<h1></h1>
+<div class="highlight"><pre><span></span><span class="nv">transPayload</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="s1">&#39;source&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+        <span class="s1">&#39;target&#39;</span>: dest_language,
+        <span class="s1">&#39;key&#39;</span>: gtranslateApiKey,
+        <span class="s1">&#39;q&#39;</span>: urllib.parse.quote<span class="o">(</span><span class="s1">&#39;I Love You&#39;</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>N.B. To pass the text into to the payload, the text has to be encoded as spaces have no corresponding character within the standard ASCII character set  <code>'q': urllib.parse.quote('I Love You')</code> </p>
+<p>The result of the earlier code block, generating the random language is passed as into the payload as the destination language for the API</p>
+<div class="highlight"><pre><span></span><span class="nv">r</span> <span class="o">=</span> requests.get<span class="o">(</span>transUrl, <span class="nv">params</span><span class="o">=</span>transPayload<span class="o">)</span>
+try:
+    r.raise_for_status<span class="o">()</span>
+except requests.exceptions.HTTPError:
+    print<span class="o">(</span><span class="s1">&#39;Error: the Request failed.&#39;</span><span class="o">)</span>
+    sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="nv">transresponse</span> <span class="o">=</span> json.loads<span class="o">(</span>r.content.decode<span class="o">(</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="o">))</span>
+</pre></div>
+
+
+<p>to get the translated text from the generated python dictionary</p>
+<div class="highlight"><pre><span></span><span class="nv">msg</span> <span class="o">=</span> transResponse.get<span class="o">(</span><span class="s1">&#39;data&#39;</span><span class="o">)</span>.get<span class="o">(</span><span class="s1">&#39;translations&#39;</span><span class="o">)[</span><span class="m">0</span><span class="o">]</span>.get<span class="o">(</span><span class="s1">&#39;translatedText&#39;</span><span class="o">)</span>
+</pre></div>
+
+
+<p>On realizing there is a lot of repetition between the translated code and random language code block, a <code>_get_request</code> function, which takes in a URL and some parameters, will be created to handle the requests for both processes.</p>
+<div class="highlight"><pre><span></span>def _get_request<span class="o">(</span>url, payload<span class="o">)</span>:
+    <span class="nv">r</span> <span class="o">=</span> requests.get<span class="o">(</span>url, <span class="nv">params</span><span class="o">=</span>payload<span class="o">)</span>
+    try:
+        r.raise_for_status<span class="o">()</span>
+    except requests.exceptions.HTTPError:
+        print<span class="o">(</span><span class="s1">&#39;Error: the Request failed.&#39;</span><span class="o">)</span>
+        sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+    <span class="nv">response</span> <span class="o">=</span> json.loads<span class="o">(</span>r.content.decode<span class="o">(</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="o">))</span>
+    <span class="k">return</span> response
+</pre></div>
+
+
+<p>the <code>_get_request</code> function can then be used by adding the following to the script</p>
+<div class="highlight"><pre><span></span>...
+
+<span class="nv">randomLangPayload</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;key&#39;</span>: gtranslateApiKey<span class="o">}</span>
+
+<span class="nv">destResponse</span> <span class="o">=</span> _get_request<span class="o">(</span>randomLangUrl, randomLangPayload<span class="o">)</span>
+<span class="nv">dest_language</span> <span class="o">=</span> random.choice<span class="o">(</span>destResponse<span class="o">[</span><span class="s1">&#39;data&#39;</span><span class="o">][</span><span class="s1">&#39;languages&#39;</span><span class="o">])</span>
+
+<span class="nv">transPayload</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="s1">&#39;source&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+    <span class="s1">&#39;target&#39;</span>: dest_language,
+    <span class="s1">&#39;key&#39;</span>: gtranslateApiKey,
+    <span class="s1">&#39;q&#39;</span>: urllib.parse.quote<span class="o">(</span><span class="s1">&#39;I Love You&#39;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nv">transResponse</span> <span class="o">=</span> _get_request<span class="o">(</span>transUrl, transPayload<span class="o">)</span>
+<span class="nv">msg</span> <span class="o">=</span> transResponse.get<span class="o">(</span><span class="s1">&#39;data&#39;</span><span class="o">)</span>.get<span class="o">(</span><span class="s1">&#39;translations&#39;</span><span class="o">)[</span><span class="m">0</span><span class="o">]</span>.get<span class="o">(</span><span class="s1">&#39;translatedText&#39;</span><span class="o">)</span>
+</pre></div>
+
+
+<p>Combining All</p>
+<p>All the functions that have been created can be imported into the Twilio client script either by copying all the code into one file or importing the functions from files. we will be going with the first option to mirror our lambda deployment script which will be created in the next article.</p>
+<p>Our scraped message and the translation of "I love you" is passed in as the message to the Twilio Client.</p>
+<p>The whatsappcode.py script</p>
+<div class="highlight"><pre><span></span>import json, sys, requests, random, os
+import urllib.parse
+from dotenv import load_dotenv
+from twilio.rest import Client
+from bs4 import BeautifulSoup as bs
+
+load_dotenv<span class="o">(</span><span class="nv">override</span><span class="o">=</span>True<span class="o">)</span>
+
+<span class="c1"># reading the environment variables</span>
+<span class="nv">account_sid</span> <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">&#39;TWILIOSID&#39;</span><span class="o">)</span>
+<span class="nv">auth_token</span> <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">&#39;TWILIO_AUTH_TOKEN&#39;</span><span class="o">)</span>
+<span class="nv">gtranslateApiKey</span> <span class="o">=</span> os.environ.get<span class="o">(</span><span class="s1">&#39;GOOGLEAPIKEY&#39;</span><span class="o">)</span>
+
+def getMessage<span class="o">()</span>:
+    <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.serenataflowers.com/pollennation/love-messages/&#39;</span>
+    <span class="nv">res</span> <span class="o">=</span> requests.get<span class="o">(</span>url<span class="o">)</span>
+    try:
+        res.raise_for_status<span class="o">()</span>
+    except requests.exceptions.HTTPError:
+        sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+    <span class="nv">soup</span> <span class="o">=</span> bs<span class="o">(</span>res.text, <span class="nv">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="o">)</span>
+    <span class="nv">listOfMessages</span> <span class="o">=</span> soup.select<span class="o">(</span><span class="s1">&#39;.simple-list li&#39;</span><span class="o">)</span>
+    <span class="nv">textMessages</span> <span class="o">=</span> <span class="o">[</span>item.text <span class="k">for</span> item in listOfMessages<span class="o">]</span>
+    <span class="k">return</span> random.choice<span class="o">(</span>textMessages<span class="o">)</span>
+
+def _get_request<span class="o">(</span>url, payload<span class="o">)</span>:
+    <span class="nv">r</span> <span class="o">=</span> requests.get<span class="o">(</span>url, <span class="nv">params</span><span class="o">=</span>payload<span class="o">)</span>
+    try:
+        r.raise_for_status<span class="o">()</span>
+    except requests.exceptions.HTTPError:
+        print<span class="o">(</span><span class="s1">&#39;Error: the Request failed.&#39;</span><span class="o">)</span>
+        sys.exit<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+    <span class="nv">response</span> <span class="o">=</span> json.loads<span class="o">(</span>r.content.decode<span class="o">(</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="o">))</span>
+    <span class="k">return</span> response
+
+<span class="nv">transUrl</span> <span class="o">=</span> <span class="s1">&#39;https://translation.googleapis.com/language/translate/v2&#39;</span>
+<span class="nv">randomLangUrl</span> <span class="o">=</span> <span class="s1">&#39;https://translation.googleapis.com/language/translate/v2/languages&#39;</span>
+
+<span class="nv">client</span> <span class="o">=</span> Client<span class="o">(</span>twiliosid, twiliotoken<span class="o">)</span>
+
+<span class="nv">randomLangPayload</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;key&#39;</span>: gtranslateApiKey<span class="o">}</span>
+
+<span class="nv">destResponse</span> <span class="o">=</span> _get_request<span class="o">(</span>randomLangUrl, randomLangPayload<span class="o">)</span>
+<span class="nv">dest_language</span> <span class="o">=</span> random.choice<span class="o">(</span>destResponse<span class="o">[</span><span class="s1">&#39;data&#39;</span><span class="o">][</span><span class="s1">&#39;languages&#39;</span><span class="o">])</span>
+
+<span class="nv">transPayload</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="s1">&#39;source&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+        <span class="s1">&#39;target&#39;</span>: dest_language,
+        <span class="s1">&#39;key&#39;</span>: gtranslateApiKey,
+        <span class="s1">&#39;q&#39;</span>: urllib.parse.quote<span class="o">(</span><span class="s1">&#39;I Love You&#39;</span><span class="o">)</span>
+    <span class="o">}</span>
+
+<span class="nv">transResponse</span> <span class="o">=</span> _get_request<span class="o">(</span>transUrl, transPayload<span class="o">)</span>
+<span class="nv">msg</span> <span class="o">=</span> transResponse.get<span class="o">(</span><span class="s1">&#39;data&#39;</span><span class="o">)</span>.get<span class="o">(</span><span class="s1">&#39;translations&#39;</span><span class="o">)[</span><span class="m">0</span><span class="o">]</span>.get<span class="o">(</span><span class="s1">&#39;translatedText&#39;</span><span class="o">)</span>
+
+<span class="nv">randomquote</span> <span class="o">=</span> getMessage<span class="o">()</span>
+<span class="nv">msg</span> <span class="o">=</span> translate<span class="o">(</span><span class="s1">&#39;I Love You&#39;</span>, <span class="s1">&#39;en&#39;</span>, dest_language, gtranslateApiKey<span class="o">)</span>
+<span class="nv">fulltextmsg</span> <span class="o">=</span> randomquote + <span class="s2">&quot; \n P.S. &quot;</span> + msg
+
+
+<span class="nv">message</span> <span class="o">=</span> client.messages.create<span class="o">(</span>
+                            <span class="nv">from_</span><span class="o">=</span><span class="s1">&#39;whatsapp:+14155238886&#39;</span>,
+                            <span class="nv">body</span><span class="o">=</span>fulltextmsg,
+                            <span class="nv">to</span><span class="o">=</span><span class="s1">&#39;whatsapp:&lt;your number&gt;&#39;</span>
+                        <span class="o">)</span>
+
+<span class="k">return</span> <span class="o">{</span>
+        <span class="s1">&#39;statusCode&#39;</span>: <span class="m">200</span>,
+        <span class="s1">&#39;body&#39;</span>: message.sid
+    <span class="o">}</span>
+</pre></div>
+
+
+<h3>Running the Script Periodically.</h3>
+<p>This will not be a lengthy section as there are a lot of articles on cron usage. Here is a <a href="https://opensource.com/article/17/11/how-use-cron-linux/">good article on using Cron.</a>
+To run the script in cron, The python interpreter which the script will be using should be set by adding the path with a shebang at the top of the script.</p>
+<p>To get your executable path, in your activate virtual environment</p>
+<div class="highlight"><pre><span></span>$ which python
+
+/home/seyi/projects/bin/python
+</pre></div>
+
+
+<p>or Find the Path, which will always be located in the bin/ directory in your virtual environment</p>
+<p>Add the Following to the first line in your code <code>#!&lt;your-env-path&gt;</code></p>
+<div class="highlight"><pre><span></span><span class="ch">#!/home/seyi/projects/bin/python</span>
+</pre></div>
+
+
+<p>Please remember to change your path</p>
+<p>After Adding the Interpreter to be used, convert your script to an executable. you will need sudo access to carry out this action</p>
+<div class="highlight"><pre><span></span>$ sudo chmod +x scriptname.py
+</pre></div>
+
+
+<p>Also note the Full path to your script</p>
+<div class="highlight"><pre><span></span>$ realpath yourscriptname.py
+
+/home/seyi/projects/whatsapp_val/whatsappCron.py
+</pre></div>
+
+
+<p>We then add this to crontab, to be run every hour during the day</p>
+<div class="highlight"><pre><span></span>$ crontab -e
+
+<span class="m">0</span> */1 * * * /home/seyi/projects/whatsapp_val/whatsappCron.py
+</pre></div>
+
+
+<p>The script should be called at the start of the next hour and a Message will be sent to the recipient's number.</p>
+<p>The next article will cover deploying your script to AWS lambda</p>
+<p><strong>N.B.</strong> Remember to remove your script from cron at the end of the day by commenting or deleting the line off cron, so you do not end up annoying the person you are sending the message to.</p>
+<p>The Source code for the article can be found here</p>
+    <br>
+  
+  <div class="sharepage">
+  <!-- share test -->
+  <span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http%3A//localhost%3A8000/articles/2020-02-25/python-love-poem/');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-02-25%2Fpython-love-poem%2F');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8000%2Farticles%2F2020-02-25%2Fpython-love-poem%2F&title=&summary=&source=');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></div>
+    </div>
+  </div>    <br>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/python.html">python</a>
+      <a href="http://localhost:8000/tag/cron.html">cron</a>
+      <a href="http://localhost:8000/tag/webscraping.html">webscraping</a>
+      <a href="http://localhost:8000/tag/api.html">api</a>
+    </p>
+  </div>
+
+
+
+
+  
+  <!-- Pager Goes Here -->
+  <ul class="pager">
+      <li class="next">
+        <a href="http://localhost:8000/articles/2020-01-28/customizing-your-site/">Customizing your Pelican Static Site  <i class="fas fa-angle-double-right"></i></a>
+      </li>
+  </ul>
+  <br>
+  <br>
+  <br>
+
+
+  <a class="home-icon" href="http://localhost:8000"><i class="fas fa-home fa-2x"></i></a>
+
+  
+
+
+
+  
+</article>
+
+
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>    Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+  <a href="#top" class="btn-scroll-to-top tophide" id="js-top" title="Top of page" style="display: block;"><i class="fas fa-angle-double-up fa-4x"></i></i></a>
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Seyi Obaweya ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/site_logo.jpeg",
+  "description": "Seyi's Thoughts and Attempts at Writings"
+}
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const scrollToTopButton = document.getElementById('js-top');
+  const mainbody = document.getElementById('main')
+    const scrollFunc = () => {
+    // Get the current scroll value
+    let y = mainbody.scrollTop;
+    if (y > 200) {
+      scrollToTopButton.className = "btn-scroll-to-top topshow";
+    } else {
+      scrollToTopButton.className = "btn-scroll-to-top tophide";
+    }
+  };
+  mainbody.addEventListener('scroll', scrollFunc);
+  const scrollToTop = () => {
+    // Let's set a variable for the number of pixels we are from the top of the document.
+    const c = mainbody.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      mainbody.scrollTo(0, c - c / 10);
+    }
+  };
+  
+  // When the button is clicked, run our ScrolltoTop function above!
+  scrollToTopButton.onclick = function(e) {
+    e.preventDefault();
+    scrollToTop();
+  }
+  
+  // Nav bar media query
+  navcol = document.getElementById('navid');
+  toggler = document.getElementById('toggler');
+  socials = document.getElementById('social')
+  var mediaq = window.matchMedia("(max-width: 600px)")
+  function removeBlock(mediaq) {
+    if (mediaq.matches) { // If media query matches
+      // toggler.removeAttribute('style');
+      toggler.style.display = "block";
+      navcol.style.display = "none";
+      socials.setAttribute('style', 'display: none;');
+      scrollToTopButton.removeAttribute('style');
+      hamburger()
+    } else {
+      toggler.setAttribute('style', 'display: none;')
+      navcol.removeAttribute('style');
+      scrollToTopButton.setAttribute('style', 'display: block;')
+      socials.removeAttribute('style');
+    }
+  }
+  
+  removeBlock(mediaq)
+  mediaq.addListener(removeBlock)
+  
+  
+  
+  //Hamburger Toggle
+  function hamburger(){
+    toggler.onclick = function(event) {
+      event.stopPropagation()
+      showMenu = !showMenu;
+      if (showMenu === true){
+        navcol.removeAttribute('style');
+      } else {
+        navcol.style.display = "none"
+      }
+      toggler.innerHTML = buttonStates[toggler.innerHTML]
+    }
+    showMenu = false;
+  
+    buttonStates = {
+      '<i class="fas fa-bars"></i> MENU' : '<i class="fas fa-times"></i> MENU',
+      '<i class="fas fa-times"></i> MENU' : '<i class="fas fa-bars"></i> MENU'
+    }
+  
+    //Closing Hamburger Outside Menu
+    document.addEventListener('click', function(event){
+      if (!event.target.contains(navcol) && showMenu && event.target != toggler){
+        navcol.style.display = "none";
+        toggler.innerHTML = buttonStates[toggler.innerHTML]
+        showMenu = false
+      }
+    })
+    
+  }
+  });
+  </script></body>
+</html>
