@@ -1,6 +1,6 @@
 Title: Creating a Python Love Poem
 Date: 2020-02-25 10:20
-Category: Web_Development
+Category: Python_Automation
 Tags: python, cron, webscraping, api
 Slug: python-love-poem
 Author: Seyi Obaweya
