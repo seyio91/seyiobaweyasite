@@ -34,13 +34,13 @@
     <meta name="msapplication-TileColor" content="#C0C0C0">
 
 <meta name="author" content="Seyi Obaweya" />
-<meta name="description" content="We&#39;ll be writing a python script that sends messages to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, sending messages using the Twilio API, and the script is deployed on AWS lambda." />
+<meta name="description" content="We&#39;ll be writing a python script that sends messages as part of a poem to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, the Twilio API to send the messages, and the script will be deployed on AWS lambda." />
 <meta name="keywords" content="python, cron, webscraping, api">
 
 
 <meta property="og:site_name" content="Seyi Obaweya"/>
 <meta property="og:title" content="Creating a Python Love Poem"/>
-<meta property="og:description" content="We&#39;ll be writing a python script that sends messages to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, sending messages using the Twilio API, and the script is deployed on AWS lambda."/>
+<meta property="og:description" content="We&#39;ll be writing a python script that sends messages as part of a poem to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, the Twilio API to send the messages, and the script will be deployed on AWS lambda."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://localhost:8000/articles/2020-02-25/python-love-poem/"/>
 <meta property="og:type" content="article"/>
@@ -165,9 +165,9 @@
 
 
   <div>
-    <p><img src="/images/thumbnails/1000x400/valentine.jfif" alt="some alternate text"></p>
+    <p><img src="/images/thumbnails/1000x400/valentine.jfif" alt="Love in the Air"></p>
 <h1></h1>
-<p>It's another Valentine's Day!!!. Lying down, thinking about doing something special for my loved one, being about 10000km away from her. After so much deliberation, sending a  WhatsApp reminder every hour, telling her how much I love her in different languages sounded like a fun and thoughtful idea.</p>
+<p>It's another Valentine's Day!!!. Lying down, thinking about doing something special for my loved one, being about 7000km away from her. After so much deliberation, sending a WhatsApp message to remind her how much I love her in a different language every hour, sounded like a fun and thoughtful idea.</p>
 <h1></h1>
 <p>In this tutorial, we will be writing a script to sends a Whatsapp message every hour to a number and deploying our script on AWS lambda. This will be written in python as that is my preferred language, if you have an interest in getting a nodejs version, you can put that in the comments.</p>
 <h3>Gettings Started!!</h3>
@@ -181,7 +181,7 @@ The script will be created using the Twilio API because it is best suited for ou
 </li>
 <li>
 <p><strong>Creating Messages to send.</strong> 
-The aim is to send Love messages and also write <code>i love you</code> in different languages. A sequence of steps will be taken to accomplish this.<br>
+The aim is to compose our poem using Love messages and also write <code>i love you</code> in different languages. A sequence of steps will be taken to accomplish this.<br>
 1) Scraping Messages off the internet- Composing a lot of messages for the project would take a lot of time, so why not make use of the available resources all over the internet?. This is done by scraping a website using the python beautiful soup library<br>
 2) Translating Messages to Random Languages - The Google Translate API will be used to get a random Language and translating our texts.</p>
 </li>
@@ -195,32 +195,34 @@ This will be done using the Cron Utility on our development server, while AWS La
 </li>
 </ul>
 <p align="center">
-<img src="/images/twiliologo.png" alt="some alternate text">  
+<img src="/images/twiliologo.png" alt="Twilio WhatsApp API">  
 </p>
 
 <h1></h1>
 <h3>Sending Messages using the Twilio API</h3>
-<p>The Twilio Whatsapp API is easy and quick to set up, using a shared phone number without waiting for a dedicated number to be approved by Whatsapp.
-To get started with the Twilio API, visit the <a href="Twilio Website">twilio website</a>, Create a Free Twilio account and confirm your email and phone number  </p>
+<p>The Twilio Whatsapp API is easy and quick to set up, using a shared phone number without waiting for a dedicated number to be approved by Whatsapp.  </p>
+<h1></h1>
+<p>To get started with the Twilio API, visit the <a href="Twilio Website">twilio website</a>  </p>
+<h1></h1>
+<p>Create a Free Twilio account and confirm your email and phone number  </p>
 <h1></h1>
 <p>The only con to using this method is that the sandbox is pre-provision with a Whatsapp Number that is shared across all sandbox users. <br>
-Also Note, Recipients have to go through a one-time permission process to receive messages. This works just fine for our small scale project. To activate the Twilio Sandbox. Navigate to Whatsapp Beta on the left side menu  </p>
+<strong>N.B.</strong>  Recipients have to go through a one-time permission process to receive messages. This works just fine for our small scale project. To activate the Twilio Sandbox. Navigate to Whatsapp Beta on the left side menu  </p>
 <h1></h1>
-<p><img src="/images/step5.PNG" alt="some alternate text">
+<p><img src="/images/step5.PNG" alt="Twilio WhatsApp Sandbox">
 <p style="text-align: center;"><b>Twilio Whatsapp Sandbox</b></p></p>
 <h1></h1>
-<p>A Phone Number and a Joining Message are provided, Save the number on your device and send the provided message from your device. This is a one time process for every Recipient using your script. </p>
+<p>A Phone Number and an authentication Message are provided, Save the number on your device and send the provided message from your device. This is a one time process for every Recipient using your script. </p>
 <p align="center">  
-<img src="/images/whatsappconfirmation.jpeg" alt="some alternate text">
+<img src="/images/whatsappconfirmation.jpeg" alt="Confirmation Message">
 <p style="text-align: center;"><b>Success Reply</b></p>
 </p>
 
-<p>if successful, a reply is returned, The web interface also shows message received.<br>
-screen shows received</p>
+<p>if successful, a reply is returned, The web interface also shows message received.  </p>
 <p><strong>Creating the project</strong>  </p>
-<p>To view how the API works, visit the <a href="https://www.twilio.com/docs/sms/whatsapp/api">API documentation to find the basic usage</a></p>
+<p>To view how the API works, visit the <a href="https://www.twilio.com/docs/sms/whatsapp/api" target="_blank">API documentation to find the basic usage</a></p>
 <p>After logging into the Twilio Console, take note of your Account SID and Auth Token. The Account SID is a unique identifier for your account, while the Auth Token is a secret key that should never be shared or else anyone will have full access to your Twilio account.</p>
-<p><img src="/images/step7.PNG" alt="some alternate text">
+<p><img src="/images/step7.PNG" alt="Twilio Project Dashboard">
 <p style="text-align: center;"><b>Twilio DashBoard</b></p></p>
 <p>Copy both keys, as they will later be used for authenticating with the API in your script</p>
 <p><strong>Create and activate a virtual environment for project isolation</strong></p>
@@ -237,7 +239,7 @@ $ git init
 
 <p>OR</p>
 <h2></h2>
-<p><strong>Automating the setup process using the <a href="somelink">newproject script</a></strong></p>
+<p><strong>Automating the setup process using the <a href="https://www.seyiobaweya.tech/articles/2020-01-17/new-project-script/" target="_blank">newproject script</a></strong></p>
 <div class="highlight"><pre><span></span>$ newproject twiliowhatsapp
 </pre></div>
 
@@ -319,15 +321,15 @@ from twilio.rest import Client
 
 
 <h3>STEP 2 Composing your messages</h3>
-<p>The next item on our list is getting the messages we want to send. This is divided into 3 parts</p>
+<p>The next item on our list is creating the Poem we would be sending. This is divided into 3 parts</p>
 <h1></h1>
 <ul>
-<li>Scraping the Page</li>
+<li>Scraping Messages off the web</li>
 <li>Getting a Random Language</li>
 <li>Translating your Text to the random Language</li>
 </ul>
 <h4>1 Scraping the webpage</h4>
-<p>Even though most people think I am a romantic, composing multiple messages to send all through the day will be a tedious process. This led to the option of scraping messages off the tons of romantic messages online. For the script, we would be scraping off <a href="https://www.serenataflowers.com/pollennation/love-messages/">serenea flowers</a> for their simple and thoughtful messages.</p>
+<p>Even though most people think I am a romantic, composing a long poem to send all through the day will be a tedious process. This led to the option of scraping messages off the tons of romantic messages online to create our poem. For the script, we would be scraping off <a href="https://www.serenataflowers.com/pollennation/love-messages/" target="_blank">serenea flowers</a> for their simple and thoughtful messages.</p>
 <p>We will be using the BeautifulSoup python package to scrape the messages.  </p>
 <h1></h1>
 <p><strong>Install the beautifulsoup and requests library</strong> for making HTTP requests and scraping the page</p>
@@ -335,7 +337,7 @@ from twilio.rest import Client
 </pre></div>
 
 
-<p>In your project folder,<strong> create a new script for scraping the site and import the request and beautifulsoup library</strong> into your file</p>
+<p>In your project folder, <strong>create a new script for scraping the site and import the request and beautifulsoup library</strong> into your file</p>
 <div class="highlight"><pre><span></span>$ touch scraper.py <span class="o">&amp;&amp;</span> vi scraper.py
 
 from bs4 import BeautifulSoup as bs
@@ -422,11 +424,11 @@ print<span class="o">(</span>getMessage<span class="o">())</span>
 </pre></div>
 
 
-<p>Every time we now run the script, a random message is generated. </p>
+<p>Every time the script is run, a verse of our poem is generated. </p>
 <h4>2 Getting a Random Language</h4>
-<p>The second process in this step is getting a random language to be used in translating the words  "I love you". (i consider every other language to be much more romantic than English).<br>
+<p>Repetition is a poetic technique used to draw a person's attention to a certain idea. we are aiming to emphasize the point that we love the message recipient by repeating the words <code>"i Love You"</code> in every verse of the poem. To spice things up, the words will be translated to a random language in every verse. (i consider every other language to be much more romantic than English).<br>
 The Google Translate API will be used in this step as I find it easy to use and free for our small scale project</p>
-<p>To use the Google API, you'll have to sign up with Google Cloud and get a developer API key. <a href="https://cloud.google.com/docs/authentication/api-keys">visit here for details</a></p>
+<p>To use the Google API, you'll have to sign up with Google Cloud and get a developer API key. <a href="https://cloud.google.com/docs/authentication/api-keys" target="_blank">visit here for details</a></p>
 <p><strong>Add the key into the .env file</strong> in your project folder to ensure the API key is not exposed in the script</p>
 <div class="highlight"><pre><span></span>vi .env
 <span class="nv">GOOGLEAPIKEY</span><span class="o">=</span>&lt;your-api-key&gt;
@@ -540,7 +542,7 @@ except requests.exceptions.HTTPError:
 </pre></div>
 
 
-<p>Combining All</p>
+<h3>Combining All</h3>
 <p>All the functions that have been created can be imported into the Twilio client script either by copying all the code into one file or importing the functions from files. we will be going with the first option to mirror our lambda deployment script which will be created in the next article.</p>
 <p>Our scraped message and the translation of "I love you" is passed in as the message to the Twilio Client.</p>
 <p>The whatsappcode.py script</p>
@@ -618,7 +620,7 @@ def _get_request<span class="o">(</span>url, payload<span class="o">)</span>:
 
 
 <h3>Running the Script Periodically.</h3>
-<p>This will not be a lengthy section as there are a lot of articles on cron usage. Here is a <a href="https://opensource.com/article/17/11/how-use-cron-linux/">good article on using Cron.</a>
+<p>This will not be a lengthy section as there are a lot of articles on cron usage. Here is a <a href="https://opensource.com/article/17/11/how-use-cron-linux/" target="_blank">good article on using Cron.</a>
 To run the script in cron, The python interpreter which the script will be using should be set by adding the path with a shebang at the top of the script.</p>
 <p>To get your executable path, in your activate virtual environment</p>
 <div class="highlight"><pre><span></span>$ which python
@@ -639,7 +641,7 @@ To run the script in cron, The python interpreter which the script will be using
 </pre></div>
 
 
-<p>Also note the Full path to your script</p>
+<p>Also, note the Full path to your script</p>
 <div class="highlight"><pre><span></span>$ realpath yourscriptname.py
 
 /home/seyi/projects/whatsapp_val/whatsappCron.py
@@ -653,10 +655,10 @@ To run the script in cron, The python interpreter which the script will be using
 </pre></div>
 
 
-<p>The script should be called at the start of the next hour and a Message will be sent to the recipient's number.</p>
+<p>The script should be called at the start of the next hour and the verse of your poem will be sent to the recipient's number.</p>
 <p>The next article will cover deploying your script to AWS lambda</p>
 <p><strong>N.B.</strong> Remember to remove your script from cron at the end of the day by commenting or deleting the line off cron, so you do not end up annoying the person you are sending the message to.</p>
-<p>The Source code for the article can be found here</p>
+<p>The Source code for the article can be found <a href="https://github.com/seyio91/twiliowhatsappscript" target="_blank">here</a></p>
     <br>
   
   <div class="sharepage">

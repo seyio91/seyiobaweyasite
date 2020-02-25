@@ -4,13 +4,13 @@ Category: Web_Development
 Tags: python, cron, webscraping, api
 Slug: python-love-poem
 Author: Seyi Obaweya
-Summary: We'll be writing a python script that sends messages to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, sending messages using the Twilio API, and the script is deployed on AWS lambda. 
+Summary: We'll be writing a python script that sends messages as part of a poem to our loved ones every hour, reminding them how much they are loved. This will be done by scraping a website using the beautiful soup library, the Twilio API to send the messages, and the script will be deployed on AWS lambda. 
 
-<img src="/images/thumbnails/1000x400/valentine.jfif" alt="some alternate text">
+<img src="/images/thumbnails/1000x400/valentine.jfif" alt="Love in the Air">
 
 # 
   
-It's another Valentine's Day!!!. Lying down, thinking about doing something special for my loved one, being about 10000km away from her. After so much deliberation, sending a  WhatsApp reminder every hour, telling her how much I love her in different languages sounded like a fun and thoughtful idea.
+It's another Valentine's Day!!!. Lying down, thinking about doing something special for my loved one, being about 7000km away from her. After so much deliberation, sending a WhatsApp message to remind her how much I love her in a different language every hour, sounded like a fun and thoughtful idea.
 
 # 
 
@@ -26,7 +26,7 @@ One option is to use Python's Selenium package to open the WhatsApp web interfac
 The script will be created using the Twilio API because it is best suited for our small scale project as it is easy to set up and can be automated
 
 - **Creating Messages to send.** 
-The aim is to send Love messages and also write `i love you` in different languages. A sequence of steps will be taken to accomplish this.  
+The aim is to compose our poem using Love messages and also write `i love you` in different languages. A sequence of steps will be taken to accomplish this.  
 1) Scraping Messages off the internet- Composing a lot of messages for the project would take a lot of time, so why not make use of the available resources all over the internet?. This is done by scraping a website using the python beautiful soup library  
 2) Translating Messages to Random Languages - The Google Translate API will be used to get a random Language and translating our texts.
 
@@ -37,48 +37,50 @@ We will be deploying our script to AWS lambda, which is a cloud computing servic
 This will be done using the Cron Utility on our development server, while AWS Lambda Triggers will be used after deployment.
 
 <p align="center">
-<img src="/images/twiliologo.png" alt="some alternate text">  
+<img src="/images/twiliologo.png" alt="Twilio WhatsApp API">  
 </p>
 
 #  
 
 
 ### Sending Messages using the Twilio API  
-The Twilio Whatsapp API is easy and quick to set up, using a shared phone number without waiting for a dedicated number to be approved by Whatsapp.
-To get started with the Twilio API, visit the [twilio website](Twilio Website), Create a Free Twilio account and confirm your email and phone number  
+The Twilio Whatsapp API is easy and quick to set up, using a shared phone number without waiting for a dedicated number to be approved by Whatsapp.  
+# 
+To get started with the Twilio API, visit the [twilio website](Twilio Website)  
+# 
+Create a Free Twilio account and confirm your email and phone number  
 # 
 
 The only con to using this method is that the sandbox is pre-provision with a Whatsapp Number that is shared across all sandbox users.   
-Also Note, Recipients have to go through a one-time permission process to receive messages. This works just fine for our small scale project. To activate the Twilio Sandbox. Navigate to Whatsapp Beta on the left side menu  
+**N.B.**  Recipients have to go through a one-time permission process to receive messages. This works just fine for our small scale project. To activate the Twilio Sandbox. Navigate to Whatsapp Beta on the left side menu  
 # 
 
-<img src="/images/step5.PNG" alt="some alternate text">
+<img src="/images/step5.PNG" alt="Twilio WhatsApp Sandbox">
 <p style="text-align: center;"><b>Twilio Whatsapp Sandbox</b></p>
 
 # 
 
-A Phone Number and a Joining Message are provided, Save the number on your device and send the provided message from your device. This is a one time process for every Recipient using your script. 
+A Phone Number and an authentication Message are provided, Save the number on your device and send the provided message from your device. This is a one time process for every Recipient using your script. 
   
   
 
 <p align="center">  
-<img src="/images/whatsappconfirmation.jpeg" alt="some alternate text">
+<img src="/images/whatsappconfirmation.jpeg" alt="Confirmation Message">
 <p style="text-align: center;"><b>Success Reply</b></p>
 </p>
   
 if successful, a reply is returned, The web interface also shows message received.  
-screen shows received
 
 
 
 **Creating the project**  
 
-To view how the API works, visit the [API documentation to find the basic usage](https://www.twilio.com/docs/sms/whatsapp/api)
+To view how the API works, visit the [API documentation to find the basic usage](https://www.twilio.com/docs/sms/whatsapp/api){:target="_blank"}
 
 
 After logging into the Twilio Console, take note of your Account SID and Auth Token. The Account SID is a unique identifier for your account, while the Auth Token is a secret key that should never be shared or else anyone will have full access to your Twilio account.
 
-<img src="/images/step7.PNG" alt="some alternate text">
+<img src="/images/step7.PNG" alt="Twilio Project Dashboard">
 <p style="text-align: center;"><b>Twilio DashBoard</b></p>
 
 Copy both keys, as they will later be used for authenticating with the API in your script
@@ -99,7 +101,7 @@ Copy both keys, as they will later be used for authenticating with the API in yo
 
 OR
 ##  
-**Automating the setup process using the [newproject script](somelink)**
+**Automating the setup process using the [newproject script](https://www.seyiobaweya.tech/articles/2020-01-17/new-project-script/){:target="_blank"}**
 
     :::bash
     $ newproject twiliowhatsapp
@@ -192,14 +194,14 @@ Next verify your .env file is in the gitignore file, then commit your code to yo
 ### STEP 2 Composing your messages  
   
 
-The next item on our list is getting the messages we want to send. This is divided into 3 parts
+The next item on our list is creating the Poem we would be sending. This is divided into 3 parts
 #  
--  Scraping the Page
+-  Scraping Messages off the web
 - Getting a Random Language
 - Translating your Text to the random Language
   
 #### 1 Scraping the webpage
-Even though most people think I am a romantic, composing multiple messages to send all through the day will be a tedious process. This led to the option of scraping messages off the tons of romantic messages online. For the script, we would be scraping off [serenea flowers](https://www.serenataflowers.com/pollennation/love-messages/) for their simple and thoughtful messages.
+Even though most people think I am a romantic, composing a long poem to send all through the day will be a tedious process. This led to the option of scraping messages off the tons of romantic messages online to create our poem. For the script, we would be scraping off [serenea flowers](https://www.serenataflowers.com/pollennation/love-messages/){:target="_blank"} for their simple and thoughtful messages.
 
 We will be using the BeautifulSoup python package to scrape the messages.  
 # 
@@ -209,7 +211,7 @@ We will be using the BeautifulSoup python package to scrape the messages.
     :::bash
     $ pip install bs4 requests
 
-In your project folder,** create a new script for scraping the site and import the request and beautifulsoup library** into your file
+In your project folder, **create a new script for scraping the site and import the request and beautifulsoup library** into your file
 
     :::bash
     $ touch scraper.py && vi scraper.py
@@ -306,14 +308,14 @@ Our code can be converted into a function that can be imported into our main `wh
     print(getMessage())
 
 
-Every time we now run the script, a random message is generated. 
+Every time the script is run, a verse of our poem is generated. 
 
 
 #### 2 Getting a Random Language
-The second process in this step is getting a random language to be used in translating the words  "I love you". (i consider every other language to be much more romantic than English).  
+Repetition is a poetic technique used to draw a person's attention to a certain idea. we are aiming to emphasize the point that we love the message recipient by repeating the words `"i Love You"` in every verse of the poem. To spice things up, the words will be translated to a random language in every verse. (i consider every other language to be much more romantic than English).  
 The Google Translate API will be used in this step as I find it easy to use and free for our small scale project
 
-To use the Google API, you'll have to sign up with Google Cloud and get a developer API key. [visit here for details](https://cloud.google.com/docs/authentication/api-keys)
+To use the Google API, you'll have to sign up with Google Cloud and get a developer API key. [visit here for details](https://cloud.google.com/docs/authentication/api-keys){:target="_blank"}
 
 **Add the key into the .env file** in your project folder to ensure the API key is not exposed in the script
 
@@ -432,7 +434,7 @@ the `_get_request` function can then be used by adding the following to the scri
     transResponse = _get_request(transUrl, transPayload)
     msg = transResponse.get('data').get('translations')[0].get('translatedText')
 
-Combining All
+### Combining All
 
 All the functions that have been created can be imported into the Twilio client script either by copying all the code into one file or importing the functions from files. we will be going with the first option to mirror our lambda deployment script which will be created in the next article.
 
@@ -513,7 +515,7 @@ The whatsappcode.py script
         }
 
 ### Running the Script Periodically.
-This will not be a lengthy section as there are a lot of articles on cron usage. Here is a [good article on using Cron.](https://opensource.com/article/17/11/how-use-cron-linux/)
+This will not be a lengthy section as there are a lot of articles on cron usage. Here is a [good article on using Cron.](https://opensource.com/article/17/11/how-use-cron-linux/){:target="_blank"}
 To run the script in cron, The python interpreter which the script will be using should be set by adding the path with a shebang at the top of the script.
 
 To get your executable path, in your activate virtual environment
@@ -537,7 +539,7 @@ After Adding the Interpreter to be used, convert your script to an executable. y
     :::bash
     $ sudo chmod +x scriptname.py
 
-Also note the Full path to your script
+Also, note the Full path to your script
 
     :::bash
     $ realpath yourscriptname.py
@@ -552,10 +554,10 @@ We then add this to crontab, to be run every hour during the day
     0 */1 * * * /home/seyi/projects/whatsapp_val/whatsappCron.py
 
 
-The script should be called at the start of the next hour and a Message will be sent to the recipient's number.
+The script should be called at the start of the next hour and the verse of your poem will be sent to the recipient's number.
 
 The next article will cover deploying your script to AWS lambda
 
 **N.B.** Remember to remove your script from cron at the end of the day by commenting or deleting the line off cron, so you do not end up annoying the person you are sending the message to.
 
-The Source code for the article can be found here
+The Source code for the article can be found [here](https://github.com/seyio91/twiliowhatsappscript){:target="_blank"}
