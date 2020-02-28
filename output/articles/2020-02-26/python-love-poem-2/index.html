@@ -183,7 +183,7 @@
 </p>
 
 <h1></h1>
-<p>In <a href="http://localhost:8000/articles/2020-02-25/python-love-poem/"><strong>Part One</strong></a>, our code has been tested and is ready for deployment. With the advent of serverless, it would be a waste of resources to run a task as small as this. Here is Where AWS Lambda comes in.<br>
+<p>In <a href="http://localhost:8000/articles/2020-02-25/python-love-poem/"><strong>Part One</strong></a>, our code has been tested and is ready for deployment. With the advent of serverless computing, it would be a waste of resources to run a task as small as this. Here is Where AWS Lambda comes in.<br>
 AWS Lambda Service is a serverless cloud computing service that runs small pieces of code/ functions without the need for a server making you only pay for the compute time you consume. Also, Aws lambda service gives a million requests for free in a month. making it perfect as we would be making less than 100 requests for this project  </p>
 <h3>Creating your Lambda Function</h3>
 <p><strong>You'll need to have an AWS account to run this project.</strong></p>
@@ -236,8 +236,10 @@ def lambda_handler<span class="o">(</span>event, context<span class="o">)</span>
 <h1></h1>
 <h1></h1>
 <h3>Installing Dependencies</h3>
+<h1></h1>
 <p>AWS provides a list of available Python libraries that can be imported into your project, however you start to encounter issues when you need libraries that are not available by default such as the Twilio and BeautifulSoup Libraries used in our script. To make deployments easier AWS lambda service allows users to install libraries locally and upload as Lambda Layers.  </p>
-<h4>Lambda Layers</h4>
+<p><strong>Lambda Layers</strong>  </p>
+<h1></h1>
 <p>A Lambda Layer is a ZIP archive that contains libraries. Layers are very useful if you have various Lambda functions using the same dependencies since the dependencies will be imported into the Lambda function at runtime. The main benefit of this is that you utilize your dependencies more efficiently, resulting in smaller deployment bundles that make deployments faster.  </p>
 <p>To create a Layer, The Python dependencies will be installed to a directory, which will then be zipped and uploaded as a Lambda layer. 
 Note, when a Layer ZIP archive is loaded into AWS Lambda, it is unzipped to the /opt folder. The Libraries should be placed inside a <code>python</code> directory to enable the Python lambda function to import the library.</p>
@@ -323,6 +325,7 @@ Click the Test Button again</p>
 </figure> </p>
 <h1></h1>
 <h3>Adding our code to the Lambda Function</h3>
+<h1></h1>
 <p>The functions are added above the main lambda handler, while the body for running our code will be included in the handler which is called at runtime. We also wrapped our code in a try/except block to catch errors raised.</p>
 <p>Our new code is</p>
 <div class="highlight"><pre><span></span>import json, sys, requests
@@ -375,6 +378,7 @@ def lambda_handler<span class="o">(</span>event, context<span class="o">)</span>
 
 
 <h3>Managing Secrets on Lambda</h3>
+<h1></h1>
 <p>In the previous part, we saw the importance of managing application secrets and were able to secure our secrets by using the .dotenv package and OS environment variables. We would be using the AWS Parameter Store to securely manage our API keys </p>
 <blockquote>
 <p>AWS Systems Manager Parameter Store provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, and license codes as parameter values.  </p>
@@ -470,6 +474,7 @@ The next line creates the <code>_getParameter</code> function which takes in a P
 
 
 <h3>Adding Roles to your Function</h3>
+<h1></h1>
 <p>Save and Run your code after including the Secured keys, We however, get an <code>AccessDeniedException</code> when the script tries to access the keys we created</p>
 <h1></h1>
 <p><p align="center">
@@ -480,7 +485,8 @@ The next line creates the <code>_getParameter</code> function which takes in a P
 </p></p>
 <h1></h1>
 <p>The error occurs because we initially chose the default execution role which only provides access to the Lambda service and we now have included the System Manager and KMS service into our function, and the default Role does not have permission to run those services. we would work around this by creating a new IAM role which gives our function access to the KMS service to decrypt our secret API keys</p>
-<h4>IAM Roles</h4>
+<p><strong>IAM Roles</strong>  </p>
+<h1></h1>
 <blockquote>
 <p><strong>"IAM roles are a secure way to grant permissions to entities that you trust"</strong>   </p>
 </blockquote>
@@ -542,6 +548,7 @@ Also, Give the Role a name and Save Role.</p>
 </p></p>
 <h1></h1>
 <p><strong>Adding the New Role to the Lambda Function</strong></p>
+<h1></h1>
 <p>Head back to your Function Designer Page, under the Execution Role Section, Select <code>Choose Existing Role</code>. Several Roles are Populated into the existing Roles Field, Search and Select the Role that you recently created for the Lambda Function.  </p>
 <p>Our final code.</p>
 <div class="highlight"><pre><span></span>import json, sys, requests
@@ -659,16 +666,13 @@ We would be using a CloudWatch event Trigger to schedule Our script to run at th
 </p></p>
 <h1></h1>
 <p>The Function should now Run at the scheduled time.</p>
-<p>Overview of Project
-Using the twilio app</p>
-<p>to get the value
-secrets management</p>
-<p>Because</p>
-<p>Inspiration</p>
-<p>Things i learned. Creating parameter store for my key
-Creating roles to access this store
-Using twilio api
-Using gtranslate api</p>
+<p><strong>Wrapping Up</strong></p>
+<h1></h1>
+<p>i hope this articles helps you understand better the steps to deploying a python script on the AWS Lambda service and integrating with other AWS services. Feel free to reach out if you need any help getting your script to work.</p>
+<h1></h1>
+<p>Ciao  </p>
+<h1></h1>
+<p>The Source code for the article can be found <a href="https://github.com/seyio91/twiliowhatsappscript" target="_blank">here</a></p>
     <br>
   
   <div class="sharepage">

@@ -20,7 +20,7 @@ This is the second article in the 2 part series "Creating a Python Love Poem". T
 </p>
 
 # 
-In [**Part One**]({filename}/articles/04-creating-a-python-poem.md), our code has been tested and is ready for deployment. With the advent of serverless, it would be a waste of resources to run a task as small as this. Here is Where AWS Lambda comes in.  
+In [**Part One**]({filename}/articles/04-creating-a-python-poem.md), our code has been tested and is ready for deployment. With the advent of serverless computing, it would be a waste of resources to run a task as small as this. Here is Where AWS Lambda comes in.  
 AWS Lambda Service is a serverless cloud computing service that runs small pieces of code/ functions without the need for a server making you only pay for the compute time you consume. Also, Aws lambda service gives a million requests for free in a month. making it perfect as we would be making less than 100 requests for this project  
 
 ### Creating your Lambda Function
@@ -85,9 +85,11 @@ The Lambda function takes in a function handler `lambda_handler(event, context)`
 # 
 
 ### Installing Dependencies 
+# 
 AWS provides a list of available Python libraries that can be imported into your project, however you start to encounter issues when you need libraries that are not available by default such as the Twilio and BeautifulSoup Libraries used in our script. To make deployments easier AWS lambda service allows users to install libraries locally and upload as Lambda Layers.  
 
-#### Lambda Layers  
+**Lambda Layers**  
+# 
 A Lambda Layer is a ZIP archive that contains libraries. Layers are very useful if you have various Lambda functions using the same dependencies since the dependencies will be imported into the Lambda function at runtime. The main benefit of this is that you utilize your dependencies more efficiently, resulting in smaller deployment bundles that make deployments faster.  
 
 
@@ -185,6 +187,7 @@ if the layer was properly uploaded, the console returns a succeeded Status
 # 
 
 ### Adding our code to the Lambda Function  
+# 
 
 The functions are added above the main lambda handler, while the body for running our code will be included in the handler which is called at runtime. We also wrapped our code in a try/except block to catch errors raised.
 
@@ -241,6 +244,7 @@ Our new code is
 
 
 ### Managing Secrets on Lambda  
+# 
 
 In the previous part, we saw the importance of managing application secrets and were able to secure our secrets by using the .dotenv package and OS environment variables. We would be using the AWS Parameter Store to securely manage our API keys 
 
@@ -347,6 +351,7 @@ Retrieving the Keys with the _getParameter function in the Lambda handler
     
 
 ### Adding Roles to your Function
+# 
 Save and Run your code after including the Secured keys, We however, get an `AccessDeniedException` when the script tries to access the keys we created
 # 
 <p align="center">
@@ -359,7 +364,8 @@ Save and Run your code after including the Secured keys, We however, get an `Acc
 # 
 The error occurs because we initially chose the default execution role which only provides access to the Lambda service and we now have included the System Manager and KMS service into our function, and the default Role does not have permission to run those services. we would work around this by creating a new IAM role which gives our function access to the KMS service to decrypt our secret API keys
 
-#### IAM Roles  
+**IAM Roles**  
+# 
 > **"IAM roles are a secure way to grant permissions to entities that you trust"**   
 # 
 such as an AWS service that needs to act on resources in your account to provide its features. 
@@ -428,7 +434,7 @@ Also, Give the Role a name and Save Role.
 # 
 
 **Adding the New Role to the Lambda Function**
-
+# 
 Head back to your Function Designer Page, under the Execution Role Section, Select `Choose Existing Role`. Several Roles are Populated into the existing Roles Field, Search and Select the Role that you recently created for the Lambda Function.  
 
 Our final code.
@@ -549,31 +555,14 @@ You can create rules that self-trigger on an automated schedule in CloudWatch Ev
 </p>
 
 # 
-
 The Function should now Run at the scheduled time.
 
+**Wrapping Up**
+# 
+i hope this articles helps you understand better the steps to deploying a python script on the AWS Lambda service and integrating with other AWS services. Feel free to reach out if you need any help getting your script to work.
+# 
+  
+Ciao  
+# 
 
-
-
-
-Overview of Project
-Using the twilio app
-
-
-
-
-to get the value
-secrets management
-
-Because
-
-
-Inspiration
-
-Things i learned. Creating parameter store for my key
-Creating roles to access this store
-Using twilio api
-Using gtranslate api
-
-
-
+The Source code for the article can be found [here](https://github.com/seyio91/twiliowhatsappscript){:target="_blank"}
