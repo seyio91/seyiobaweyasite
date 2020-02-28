@@ -1,6 +1,11 @@
 html {
     font-size: 95% !important;
 }
+
+/* figcaption {
+    font-size: 60% !important;
+} */
+
 li.navlist {
     text-transform: capitalize !important;
 }
