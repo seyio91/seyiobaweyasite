@@ -2,7 +2,7 @@ Title: Deploying your Python Script to Lambda - Part 2
 Date: 2020-02-26 10:20
 Category: Python_Automation
 Tags: python, aws, webscraping, lambda
-Slug: python-love-poem-2
+Slug: python-deploy-aws-lambda
 Author: Seyi Obaweya
 Summary: After successfully creating our script, we will be using the AWS Lambda service to deploy the script. This article walks you through the process of setting up the lambda function.
 
