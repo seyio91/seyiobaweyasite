@@ -25,7 +25,7 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'Flex'
 STATIC_PATHS = ['images', 'static']
-# FAVICON = 'img/favicon.ico'
+FAVICON = 'images/favicon.png'
 CUSTOM_CSS = 'static/custom.css'
 
 BROWSER_COLOR = '#C0C0C0'
