@@ -181,6 +181,15 @@
 }
 </script>
 
+  <!-- Modal Code -->
+  
+  <!-- Modal Code end -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="closeModal">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="modalCaption"></div>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -266,6 +275,34 @@
     })
     
   }
+    // Image Click Modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementsByClassName("enableModal");
+    var modalImg = document.getElementById("modalImg");
+    var captionText = document.getElementById("modalCaption");
+
+
+    for (let i=0; i<img.length; i++){
+        elem = img[i];
+        elem.addEventListener('click', (e)=>{
+            console.log(e.target.src)
+            modal.style.display = "block";
+            modalImg.src = e.target.src;
+            captionText.innerHTML = e.target.alt;
+        })
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("closeModal")[0];
+
+    console.log(span)
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
   });
   </script></body>
 </html>

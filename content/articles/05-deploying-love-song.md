@@ -44,7 +44,7 @@ Select the closest Runtime to your Python version to your development environmen
 # 
 <p align="center">
 <figure>
-  <img src="/images/create_function.JPG" alt="Creating a Function">
+  <img src="/images/create_function.JPG" alt="Creating a Function"  class="enableModal">
   <figcaption style="text-align: center;">Figure 1. Creating a Function.</figcaption>
 </figure> 
 </p>
@@ -75,7 +75,7 @@ The Lambda function takes in a function handler `lambda_handler(event, context)`
 # 
 <p align="center">
 <figure>
-  <img src="/images/step20.JPG" alt="Function Homepage">
+  <img src="/images/step20.JPG" alt="Function Homepage"  class="enableModal">
   <figcaption style="text-align: center;">Figure 2. Designer Page.</figcaption>
 </figure> 
 </p>
@@ -132,7 +132,7 @@ The Created Zip file can also be uploaded on the AWS Console
 # 
 <p align="center">
 <figure>
-  <img src="/images/layers1.JPG" alt="Creating a Layer">
+  <img src="/images/layers1.JPG" alt="Creating a Layer"  class="enableModal">
   <figcaption style="text-align: center;">Figure 3. Creating a Layer.</figcaption>
 </figure> 
 </p>
@@ -148,7 +148,7 @@ After creating and Uploading your Layers, the dependencies can be imported in th
 # 
 <p align="center">
 <figure>
-  <img src="/images/add_layer2.JPG" alt="Adding Layers to Lambda Function">
+  <img src="/images/add_layer2.JPG" alt="Adding Layers to Lambda Function"  class="enableModal">
   <figcaption style="text-align: center;">Figure 4. Adding Layers to Lambda Function.</figcaption>
 </figure> 
 </p>
@@ -180,7 +180,7 @@ Click the Test Button again
 if the layer was properly uploaded, the console returns a succeeded Status
 # 
 <figure>
-  <img src="/images/success.JPG" alt="Test Success" align="center">
+  <img src="/images/success.JPG" alt="Test Success" align="center"  class="enableModal">
   <figcaption style="text-align: center;">Figure 5. Test Success.</figcaption>
 </figure> 
 
@@ -277,7 +277,7 @@ After creating your keys, your parameter store should contain all 3 keys
 # 
 <p align="center">
 <figure>
-  <img src="/images/step9.PNG" alt="Parameter Store">
+  <img src="/images/step9.PNG" alt="Parameter Store"  class="enableModal">
   <figcaption style="text-align: center;">Figure 6. Parameter Store.</figcaption>
 </figure> 
 </p>
@@ -290,7 +290,7 @@ You can also go into a key and view the decrypted value if signed in as a permit
 # 
 <p align="center">
 <figure>
-  <img src="/images/step10.PNG" alt="Secured Key View">
+  <img src="/images/step10.PNG" alt="Secured Key View"  class="enableModal">
   <figcaption style="text-align: center;">Figure 7. Secured Key View.</figcaption>
 </figure> 
 </p>
@@ -356,7 +356,7 @@ Save and Run your code after including the Secured keys, We however, get an `Acc
 # 
 <p align="center">
 <figure>
-  <img src="/images/permission_error.JPG" alt="Console Error">
+  <img src="/images/permission_error.JPG" alt="Console Error"  class="enableModal">
   <figcaption style="text-align: center;">Figure 8. Console Error.</figcaption>
 </figure> 
 </p>
@@ -383,7 +383,7 @@ such as an AWS service that needs to act on resources in your account to provide
 # 
 <p align="center">
 <figure>
-  <img src="/images/step13.PNG" alt="Creating a Role">
+  <img src="/images/step13.PNG" alt="Creating a Role"  class="enableModal">
   <figcaption style="text-align: center;">Figure 9. Creating a Role.</figcaption>
 </figure> 
 </p>
@@ -413,7 +413,7 @@ Review Policy and Give a Policy Name
 # 
 <p align="center">
 <figure>
-  <img src="/images/policy-creation.JPG" alt="Creating a Policy">
+  <img src="/images/policy-creation.JPG" alt="Creating a Policy"  class="enableModal">
   <figcaption style="text-align: center;">Figure 10. Creating a Policy.</figcaption>
 </figure> 
 </p>
@@ -426,7 +426,7 @@ Also, Give the Role a name and Save Role.
 # 
 <p align="center">
 <figure>
-  <img src="/images/roles-saved.JPG" alt="Role Summary">
+  <img src="/images/roles-saved.JPG" alt="Role Summary"  class="enableModal">
   <figcaption style="text-align: center;">Figure 11. Role Summary.</figcaption>
 </figure> 
 </p>
@@ -549,7 +549,7 @@ You can create rules that self-trigger on an automated schedule in CloudWatch Ev
 # 
 <p align="center">
 <figure>
-  <img src="/images/step17.PNG" alt="Cloud Watch Event" style="margin: auto;">
+  <img src="/images/step17.PNG" alt="Cloud Watch Event" style="margin: auto;"  class="enableModal">
   <figcaption style="text-align: center;">Figure 12. Cloud Watch Event.</figcaption>
 </figure> 
 </p>

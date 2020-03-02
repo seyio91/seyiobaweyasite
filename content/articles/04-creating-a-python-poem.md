@@ -55,19 +55,27 @@ The only con to using this method is that the sandbox is pre-provision with a Wh
 **N.B.**  Recipients have to go through a one-time permission process to receive messages. This works just fine for our small scale project. To activate the Twilio Sandbox. Navigate to Whatsapp Beta on the left side menu  
 # 
 
-<img src="/images/step5.PNG" alt="Twilio WhatsApp Sandbox">
-<p style="text-align: center;"><b>Twilio Whatsapp Sandbox</b></p>
+<p align="center">
+<figure>
+  <img src="/images/step5.PNG" alt="Twilio WhatsApp Sandbox" class="enableModal">
+  <figcaption style="text-align: center;">Figure 1. Twilio Whatsapp Sandbox.</figcaption>
+</figure> 
+</p>
 
 # 
 
 A Phone Number and an authentication Message are provided, Save the number on your device and send the provided message from your device. This is a one time process for every Recipient using your script. 
-  
-  
 
-<p align="center">  
-<img src="/images/whatsappconfirmation.jpeg" alt="Confirmation Message">
-<p style="text-align: center;"><b>Success Reply</b></p>
+
+# 
+<p align="center">
+<figure>
+  <img src="/images/whatsappconfirmation.jpeg" alt="Confirmation Message" class="enableModal" align="center">
+  <figcaption style="text-align: center;">Figure 2. Success Reply.</figcaption>
+</figure> 
 </p>
+
+# 
   
 if successful, a reply is returned, The web interface also shows message received.  
 
@@ -80,8 +88,15 @@ To view how the API works, visit the [API documentation to find the basic usage]
 
 After logging into the Twilio Console, take note of your Account SID and Auth Token. The Account SID is a unique identifier for your account, while the Auth Token is a secret key that should never be shared or else anyone will have full access to your Twilio account.
 
-<img src="/images/step7.PNG" alt="Twilio Project Dashboard">
-<p style="text-align: center;"><b>Twilio DashBoard</b></p>
+# 
+<p align="center">
+<figure>
+  <img src="/images/step7.PNG" alt="Twilio Project Dashboard" class="enableModal">
+  <figcaption style="text-align: center;">Figure 3. Twilio DashBoard.</figcaption>
+</figure> 
+</p>
+
+# 
 
 Copy both keys, as they will later be used for authenticating with the API in your script
 
@@ -240,9 +255,12 @@ If our request is successful, the HTML document is then passed to beautifulsoup 
 We then select all the messages in the soup object. To do this, we need to first get the HTML element path of the messages. This can be done using the `inspect element` option in your web browser.  
 # 
 
-<img src="/images/step19.PNG" alt="some alternate text">  
-<p style="text-align: center;"><b>Chrome Developer Tools</b></p>
-
+<p align="center">
+<figure>
+  <img src="/images/step19.PNG" alt="Chrome Developer Tools" class="enableModal">
+  <figcaption style="text-align: center;">Figure 4. Chrome Developer Tools.</figcaption>
+</figure> 
+</p>
 
 # 
 

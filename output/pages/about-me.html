@@ -123,7 +123,7 @@
     </div>
     <div class="card-body">
     <ul class="recent">
-        <li><a href="http://localhost:8000/articles/2020-02-26/python-love-poem-2/"><i class="fas fa-link"></i> Deploying your Python Script to Lambda - Part 2</a></li>
+        <li><a href="http://localhost:8000/articles/2020-02-26/python-deploy-aws-lambda/"><i class="fas fa-link"></i> Deploying your Python Script to Lambda - Part 2</a></li>
         <li><a href="http://localhost:8000/articles/2020-02-25/python-love-poem/"><i class="fas fa-link"></i> Creating a Python Love Poem</a></li>
         <li><a href="http://localhost:8000/articles/2020-01-28/customizing-your-site/"><i class="fas fa-link"></i> Customizing your Pelican Static Site</a></li>
         <li><a href="http://localhost:8000/articles/2020-01-20/personal-website-setup/"><i class="fas fa-link"></i> Creating a Personal Static Website with Pelican</a></li>
@@ -249,6 +249,15 @@ Linkedin: <a href="https://www.linkedin.com/in/obaweya-seyi-375270ba">https://ww
 }
 </script>
 
+  <!-- Modal Code -->
+  
+  <!-- Modal Code end -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="closeModal">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="modalCaption"></div>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -334,6 +343,34 @@ Linkedin: <a href="https://www.linkedin.com/in/obaweya-seyi-375270ba">https://ww
     })
     
   }
+    // Image Click Modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementsByClassName("enableModal");
+    var modalImg = document.getElementById("modalImg");
+    var captionText = document.getElementById("modalCaption");
+
+
+    for (let i=0; i<img.length; i++){
+        elem = img[i];
+        elem.addEventListener('click', (e)=>{
+            console.log(e.target.src)
+            modal.style.display = "block";
+            modalImg.src = e.target.src;
+            captionText.innerHTML = e.target.alt;
+        })
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("closeModal")[0];
+
+    console.log(span)
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
   });
   </script></body>
 </html>
