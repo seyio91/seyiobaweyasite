@@ -1,6 +1,9 @@
 html {
     font-size: 95% !important;
 }
+main article :not(pre) > code {
+    white-space : pre-wrap !important;
+  }
 
 /* figcaption {
     font-size: 60% !important;
