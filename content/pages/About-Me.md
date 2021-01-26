@@ -34,7 +34,8 @@ Linkedin: [https://www.linkedin.com/in/obaweya-seyi-375270ba](https://www.linked
 GitHub: [https://github.com/seyio91](https://github.com/seyio91)
 
   
-## Download Resume <b>[Here]({attach}/downloads/Resume_2020_Obaweya_Oluwaseyifunmi_v3.pdf)</b>
+Download Resume <b>[Here]({attach}/downloads/Resume_2020_Obaweya_Oluwaseyifunmi_v3.pdf)</b>  
+Download Cover Letter <b>[Here]({attach}/downloads/cover-letter.pdf)</b>
   
 
 <p align="center"><h2>Tech Stack</h2></p>  
