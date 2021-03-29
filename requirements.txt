@@ -15,7 +15,7 @@ pelican-advthumbnailer==0.7.0
 pelican-autostatic==0.2.2
 Pillow==7.0.0
 pyasn1==0.4.8
-Pygments==2.5.2
+Pygments==2.7.4
 python-dateutil==2.8.1
 pytz==2019.3
 PyYAML==5.2
